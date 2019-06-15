@@ -1,166 +1,140 @@
-
 <html>
   <head>
-    
-<meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Bishop&#39;s Learning Space</title>
-<meta name="description" content="Live and learn. ">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
+<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1560641776050">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1560641684465">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://Superbishop.github.io/styles/main.css">
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
 
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://Superbishop.github.io">
-        <img class="avatar" src="https://Superbishop.github.io/images/avatar.png?v=1560641684465" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://Superbishop.github.io">
-        <h1 class="site-title">Bishop&#39;s Learning Space</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
-  </div>
-</div>
-
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a class="menu purple-link" href="https://Superbishop.github.io" class="menu" target="_blank">
-            Homepage
-          </a>
-        
-      
-        
-          <a class="menu purple-link" href="/archives" class="menu" target="_blank">
-            Archives
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            Tags
-          </a>
-        
-      
-        
-          <a class="menu purple-link" href="/post/about" class="menu" target="_blank">
-            About
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-      <div class="content-container">
-        
-        
-<section class="post-item">
-    <div class="content">
-      <a href="https://Superbishop.github.io/post/learning-summary-6-14-2019">
-        <h2 class="post-title">Learning Summary-6-14-2019</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-06-16</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://Superbishop.github.io/tag/j75nuvaWl">
-                python
-                
-                  ，
-                
-              </a>
-            
-              <a href="https://Superbishop.github.io/tag/B3Myw-CcF">
-                learn summary
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://Superbishop.github.io">
+  <img class="avatar" src="https://Superbishop.github.io/images/avatar.png?v=1560641776050" alt="">
+  </a>
+  <h1 class="site-title">
+    Bishop&#39;s Learning Space
+  </h1>
+  <p class="site-description">
+    Live and learn. 
+  </p>
+  <div class="menu-container">
     
-      <a href="https://Superbishop.github.io/post/learning-summary-6-14-2019">
-        <div class="feature-container" style="background-image: url('https://Superbishop.github.io/post-images/learning-summary-6-14-2019.jpeg')">
-        </div>
-      </a>
+      
+        <a href="https://Superbishop.github.io" class="menu" target="_blank">
+          Homepage
+        </a>
+      
     
-  </section>
-
-
-<div class="pagination-container">
-  
-  
-</div>
-
-
-      </div>
-
-      <div class="site-footer">
-  <div class="slogan">Live and learn. </div>
+      
+        <a href="/archives" class="menu" target="_blank">
+          Archives
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          Tags
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" target="_blank">
+          About
+        </a>
+      
+    
+  </div>
   <div class="social-container">
     
       
+        <a href="https://github.com/Superbishop" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
     
+      
+        <a href="https://twitter.com/Bishopsun1988" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/p/1005053175769285/info?mod=pedit" target="_blank">
+          <i class="fab fa-weibo"></i>
+        </a>
       
     
       
     
       
-    
+        <a href="https://www.facebook.com/leo.sun.184" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
       
     
   </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Superbishop.github.io/atom.xml" target="_blank">RSS</a>
 </div>
 
+    
+        <div class="post-container">
+  
+    <article class="post">
+      <a href="https://Superbishop.github.io/post/learning-summary-6-14-2019">
+        <h2 class="post-title">Learning Summary-6-14-2019</h2>
+      </a>
+      <div class="post-info">
+        <time class="post-time">
+          · 2019-06-16 ·
+        </time>
+        
+          <a href="https://Superbishop.github.io/tag/j75nuvaWl" class="post-tag">
+            # python
+          </a>
+        
+          <a href="https://Superbishop.github.io/tag/B3Myw-CcF" class="post-tag">
+            # learn summary
+          </a>
+        
+      </div>
+      
+        <a href="https://Superbishop.github.io/post/learning-summary-6-14-2019" class="post-feature-image" style="background-image: url('https://Superbishop.github.io/post-images/learning-summary-6-14-2019.jpeg')">
+        </a>
+      
+      <div class="post-abstract">
+        
+      </di>
+    </article>
+  
+</div>
 
-    </div>
-    <script type="application/javascript">
+    
+        <div class="pagination-container">
+  
+  
+</div>
 
-hljs.initHighlightingOnLoad()
+    
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://Superbishop.github.io/atom.xml" target="_blank">RSS</a>
+</div>
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
+<script>
+  hljs.initHighlightingOnLoad()
 </script>
 
-
-
-
+      </div>
+    </div>
   </body>
 </html>
