@@ -1,9 +1,9 @@
 <html>
   <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>python | Bishop&#39;s Learning Space</title>
+<title>Leaning Summary 7-05 | Bishop&#39;s Learning Space</title>
 <link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1562386146273">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -86,46 +86,77 @@
   </div>
 </div>
 
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：#python
-            </h2> 
-        </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://Superbishop.github.io/post/learning-summary-6-14-2019">
-        <h2 class="post-title">Learning Summary-6-14-2019</h2>
-      </a>
-      <div class="post-info">
-        <time class="post-time">
-          · 2019-06-16 ·
-        </time>
-        
-          <a href="https://Superbishop.github.io/tag/j75nuvaWl" class="post-tag">
-            # python
-          </a>
-        
-          <a href="https://Superbishop.github.io/tag/B3Myw-CcF" class="post-tag">
-            # learn summary
-          </a>
-        
-      </div>
-      
-        <a href="https://Superbishop.github.io/post/learning-summary-6-14-2019" class="post-feature-image" style="background-image: url('https://Superbishop.github.io/post-images/learning-summary-6-14-2019.jpeg')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-</div>
 
-        <div class="pagination-container">
-  
-  
-</div>
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Leaning Summary 7-05
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-07-05 ·
+              </time>
+              
+            </div>
+            
+            <div class="post-content">
+              <ol>
+<li>argv 和input()的不同点:
+用户输入时机的不同.如果参数是在用户执行命令时就要输入,使用argv;若是在脚本运行过程中需要用户输入,则使用input().
+2.与文件相关的命令(方法/函数):</li>
+</ol>
+<ul>
+<li>close:关闭文件</li>
+<li>read:读取文件的内容.你可以把结果赋给一个变量.</li>
+<li>readline:只读取文本文件中的一行</li>
+<li>truncate:清空文件,慎用</li>
+<li>write('stuff'):将struff写入文件</li>
+<li>seek(0):将读写位置移到文件开头</li>
+</ul>
+<p>Q:如何在文件用一次write命令写入多个字符串且用转义字符进行排版?</p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://Superbishop.github.io/post/learning-summary-6-14-2019">
+              <h3 class="post-title">
+                Learning Summary-6-14-2019
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '3bb4552eafc7c9ab4144',
+    clientSecret: 'f10e504a6ff8534bac9d2f34638c7b681cbf3763',
+    repo: 'superbishop.github.io',
+    owner: 'superbishop',
+    admin: ['superbishop'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
 
         <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
