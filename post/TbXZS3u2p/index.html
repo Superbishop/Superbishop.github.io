@@ -3,8 +3,8 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>自定义opener 以及全局opener创建 | Bishop&#39;s Learning Space</title>
-<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1563344052765">
+<title>自定义opener 以及全局opener的创建方法 | Bishop&#39;s Learning Space</title>
+<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1563344819133">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://Superbishop.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://Superbishop.github.io">
-  <img class="avatar" src="https://Superbishop.github.io/images/avatar.png?v=1563344052765" alt="">
+  <img class="avatar" src="https://Superbishop.github.io/images/avatar.png?v=1563344819133" alt="">
   </a>
   <h1 class="site-title">
     Bishop&#39;s Learning Space
@@ -90,7 +90,7 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              自定义opener 以及全局opener创建
+              自定义opener 以及全局opener的创建方法
             </h2>
             <div class="post-info">
               <time class="post-time">
@@ -100,11 +100,9 @@
             </div>
             
             <div class="post-content">
-              <p>通常我们默认使用的urlopen,它是一个特殊的opener,也就是模块自动构建好的,但基本的urlopen()不支持代理IP/cookie等其他HTTP/HTTPS高级功能,因此需要自动以opener.</p>
-<ul>
-<li>通过 reqeust.build.opener()创建自定义opener对象,使用自定义的opener对象,调用open()方法发送请求</li>
-<li>若程序全局都使用自定义opener,通过request.install.opener()将自定义的opener对象定义为全局opener,即若之后凡是调用urlopen,都将使用该opener</li>
-</ul>
+              <h4 id="通常我们默认使用的urlopen它是一个特殊的opener也就是模块自动构建好的但基本的urlopen不支持代理ipcookie等其他httphttps高级功能因此需要自动以opener">通常我们默认使用的urlopen,它是一个特殊的opener,也就是模块自动构建好的,但基本的urlopen()不支持代理IP/cookie等其他HTTP/HTTPS高级功能,因此需要自动以opener.</h4>
+<h5 id="通过-reqeustbuildopener创建自定义opener对象使用自定义的opener对象调用open方法发送请求">* 通过 reqeust.build.opener()创建自定义opener对象,使用自定义的opener对象,调用open()方法发送请求</h5>
+<h5 id="若程序全局都使用自定义opener通过requestinstallopener将自定义的opener对象定义为全局opener即若之后凡是调用urlopen都将使用该opener">* 若程序全局都使用自定义opener,通过request.install.opener()将自定义的opener对象定义为全局opener,即若之后凡是调用urlopen,都将使用该opener</h5>
 
             </div>
           </article>

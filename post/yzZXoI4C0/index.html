@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>反爬虫机制一 | Bishop&#39;s Learning Space</title>
-<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1563344052765">
+<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1563344819133">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://Superbishop.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://Superbishop.github.io">
-  <img class="avatar" src="https://Superbishop.github.io/images/avatar.png?v=1563344052765" alt="">
+  <img class="avatar" src="https://Superbishop.github.io/images/avatar.png?v=1563344819133" alt="">
   </a>
   <h1 class="site-title">
     Bishop&#39;s Learning Space
@@ -100,8 +100,14 @@
             </div>
             
             <div class="post-content">
-              <p>反爬虫机制一:判断用户是否是浏览器访问,而非通过爬虫程序的urllib进行访问
-应对方法:伪装浏览器进行访问</p>
+              <ul>
+<li>
+<h4 id="反爬虫机制一判断用户是否是浏览器访问而非通过爬虫程序的urllib进行访问">反爬虫机制一:判断用户是否是浏览器访问,而非通过爬虫程序的urllib进行访问</h4>
+</li>
+<li>
+<h4 id="应对方法伪装浏览器进行访问">应对方法:伪装浏览器进行访问</h4>
+</li>
+</ul>
 <pre><code>header={
 &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36&quot;
 } #构造请求头信息,包含进user-agent信息
@@ -110,7 +116,7 @@ req=request.Request(url,headers=header)#自定义请求对象将构造的请求�
 
 
 </code></pre>
-<p>同时,很多时候会添加多个user-agent进行随机爬虫,防止被网页识别并拦截</p>
+<h4 id="同时很多时候会添加多个user-agent进行随机爬虫防止被网页识别并拦截"><strong>同时,很多时候会添加多个user-agent进行随机爬虫,防止被网页识别并拦截</strong></h4>
 
             </div>
           </article>

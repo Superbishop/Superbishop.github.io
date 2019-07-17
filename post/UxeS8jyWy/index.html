@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>爬虫与反爬虫对抗策略 | Bishop&#39;s Learning Space</title>
-<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1563344052765">
+<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1563344819133">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://Superbishop.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://Superbishop.github.io">
-  <img class="avatar" src="https://Superbishop.github.io/images/avatar.png?v=1563344052765" alt="">
+  <img class="avatar" src="https://Superbishop.github.io/images/avatar.png?v=1563344819133" alt="">
   </a>
   <h1 class="site-title">
     Bishop&#39;s Learning Space
@@ -100,37 +100,37 @@
             </div>
             
             <div class="post-content">
-              <h2 id="爬虫几个重要基本概念">爬虫几个重要基本概念</h2>
+              <h3 id="一-爬虫几个重要基本概念">一. 爬虫几个重要基本概念</h3>
 <ul>
 <li>
-<h3 id="爬虫自动获取网站数据的程序">爬虫:自动获取网站数据的程序</h3>
+<h4 id="爬虫自动获取网站数据的程序">爬虫:自动获取网站数据的程序</h4>
 </li>
 <li>
-<h3 id="反爬虫使用技术手段防止爬虫程序爬取数据">反爬虫：使用技术手段防止爬虫程序爬取数据</h3>
+<h4 id="反爬虫使用技术手段防止爬虫程序爬取数据">反爬虫：使用技术手段防止爬虫程序爬取数据</h4>
 </li>
 <li>
-<h3 id="误伤反爬虫技术将普通用户识别为爬虫这种情况多出现在封ip中例如学校网络-小区网络再或者网络网络都是共享一个公共ip这个时候如果是封ip就会导致很多正常访问的用户也无法获取到数据-所以相对来说封ip的策略不是特别好通常都是禁止某ip一段时间访问">误伤：反爬虫技术将普通用户识别为爬虫，这种情况多出现在封ip中，例如学校网络、小区网络再或者网络网络都是共享一个公共ip，这个时候如果是封ip就会导致很多正常访问的用户也无法获取到数据。所以相对来说封ip的策略不是特别好，通常都是禁止某ip一段时间访问。</h3>
+<h4 id="误伤反爬虫技术将普通用户识别为爬虫这种情况多出现在封ip中例如学校网络-小区网络再或者网络网络都是共享一个公共ip这个时候如果是封ip就会导致很多正常访问的用户也无法获取到数据-所以相对来说封ip的策略不是特别好通常都是禁止某ip一段时间访问">误伤：反爬虫技术将普通用户识别为爬虫，这种情况多出现在封ip中，例如学校网络、小区网络再或者网络网络都是共享一个公共ip，这个时候如果是封ip就会导致很多正常访问的用户也无法获取到数据。所以相对来说封ip的策略不是特别好，通常都是禁止某ip一段时间访问。</h4>
 </li>
 <li>
-<h3 id="成本反爬虫也是需要人力和机器成本">成本：反爬虫也是需要人力和机器成本</h3>
+<h4 id="成本反爬虫也是需要人力和机器成本">成本：反爬虫也是需要人力和机器成本</h4>
 </li>
 <li>
-<h3 id="拦截成功拦截爬虫一般拦截率越高误伤率也就越高">拦截：成功拦截爬虫，一般拦截率越高，误伤率也就越高</h3>
+<h4 id="拦截成功拦截爬虫一般拦截率越高误伤率也就越高">拦截：成功拦截爬虫，一般拦截率越高，误伤率也就越高</h4>
 </li>
 </ul>
-<h2 id="爬虫与反爬虫对抗举例">爬虫与反爬虫对抗举例:</h2>
+<h3 id="二-爬虫与反爬虫对抗举例">二. 爬虫与反爬虫对抗举例:</h3>
 <p><img src="https://Superbishop.github.io/post-images/1563060420392.png" alt=""></p>
-<h2 id="python应对反爬虫机制策略总结">Python应对反爬虫机制策略总结:</h2>
-<h3 id="1-反爬虫机制user-agent解析">1. 反爬虫机制:user-agent解析</h3>
-<h3 id="应对机制fake-user-agent通过设定request-headers中的user-agent进行突破">应对机制:fake user-agent,通过设定Request Headers中的User-Agent进行突破</h3>
-<h3 id="2反爬虫机制访问频率限制">2.反爬虫机制:访问频率限制</h3>
-<h3 id="应对机制">应对机制:</h3>
-<h3 id="修改访问频率限制通过-post-方式修改-read_time正常访问的话这个值一般会大于10如果我们修改成-60">* 	修改访问频率限制,通过 POST 方式，修改 read_time，正常访问的话，这个值一般会大于10如果我们修改成 60.</h3>
-<h3 id="代理pi访问通过多个代理ip访问降低单个ip访问频率突破该机制">* 	代理PI访问,通过多个代理IP访问降低单个IP访问频率突破该机制</h3>
-<h3 id="分布式爬虫通过部署在多个服务器上的爬虫程序统一从一个地方拿网址平均下来每个服务器访问频率降低-从而突破限制同时实现的爬虫会更加的稳定和高效">* 	分布式爬虫,通过部署在多个服务器上的爬虫程序统一从一个地方拿网址,,平均下来每个服务器访问频率降低 ,从而突破限制,同时实现的爬虫会更加的稳定和高效</h3>
-<h3 id="3-反爬虫机制蜜罐技术">3. 	反爬虫机制:蜜罐技术</h3>
-<p><code>在反爬虫的机制中，有一种蜜罐技术。网页上会故意留下一些人类看不到或者绝对不会点击的链接。由于爬虫会从源代码中获取内容，所以爬虫可能会访问这样的链接。这个时候，只要网站发现了有IP访问这个链接，立刻永久封禁该IP + User-Agent + Mac地址等等可以用于识别访问者身份的所有信息。</code></p>
-<h3 id="应对机制定向爬虫技术">应对机制:定向爬虫技术</h3>
+<h3 id="三-python应对反爬虫机制策略总结">三. Python应对反爬虫机制策略总结:</h3>
+<h4 id="1-反爬虫机制user-agent解析">1. 反爬虫机制:user-agent解析</h4>
+<h4 id="应对机制fake-user-agent通过设定request-headers中的user-agent进行突破">应对机制:fake user-agent,通过设定Request Headers中的User-Agent进行突破</h4>
+<h4 id="2反爬虫机制访问频率限制">2.反爬虫机制:访问频率限制</h4>
+<h4 id="应对机制">应对机制:</h4>
+<h4 id="修改访问频率限制通过-post-方式修改-read_time正常访问的话这个值一般会大于10如果我们修改成-60">* 	修改访问频率限制,通过 POST 方式，修改 read_time，正常访问的话，这个值一般会大于10如果我们修改成 60.</h4>
+<h4 id="代理pi访问通过多个代理ip访问降低单个ip访问频率突破该机制">* 	代理PI访问,通过多个代理IP访问降低单个IP访问频率突破该机制</h4>
+<h4 id="分布式爬虫通过部署在多个服务器上的爬虫程序统一从一个地方拿网址平均下来每个服务器访问频率降低-从而突破限制同时实现的爬虫会更加的稳定和高效">* 	分布式爬虫,通过部署在多个服务器上的爬虫程序统一从一个地方拿网址,,平均下来每个服务器访问频率降低 ,从而突破限制,同时实现的爬虫会更加的稳定和高效</h4>
+<h4 id="3-反爬虫机制蜜罐技术">3. 反爬虫机制:蜜罐技术</h4>
+<h5 id="在反爬虫的机制中有一种蜜罐技术-网页上会故意留下一些人类看不到或者绝对不会点击的链接-由于爬虫会从源代码中获取内容所以爬虫可能会访问这样的链接-这个时候只要网站发现了有ip访问这个链接立刻永久封禁该ip-user-agent-mac地址等等可以用于识别访问者身份的所有信息"><code>在反爬虫的机制中，有一种蜜罐技术。网页上会故意留下一些人类看不到或者绝对不会点击的链接。由于爬虫会从源代码中获取内容，所以爬虫可能会访问这样的链接。这个时候，只要网站发现了有IP访问这个链接，立刻永久封禁该IP + User-Agent + Mac地址等等可以用于识别访问者身份的所有信息。</code></h5>
+<h4 id="应对机制定向爬虫技术">应对机制:定向爬虫技术</h4>
 
             </div>
           </article>
