@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>About me | Bishop&#39;s Learning Space</title>
+<title>自定义请求 | Bishop&#39;s Learning Space</title>
 <link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1563343588566">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -90,23 +90,38 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              About me
+              自定义请求
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2019-06-16 ·
+                · 2019-07-17 ·
               </time>
               
             </div>
             
             <div class="post-content">
-              <pre><code>                         Fresh bird still in Pyhton learning
+              <p>正常情况下,引入request模块,request会自动创建请求对象.</p>
+<pre><code>response=reqeust.urlopen(url).read().decode() #发送请求,获取响应并解码
 </code></pre>
+<p>但往往爬虫时需要创建自定义请求对象,使我们能封装更多信息进行请求.</p>
+<pre><code>req=request.Request(url) #创建自定义请求对象
+response=reqeust.urlopen(req).read().decode() #发送请求,获取响应并解码
+</code></pre>
+<p>前后两种request,不同点在于,第一种只针对url自动创建了请求对象,而第二种自定义的Request可以封装更多信息,不仅仅是url,还可以是cookies等其他信息,对抗反爬虫机制.</p>
 
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://Superbishop.github.io/post/UxeS8jyWy">
+              <h3 class="post-title">
+                爬虫与反爬虫对抗策略
+              </h3>
+            </a>
+          </div>
         
 
         
