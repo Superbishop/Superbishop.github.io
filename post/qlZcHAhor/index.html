@@ -1,9 +1,9 @@
 <html>
   <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Bishop&#39;s Learning Space</title>
+<title>正则表达式 | Bishop&#39;s Learning Space</title>
 <link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1568090495365">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -87,13 +87,104 @@
 </div>
 
 
-        <div class="tags-container">
-          
-            <a class="tag" href="https://Superbishop.github.io/tag/j75nuvaWl">python</a>
-          
-            <a class="tag" href="https://Superbishop.github.io/tag/B3Myw-CcF">learn summary</a>
-          
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              正则表达式
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-09-10 ·
+              </time>
+              
+            </div>
+            
+            <div class="post-content">
+              <ul>
+<li>
+<p><strong>概念:针对字符串进行数据筛选的表达式(匹配), eg:  import re</strong></p>
+</li>
+<li>
+<p><strong>原子:正则表达式中实现匹配的基本单位</strong></p>
+</li>
+<li>
+<p>以普通字符作为原子</p>
+</li>
+<li>
+<p>匹配通用字符
+\w 任意字母/数字/下划线
+\W 和小写w相反
+\d 十进制数字
+\D 除了十进制数以外的值
+\s 空白字符
+\S 非空白字符</p>
+</li>
+<li>
+<p>匹配数字/英文/中文
+数字 [0,9]
+英文 [a,z][A,Z]
+中文[\u4e00-\u9fa5]</p>
+</li>
+<li>
+<p>原子表:定义一组平等的原子, eg:  pat=&quot;1[3578]\d\d\d\d\d\d\d\d\d&quot;</p>
+</li>
+<li>
+<p>元字符:正则表达式中具有特殊意义的字符
+.     匹配任意字符(\n 除外)
+^   匹配字符串开始位置 eg: ^136
+$    匹配字符串中结束的位置 eg:666$
+&quot;*&quot;    重复0/1/多次前面原子   eg: \d
+?      重复0/1次前面的原子   eg:\d?
+&quot;+&quot;  重复1/多次前面的原子 eg:\d+</p>
+</li>
+</ul>
+<p>匹配固定次数
+{n} 前面的原子出现n次
+{n,} 前面的原子出现至少出现n次
+{n,m} 出现次数介于n-m之间</p>
+
+            </div>
+          </article>
         </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://Superbishop.github.io/post/l99V4EeeY">
+              <h3 class="post-title">
+                处理get请求
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '3bb4552eafc7c9ab4144',
+    clientSecret: 'f10e504a6ff8534bac9d2f34638c7b681cbf3763',
+    repo: 'superbishop.github.io',
+    owner: 'superbishop',
+    admin: ['superbishop'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
 
         <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 

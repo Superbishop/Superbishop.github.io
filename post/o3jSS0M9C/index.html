@@ -1,9 +1,9 @@
 <html>
   <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Bishop&#39;s Learning Space</title>
+<title>反爬虫机制2:代理IP爬去网站 | Bishop&#39;s Learning Space</title>
 <link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1568090495365">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -87,13 +87,85 @@
 </div>
 
 
-        <div class="tags-container">
-          
-            <a class="tag" href="https://Superbishop.github.io/tag/j75nuvaWl">python</a>
-          
-            <a class="tag" href="https://Superbishop.github.io/tag/B3Myw-CcF">learn summary</a>
-          
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              反爬虫机制2:代理IP爬去网站
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-07-28 ·
+              </time>
+              
+            </div>
+            
+            <div class="post-content">
+              <pre><code>proxylist = [
+    {&quot;http&quot;:&quot;47.107.186.18:8118&quot;},
+    {&quot;http&quot;:&quot;101.132.164.113:8118&quot;},
+    {&quot;http&quot;:&quot;121.232.194.196:9000&quot;},
+    {&quot;http&quot;:&quot;112.111.97.101:9000&quot;},
+    {&quot;http&quot;:&quot;175.44.151.198:9000&quot;}
+]
+
+# 随机选取代理IP
+proxy = random.choice(proxylist)
+print(proxy)
+
+# 构建代理处理器对象
+proxyHandler = request.ProxyHandler(proxy)
+
+# 创建自定义opener
+opener = request.build_opener(proxyHandler)
+
+# 创建自定义请求对象
+request = request.Request(url)
+
+response = opener.open(request)
+</code></pre>
+
+            </div>
+          </article>
         </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://Superbishop.github.io/post/TbXZS3u2p">
+              <h3 class="post-title">
+                自定义opener 以及全局opener的创建方法
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '3bb4552eafc7c9ab4144',
+    clientSecret: 'f10e504a6ff8534bac9d2f34638c7b681cbf3763',
+    repo: 'superbishop.github.io',
+    owner: 'superbishop',
+    admin: ['superbishop'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
 
         <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
