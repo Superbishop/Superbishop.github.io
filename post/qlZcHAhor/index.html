@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>正则表达式 | Bishop&#39;s Learning Space</title>
-<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1568091000558">
+<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1568782768565">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://Superbishop.github.io/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://Superbishop.github.io">
-  <img class="avatar" src="https://Superbishop.github.io/images/avatar.png?v=1568091000558" alt="">
+  <img class="avatar" src="https://Superbishop.github.io/images/avatar.png?v=1568782768565" alt="">
   </a>
   <h1 class="site-title">
     Bishop&#39;s Learning Space
@@ -97,6 +97,14 @@
                 · 2019-09-10 ·
               </time>
               
+                <a href="https://Superbishop.github.io/tag/wiZ0GzLM1" class="post-tag">
+                  # 正则表达式
+                </a>
+              
+                <a href="https://Superbishop.github.io/tag/j75nuvaWl" class="post-tag">
+                  # python
+                </a>
+              
             </div>
             
             <div class="post-content">
@@ -111,36 +119,36 @@
 <p>以普通字符作为原子</p>
 </li>
 <li>
-<p>匹配通用字符
-\w 任意字母/数字/下划线
-\W 和小写w相反
-\d 十进制数字
-\D 除了十进制数以外的值
-\s 空白字符
+<p>匹配通用字符<br>
+\w 任意字母/数字/下划线<br>
+\W 和小写w相反<br>
+\d 十进制数字<br>
+\D 除了十进制数以外的值<br>
+\s 空白字符<br>
 \S 非空白字符</p>
 </li>
 <li>
-<p>匹配数字/英文/中文
-数字 [0,9]
-英文 [a,z][A,Z]
+<p>匹配数字/英文/中文<br>
+数字 [0,9]<br>
+英文 [a,z][A,Z]<br>
 中文[\u4e00-\u9fa5]</p>
 </li>
 <li>
 <p>原子表:定义一组平等的原子, eg:  pat=&quot;1[3578]\d\d\d\d\d\d\d\d\d&quot;</p>
 </li>
 <li>
-<p><strong>元字符:正则表达式中具有特殊意义的字符</strong>
-.     匹配任意字符(\n 除外)
-^   匹配字符串开始位置 eg: ^136
-$    匹配字符串中结束的位置 eg:666$
-&quot;*&quot;    重复0/1/多次前面原子   eg: \d
-?      重复0/1次前面的原子   eg:\d?
+<p><strong>元字符:正则表达式中具有特殊意义的字符</strong><br>
+.     匹配任意字符(\n 除外)<br>
+^   匹配字符串开始位置 eg: ^136<br>
+$    匹配字符串中结束的位置 eg:666$<br>
+&quot;*&quot;    重复0/1/多次前面原子   eg: \d<br>
+?      重复0/1次前面的原子   eg:\d?<br>
 &quot;+&quot;  重复1/多次前面的原子 eg:\d+</p>
 </li>
 </ul>
-<p>匹配固定次数
-{n} 前面的原子出现n次
-{n,} 前面的原子出现至少出现n次
+<p>匹配固定次数<br>
+{n} 前面的原子出现n次<br>
+{n,} 前面的原子出现至少出现n次<br>
 {n,m} 出现次数介于n-m之间</p>
 <ul>
 <li><strong>多个正则表达式可用或&quot;|&quot;符号连接,从而实现多种数据匹配</strong></li>
