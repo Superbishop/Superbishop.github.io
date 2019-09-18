@@ -1,103 +1,105 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>反爬虫机制一 | Bishop&#39;s Learning Space</title>
-<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1568782768565">
+<meta name="description" content="Live and learn. ">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1568783006568">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://Superbishop.github.io/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://Superbishop.github.io">
-  <img class="avatar" src="https://Superbishop.github.io/images/avatar.png?v=1568782768565" alt="">
-  </a>
-  <h1 class="site-title">
-    Bishop&#39;s Learning Space
-  </h1>
-  <p class="site-description">
-    Live and learn. 
-  </p>
-  <div class="menu-container">
-    
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://Superbishop.github.io">
+        <img src="https://Superbishop.github.io/images/avatar.png?v=1568783006568" class="site-logo">
+        <h1 class="site-title">Bishop&#39;s Learning Space</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
       
-        <a href="https://Superbishop.github.io" class="menu" target="_blank">
-          Homepage
-        </a>
+        
+          <a href="https://Superbishop.github.io" class="site-nav" target="_blank">
+            Homepage
+          </a>
+        
       
-    
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            Archives
+          </a>
+        
       
-        <a href="/archives" class="menu" target="_blank">
-          Archives
-        </a>
+        
+          <a href="/tags" class="site-nav">
+            Tags
+          </a>
+        
       
-    
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            About
+          </a>
+        
       
-        <a href="/tags" class="menu">
-          Tags
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu" target="_blank">
-          About
-        </a>
-      
-    
+    </div>
   </div>
-  <div class="social-container">
-    
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
       
-        <a href="https://github.com/Superbishop" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
+        
       
-    
+        
       
-        <a href="https://twitter.com/Bishopsun1988" target="_blank">
-          <i class="fab fa-twitter"></i>
-        </a>
+        
       
-    
+        
       
-        <a href="https://weibo.com/p/1005053175769285/info?mod=pedit" target="_blank">
-          <i class="fab fa-weibo"></i>
-        </a>
+        
       
-    
-      
-    
-      
-        <a href="https://www.facebook.com/leo.sun.184" target="_blank">
-          <i class="fab fa-facebook"></i>
-        </a>
-      
-    
+    </div>
+    <div class="site-description">
+      Live and learn. 
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Superbishop.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
 
 
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              反爬虫机制一
-            </h2>
-            <div class="post-info">
-              <time class="post-time">
-                · 2019-07-17 ·
-              </time>
-              
-            </div>
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">反爬虫机制一</h2>
+            <div class="post-date">2019-07-17</div>
             
             <div class="post-content">
               <ul>
@@ -119,58 +121,74 @@ req=request.Request(url,headers=header)#自定义请求对象将构造的请求�
 <h4 id="同时很多时候会添加多个user-agent进行随机爬虫防止被网页识别并拦截"><strong>同时,很多时候会添加多个user-agent进行随机爬虫,防止被网页识别并拦截</strong></h4>
 
             </div>
-          </article>
-        </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://Superbishop.github.io/post/zxPVKJyYZ">
+                  <h3 class="post-title">
+                    自定义请求
+                  </h3>
+                </a>
+              </div>
+            
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://Superbishop.github.io/post/zxPVKJyYZ">
-              <h3 class="post-title">
-                自定义请求
-              </h3>
-            </a>
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
           </div>
-        
 
-        
-          
-            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-<div id="gitalk-container"></div>
-
-<script>
-
-  var gitalk = new Gitalk({
-    clientID: '3bb4552eafc7c9ab4144',
-    clientSecret: 'f10e504a6ff8534bac9d2f34638c7b681cbf3763',
-    repo: 'superbishop.github.io',
-    owner: 'superbishop',
-    admin: ['superbishop'],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-
-  gitalk.render('gitalk-container')
-
-</script>
-
-          
-
-          
-        
-
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://Superbishop.github.io/atom.xml" target="_blank">RSS</a>
-</div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-</script>
-
+        </div>
       </div>
     </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '3bb4552eafc7c9ab4144',
+        clientSecret: 'f10e504a6ff8534bac9d2f34638c7b681cbf3763',
+        repo: 'superbishop.github.io',
+        owner: 'superbishop',
+        admin: ['superbishop'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
   </body>
 </html>
