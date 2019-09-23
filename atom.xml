@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Superbishop.github.io</id>
     <title>Bishop&apos;s Learning Space</title>
-    <updated>2019-09-23T05:04:58.235Z</updated>
+    <updated>2019-09-23T05:22:19.187Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Superbishop.github.io"/>
     <link rel="self" href="https://Superbishop.github.io/atom.xml"/>
@@ -10,6 +10,23 @@
     <logo>https://Superbishop.github.io/images/avatar.png</logo>
     <icon>https://Superbishop.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Bishop&apos;s Learning Space</rights>
+    <entry>
+        <title type="html"><![CDATA[此生有妻如西原，足矣]]></title>
+        <id>https://Superbishop.github.io/post/Kh7_bVYeJ</id>
+        <link href="https://Superbishop.github.io/post/Kh7_bVYeJ">
+        </link>
+        <updated>2019-09-23T05:10:19.000Z</updated>
+        <content type="html"><![CDATA[<p>《艽野尘梦》乃吾生平第一篇看完的古文，当然如果《红楼梦》不算其中的话，而且讲述近代历史上工布与密波之役，说来惭愧，二十几年来从未听闻此战。</p>
+<p>书中详实述说入藏援藏及出藏经历，以及西原生死相随，不离不弃的坚贞爱情。一直听说藏女对待爱情忠诚坚贞，同时性格刚烈坚强，身手矫健堪比军中汉子，如同渠珍所言“真女子也”。羌塘沙漠，通天河艰辛之行，尤能看出西原女中豪杰。</p>
+<pre><code>“次晨，士兵尤未起，西原即呼余同出。斜行约二里，入山谷。西原行甚速。闻砰然一声，余前视之，竟毙一野骡。西原方取刀割其腿上肉。余止之曰：“割肉几何，不如取其两腿曳之归。”西原极称是。乃截两腿，以带系之，牵曳回。中途来士兵数人，令急往山谷取其余肉，免为狼噬。既归。西原已汗涔涔下矣。嘱余小心看守，复匆匆去。负牛粪一包至。操刀割肉，为多数方块，以通条穿之，燃之烘热。谓余曰：“有如许干肉，可供十日食矣。”是日，士兵亦获野骡、野羊、山兔甚多。皆仿西原法烘干之。”
+</code></pre>
+<p>此段将西原女中豪杰形象刻画的入木三分，读来让人甚是钦佩。书中不仅写她心思敏捷，身手不凡，还多次描绘陈与其生死相依的凄美爱情。西原死前所述，读者无不痛哭流涕，悲痛欲绝。</p>
+<pre><code>“万里从君，相期终始，不图病人膏肓，中道永诀。然君幸获济，我死亦瞑目矣。今家书旦晚可至，愿君归途珍重。”
+</code></pre>
+<p>读到此处西原遗言，虽真性情男儿亦不知觉泪流满面，篇尾渠珍一句“入室，觉伊不见。”更是以聊聊数笔写出丧妻之痛，读至此处，孰能无泪？孰能无痛？</p>
+<p>任乃强先生评此书“余一夜读之竟，寝已鸡鸣，不觉其晏，但觉其人奇，事奇，文奇，既齐且实，实而复娓娓动人，一切为康藏诸游记最”之精辟。我辈今日读此书，亦能废寝忘食，通宵达旦。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[正则表达式]]></title>
         <id>https://Superbishop.github.io/post/qlZcHAhor</id>
