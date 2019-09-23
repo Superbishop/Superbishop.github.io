@@ -1,16 +1,18 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
+    
+<meta charset="utf-8" >
 
 <title>About me | Bishop&#39;s Learning Space</title>
 <meta name="description" content="Live and learn. ">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1568783274959">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1569210684171">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://Superbishop.github.io/styles/main.css">
 
@@ -21,216 +23,122 @@
 
   
 
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
   </head>
   <body>
-  
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://Superbishop.github.io">Bishop&#39;s Learning Space</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
-        
-          <li>
-            
-              <a href="https://Superbishop.github.io" class="menu" target="_blank">
-                Homepage
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/archives" class="menu" target="_blank">
-                Archives
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/tags" class="menu">
-                Tags
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/about" class="menu" target="_blank">
-                About
-              </a>
-            
-          </li>
-        
-      </ul>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://Superbishop.github.io">
+        <img class="avatar" src="https://Superbishop.github.io/images/avatar.png?v=1569210684171" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://Superbishop.github.io">
+        <h1 class="site-title">Bishop&#39;s Learning Space</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
     </div>
   </div>
-</nav>
+</div>
 
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <article class="article">
-            <h1>About me</h1>
-            <p class="article-meta">
-              2019-06-16
-              
-            </p>
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a class="menu purple-link" href="https://Superbishop.github.io" class="menu" target="_blank">
+            Homepage
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="/archives" class="menu" target="_blank">
+            Archives
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            Tags
+          </a>
+        
+      
+        
+          <a class="menu purple-link" href="/post/about" class="menu" target="_blank">
+            About
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">About me</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-06-16</span>
             
-            <div class="post-content">
-              <pre><code>                         Fresh bird still in Pyhton learning
+          </div>
+          <div class="post-content">
+            <pre><code>                         Fresh bird still in Pyhton learning
 </code></pre>
 
-            </div>
-          </article>
+          </div>
         </div>
-        <div class="paper" data-aos="fade-in">
-          
-        </div>
-        
-          
-            <div class="paper" data-aos="fade-in">
-              <div id="gitalk-container"></div>
-            </div>
-          
 
-          
         
       </div>
 
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://Superbishop.github.io/images/avatar.png?v=1568783274959" class="no-responsive avatar">
-    <div class="text-muted">Live and learn. </div>
-    <div class="social-container">
       
         
-      
+          <div id="gitalk-container"></div>
+        
+
         
       
-        
+
+      <div class="site-footer">
+  <div class="slogan">Live and learn. </div>
+  <div class="social-container">
+    
       
-        
+    
       
-        
+    
       
-    </div>
+    
+      
+    
+      
+    
   </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://Superbishop.github.io/post/qlZcHAhor">正则表达式</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://Superbishop.github.io/post/l99V4EeeY">处理get请求</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://Superbishop.github.io/post/o3jSS0M9C">反爬虫机制2:代理IP爬去网站</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://Superbishop.github.io/post/TbXZS3u2p">自定义opener 以及全局opener的创建方法</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://Superbishop.github.io/post/yzZXoI4C0">反爬虫机制一</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://Superbishop.github.io/post/zxPVKJyYZ">自定义请求</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://Superbishop.github.io/post/UxeS8jyWy">爬虫与反爬虫对抗策略</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://Superbishop.github.io/post/3vAt6NvMi">Leaning Summary 7-05</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://Superbishop.github.io/post/learning-summary-6-14-2019">Learning Summary-6-14-2019</a>
-            </li>
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://Superbishop.github.io/tag/wiZ0GzLM1" class="badge warning">
-          正则表达式
-        </a>
-      
-        <a href="https://Superbishop.github.io/tag/j75nuvaWl" class="badge warning">
-          python
-        </a>
-      
-        <a href="https://Superbishop.github.io/tag/B3Myw-CcF" class="badge warning">
-          learn summary
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Superbishop.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Superbishop.github.io/atom.xml" target="_blank">RSS</a>
 </div>
 
 
     </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script type="application/javascript">
-
-AOS.init();
+    <script type="application/javascript">
 
 hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
 </script>
 
