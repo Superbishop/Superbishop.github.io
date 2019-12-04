@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Superbishop.github.io</id>
     <title>Bishop&apos;s Learning Space</title>
-    <updated>2019-09-23T05:32:26.290Z</updated>
+    <updated>2019-12-04T02:26:42.517Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Superbishop.github.io"/>
     <link rel="self" href="https://Superbishop.github.io/atom.xml"/>
@@ -10,6 +10,55 @@
     <logo>https://Superbishop.github.io/images/avatar.png</logo>
     <icon>https://Superbishop.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Bishop&apos;s Learning Space</rights>
+    <entry>
+        <title type="html"><![CDATA[爬取豆瓣电影列表]]></title>
+        <id>https://Superbishop.github.io/post/Ekr4wfa8m</id>
+        <link href="https://Superbishop.github.io/post/Ekr4wfa8m">
+        </link>
+        <updated>2019-12-04T02:24:58.000Z</updated>
+        <content type="html"><![CDATA[<pre><code>import requests
+import re
+import xlsxwriter
+
+headers={&quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64)\
+        AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36&quot;}
+
+url=&quot;https://movie.douban.com/j/chart/top_list?type=11&amp;interval_id=100%3A90&amp;action=&amp;start=40&amp;limit=20&quot;
+
+response=requests.get(url,headers=headers).text
+
+pat1=r'&quot;rating&quot;:\[&quot;(.*?)&quot;,&quot;\d+&quot;\]'
+pat2=r'&quot;rank&quot;:(\d+)'
+pat3=r'&quot;title&quot;:&quot;(.*?)&quot;'
+
+pattern1=re.compile(pat1)
+pattern2=re.compile(pat2)
+pattern3=re.compile(pat3)
+
+data1=re.findall(pattern1,response)
+data2=re.findall(pattern2,response)
+data3=re.findall(pattern3,response)
+
+#创建表单于电脑桌面保存爬取电影排名结果
+workbook=xlsxwriter.Workbook('C:doubanfilm3.xlsx')
+worksheet=workbook.add_worksheet()
+worksheet.write(&quot;A1&quot;,&quot;电影排名&quot;)
+worksheet.write(&quot;B1&quot;,&quot;电影评分&quot;)
+worksheet.write(&quot;C1&quot;,&quot;电影名&quot;)
+
+for x in range(0,len(data1)) :
+    print(&quot;电影排名:&quot;,data2[x],&quot;电影评分:&quot;,data1[x],&quot;电影名:&quot;,data3[x])
+
+    worksheet.write(&quot;A&quot;+str(x+2),data2[x])
+    worksheet.write(&quot;B&quot;+str(x+2),data1[x])
+    worksheet.write(&quot;C&quot;+str(x+2),data3[x])
+
+
+workbook.close()
+
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[没有麦田的守望者 (书评：麦田守望者)]]></title>
         <id>https://Superbishop.github.io/post/没有麦田的守望者 (书评：麦田守望者)</id>
@@ -236,28 +285,6 @@ response=reqeust.urlopen(req).read().decode() #发送请求,获取响应并解�
 <h4 id="3-反爬虫机制蜜罐技术">3. 反爬虫机制:蜜罐技术</h4>
 <h5 id="在反爬虫的机制中有一种蜜罐技术-网页上会故意留下一些人类看不到或者绝对不会点击的链接-由于爬虫会从源代码中获取内容所以爬虫可能会访问这样的链接-这个时候只要网站发现了有ip访问这个链接立刻永久封禁该ip-user-agent-mac地址等等可以用于识别访问者身份的所有信息"><code>在反爬虫的机制中，有一种蜜罐技术。网页上会故意留下一些人类看不到或者绝对不会点击的链接。由于爬虫会从源代码中获取内容，所以爬虫可能会访问这样的链接。这个时候，只要网站发现了有IP访问这个链接，立刻永久封禁该IP + User-Agent + Mac地址等等可以用于识别访问者身份的所有信息。</code></h5>
 <h4 id="应对机制定向爬虫技术">应对机制:定向爬虫技术</h4>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Leaning Summary 7-05]]></title>
-        <id>https://Superbishop.github.io/post/3vAt6NvMi</id>
-        <link href="https://Superbishop.github.io/post/3vAt6NvMi">
-        </link>
-        <updated>2019-07-05T02:48:34.000Z</updated>
-        <content type="html"><![CDATA[<ol>
-<li>argv 和input()的不同点:<br>
-用户输入时机的不同.如果参数是在用户执行命令时就要输入,使用argv;若是在脚本运行过程中需要用户输入,则使用input().<br>
-2.与文件相关的命令(方法/函数):</li>
-</ol>
-<ul>
-<li>close:关闭文件</li>
-<li>read:读取文件的内容.你可以把结果赋给一个变量.</li>
-<li>readline:只读取文本文件中的一行</li>
-<li>truncate:清空文件,慎用</li>
-<li>write('stuff'):将struff写入文件</li>
-<li>seek(0):将读写位置移到文件开头</li>
-</ul>
-<p>Q:如何在文件用一次write命令写入多个字符串且用转义字符进行排版?</p>
 ]]></content>
     </entry>
 </feed>

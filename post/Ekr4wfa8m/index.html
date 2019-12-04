@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | Bishop&#39;s Learning Space</title>
+<title>爬取豆瓣电影列表 | Bishop&#39;s Learning Space</title>
 <meta name="description" content="Live and learn. ">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -13,6 +13,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://Superbishop.github.io/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -91,20 +97,76 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="tags-container">
+          <div class="post-detail">
+            <h2 class="post-title">爬取豆瓣电影列表</h2>
+            <div class="post-date">2019-12-04</div>
             
-              <a class="tag" href="https://Superbishop.github.io/tag/ysEQiNQV9">书评</a>
+            <div class="post-content">
+              <pre><code>import requests
+import re
+import xlsxwriter
+
+headers={&quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64)\
+        AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36&quot;}
+
+url=&quot;https://movie.douban.com/j/chart/top_list?type=11&amp;interval_id=100%3A90&amp;action=&amp;start=40&amp;limit=20&quot;
+
+response=requests.get(url,headers=headers).text
+
+pat1=r'&quot;rating&quot;:\[&quot;(.*?)&quot;,&quot;\d+&quot;\]'
+pat2=r'&quot;rank&quot;:(\d+)'
+pat3=r'&quot;title&quot;:&quot;(.*?)&quot;'
+
+pattern1=re.compile(pat1)
+pattern2=re.compile(pat2)
+pattern3=re.compile(pat3)
+
+data1=re.findall(pattern1,response)
+data2=re.findall(pattern2,response)
+data3=re.findall(pattern3,response)
+
+#创建表单于电脑桌面保存爬取电影排名结果
+workbook=xlsxwriter.Workbook('C:doubanfilm3.xlsx')
+worksheet=workbook.add_worksheet()
+worksheet.write(&quot;A1&quot;,&quot;电影排名&quot;)
+worksheet.write(&quot;B1&quot;,&quot;电影评分&quot;)
+worksheet.write(&quot;C1&quot;,&quot;电影名&quot;)
+
+for x in range(0,len(data1)) :
+    print(&quot;电影排名:&quot;,data2[x],&quot;电影评分:&quot;,data1[x],&quot;电影名:&quot;,data3[x])
+
+    worksheet.write(&quot;A&quot;+str(x+2),data2[x])
+    worksheet.write(&quot;B&quot;+str(x+2),data1[x])
+    worksheet.write(&quot;C&quot;+str(x+2),data3[x])
+
+
+workbook.close()
+
+</code></pre>
+
+            </div>
             
-              <a class="tag" href="https://Superbishop.github.io/tag/tZDa2M7oR">麦田守望者</a>
             
-              <a class="tag" href="https://Superbishop.github.io/tag/wiZ0GzLM1">正则表达式</a>
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://Superbishop.github.io/post/没有麦田的守望者 (书评：麦田守望者)">
+                  <h3 class="post-title">
+                    没有麦田的守望者 (书评：麦田守望者)
+                  </h3>
+                </a>
+              </div>
             
-              <a class="tag" href="https://Superbishop.github.io/tag/j75nuvaWl">python</a>
+
             
-              <a class="tag" href="https://Superbishop.github.io/tag/B3Myw-CcF">learn summary</a>
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
             
+
           </div>
+
         </div>
       </div>
     </div>
@@ -125,6 +187,29 @@ var app = new Vue({
 })
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '3bb4552eafc7c9ab4144',
+        clientSecret: 'f10e504a6ff8534bac9d2f34638c7b681cbf3763',
+        repo: 'superbishop.github.io',
+        owner: 'superbishop',
+        admin: ['superbishop'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
