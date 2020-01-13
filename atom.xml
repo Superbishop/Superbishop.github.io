@@ -2,62 +2,20 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Superbishop.github.io</id>
     <title>Bishop&apos;s Learning Space</title>
-    <updated>2019-12-04T02:39:18.232Z</updated>
+    <updated>2020-01-13T05:40:24.352Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Superbishop.github.io"/>
     <link rel="self" href="https://Superbishop.github.io/atom.xml"/>
     <subtitle>Live and learn. </subtitle>
     <logo>https://Superbishop.github.io/images/avatar.png</logo>
     <icon>https://Superbishop.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2019, Bishop&apos;s Learning Space</rights>
+    <rights>All rights reserved 2020, Bishop&apos;s Learning Space</rights>
     <entry>
         <title type="html"><![CDATA[爬取豆瓣电影列表]]></title>
         <id>https://Superbishop.github.io/post/Ekr4wfa8m</id>
         <link href="https://Superbishop.github.io/post/Ekr4wfa8m">
         </link>
         <updated>2019-12-04T02:24:58.000Z</updated>
-        <content type="html"><![CDATA[<pre><code>import requests
-import re
-import xlsxwriter
-
-headers={&quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64)\
-        AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36&quot;}
-
-url=&quot;https://movie.douban.com/j/chart/top_list?type=11&amp;interval_id=100%3A90&amp;action=&amp;start=40&amp;limit=20&quot;
-
-response=requests.get(url,headers=headers).text
-
-pat1=r'&quot;rating&quot;:\[&quot;(.*?)&quot;,&quot;\d+&quot;\]'
-pat2=r'&quot;rank&quot;:(\d+)'
-pat3=r'&quot;title&quot;:&quot;(.*?)&quot;'
-
-pattern1=re.compile(pat1)
-pattern2=re.compile(pat2)
-pattern3=re.compile(pat3)
-
-data1=re.findall(pattern1,response)
-data2=re.findall(pattern2,response)
-data3=re.findall(pattern3,response)
-
-#创建表单于电脑桌面保存爬取电影排名结果
-workbook=xlsxwriter.Workbook('C:doubanfilm3.xlsx')
-worksheet=workbook.add_worksheet()
-worksheet.write(&quot;A1&quot;,&quot;电影排名&quot;)
-worksheet.write(&quot;B1&quot;,&quot;电影评分&quot;)
-worksheet.write(&quot;C1&quot;,&quot;电影名&quot;)
-
-for x in range(0,len(data1)) :
-    print(&quot;电影排名:&quot;,data2[x],&quot;电影评分:&quot;,data1[x],&quot;电影名:&quot;,data3[x])
-
-    worksheet.write(&quot;A&quot;+str(x+2),data2[x])
-    worksheet.write(&quot;B&quot;+str(x+2),data1[x])
-    worksheet.write(&quot;C&quot;+str(x+2),data3[x])
-
-
-workbook.close()
-
-</code></pre>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[没有麦田的守望者 (书评：麦田守望者)]]></title>
@@ -65,11 +23,6 @@ workbook.close()
         <link href="https://Superbishop.github.io/post/没有麦田的守望者 (书评：麦田守望者)">
         </link>
         <updated>2019-09-23T05:23:50.000Z</updated>
-        <content type="html"><![CDATA[<p>花了两天时间看完这本书，期间有过放弃阅读的想法，然思考再三，仍继续阅读着。之所以有过放弃念头是因为该书前段极其枯燥乏味，加之满篇的 “他妈的 ”，我搜索了下全篇有 230次“ 他妈的”，然而回头想想，这不正是符合小说主人公霍尔顿的性格特征嘛，一个不喜欢身边所有事物的人，说他厌世一点不为过，这也就引出他想去到西部农场，居住在树林旁的想法，想要站在悬崖边守望着麦田里成千上万奔跑的孩子。</p>
-<p>塞林格在该小说刻画的霍尔顿形象真实深刻，入木三分。小说情节描述很有画面感，每个部分如同身临其境，比如那个变态的男人，穿着女人的衣服在房间里走来走去；那对变态的情侣用嘴互相吐酒在对方嘴里，显示他们爱得多么深刻。不仅如此，塞林格真实再现美国五六十年代的社会现状，美国人民的生活、娱乐、学习、工作。霍尔顿的老爸是有名的律师，收入不菲。作为律师，本职是救人于水火，拯救他人。然在他霍尔顿眼里，不过就是干着各种勾当，每天喝着高级红酒。霍尔顿的中学老师，喜欢跑到学生宿舍讲着各种性的话题，讨论性为何物。如此变态人物在小说里不胜枚举，这些都是霍尔顿厌世的根源所在。初看此小说，大部分人是极其讨厌主人公，性格叛逆，说话粗鄙不堪，行为举止犹如社会流氓，对，就是流氓，毫不讽刺的说。但之所以这么多人喜欢这本书，百看不厌，在于能设身处地，换位思考，若是你我身在那样的大资本社会环境下，有几个能不被同化。然能真正做到主人公鄙夷世俗者，估计寥寥无几。这也就是本书带给许多人的震撼之处。“世人皆浊我独清”，当然主人公也不够“清”，但至少精神上是澄净的。</p>
-<p>不过塞林格不是要塑造那个年代的英雄式人物，相反他要塑造一个悲剧式人物。如何悲剧？本身足够叛逆的霍尔顿，是能够抛弃世俗，脱离世俗的庸俗，回归自己“麦田式”的生活，“守望者”的生活，然最终小说峰回路转，他依然无法摆脱社会现实这一张巨网，叛逆的性格被现实所扭曲反转，过上那个年代作为一个正常中学生应该过得正常生活。霍尔顿会继续转校，上完中学，大学，就业，结婚，生子。不过不再是自己一直期盼的生活，树林边木房子居住着，悬崖边守望着，麦田里奔跑着。</p>
-<p>没有麦田，何以守望。</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[此生有妻如西原，足矣]]></title>
@@ -77,18 +30,6 @@ workbook.close()
         <link href="https://Superbishop.github.io/post/此生有妻如西原，足矣">
         </link>
         <updated>2019-09-23T05:10:19.000Z</updated>
-        <content type="html"><![CDATA[<p>《艽野尘梦》乃吾生平第一篇看完的古文，当然如果《红楼梦》不算其中的话，而且讲述近代历史上工布与密波之役，说来惭愧，二十几年来从未听闻此战。</p>
-<p>书中详实述说入藏援藏及出藏经历，以及西原生死相随，不离不弃的坚贞爱情。一直听说藏女对待爱情忠诚坚贞，同时性格刚烈坚强，身手矫健堪比军中汉子，如同渠珍所言“真女子也”。羌塘沙漠，通天河艰辛之行，尤能看出西原女中豪杰。</p>
-<blockquote>
-<p>“次晨，士兵尤未起，西原即呼余同出。斜行约二里，入山谷。西原行甚速。闻砰然一声，余前视之，竟毙一野骡。西原方取刀割其腿上肉。余止之曰：“割肉几何，不如取其两腿曳之归。”西原极称是。乃截两腿，以带系之，牵曳回。中途来士兵数人，令急往山谷取其余肉，免为狼噬。既归。西原已汗涔涔下矣。嘱余小心看守，复匆匆去。负牛粪一包至。操刀割肉，为多数方块，以通条穿之，燃之烘热。谓余曰：“有如许干肉，可供十日食矣。”是日，士兵亦获野骡、野羊、山兔甚多。皆仿西原法烘干之。”</p>
-</blockquote>
-<p>此段将西原女中豪杰形象刻画的入木三分，读来让人甚是钦佩。书中不仅写她心思敏捷，身手不凡，还多次描绘陈与其生死相依的凄美爱情。西原死前所述，读者无不痛哭流涕，悲痛欲绝。</p>
-<blockquote>
-<p>“万里从君，相期终始，不图病人膏肓，中道永诀。然君幸获济，我死亦瞑目矣。今家书旦晚可至，愿君归途珍重。”</p>
-</blockquote>
-<p>读到此处西原遗言，虽真性情男儿亦不知觉泪流满面，篇尾渠珍一句“入室，觉伊不见。”更是以聊聊数笔写出丧妻之痛，读至此处，孰能无泪？孰能无痛？</p>
-<p>任乃强先生评此书“余一夜读之竟，寝已鸡鸣，不觉其晏，但觉其人奇，事奇，文奇，既齐且实，实而复娓娓动人，一切为康藏诸游记最”之精辟。我辈今日读此书，亦能废寝忘食，通宵达旦。</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[正则表达式]]></title>
@@ -96,52 +37,6 @@ workbook.close()
         <link href="https://Superbishop.github.io/post/qlZcHAhor">
         </link>
         <updated>2019-09-10T03:51:52.000Z</updated>
-        <content type="html"><![CDATA[<ul>
-<li>
-<p><strong>概念:针对字符串进行数据筛选的表达式(匹配), eg:  import re</strong></p>
-</li>
-<li>
-<p><strong>原子:正则表达式中实现匹配的基本单位</strong></p>
-</li>
-<li>
-<p>以普通字符作为原子</p>
-</li>
-<li>
-<p>匹配通用字符<br>
-\w 任意字母/数字/下划线<br>
-\W 和小写w相反<br>
-\d 十进制数字<br>
-\D 除了十进制数以外的值<br>
-\s 空白字符<br>
-\S 非空白字符</p>
-</li>
-<li>
-<p>匹配数字/英文/中文<br>
-数字 [0,9]<br>
-英文 [a,z][A,Z]<br>
-中文[\u4e00-\u9fa5]</p>
-</li>
-<li>
-<p>原子表:定义一组平等的原子, eg:  pat=&quot;1[3578]\d\d\d\d\d\d\d\d\d&quot;</p>
-</li>
-<li>
-<p><strong>元字符:正则表达式中具有特殊意义的字符</strong><br>
-.     匹配任意字符(\n 除外)<br>
-^   匹配字符串开始位置 eg: ^136<br>
-$    匹配字符串中结束的位置 eg:666$<br>
-&quot;*&quot;    重复0/1/多次前面原子   eg: \d<br>
-?      重复0/1次前面的原子   eg:\d?<br>
-&quot;+&quot;  重复1/多次前面的原子 eg:\d+</p>
-</li>
-</ul>
-<p>匹配固定次数<br>
-{n} 前面的原子出现n次<br>
-{n,} 前面的原子出现至少出现n次<br>
-{n,m} 出现次数介于n-m之间</p>
-<ul>
-<li><strong>多个正则表达式可用或&quot;|&quot;符号连接,从而实现多种数据匹配</strong></li>
-</ul>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[处理get请求]]></title>
@@ -149,21 +44,6 @@ $    匹配字符串中结束的位置 eg:666$<br>
         <link href="https://Superbishop.github.io/post/l99V4EeeY">
         </link>
         <updated>2019-07-28T03:58:42.000Z</updated>
-        <content type="html"><![CDATA[<pre><code>import urllib
-from urllib import request
-# https://www.baidu.com/s?wd=%E5%85%8D%E8%B4%B9%E4%BB%A3%E7%90%86IP # url 编码
-url = &quot;http://www.baidu.com/s?&quot;
-wd = {&quot;wd&quot;:&quot;免费代理IP&quot;}
-
-# 构造url编码
-wdd = urllib.parse.urlencode(wd)
-
-url = url + wdd
-req = request.Request(url)
-response = request.urlopen(req)
-print(response.read().decode())
-</code></pre>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[反爬虫机制2:代理IP爬去网站]]></title>
@@ -171,30 +51,6 @@ print(response.read().decode())
         <link href="https://Superbishop.github.io/post/o3jSS0M9C">
         </link>
         <updated>2019-07-28T02:55:46.000Z</updated>
-        <content type="html"><![CDATA[<pre><code>proxylist = [
-    {&quot;http&quot;:&quot;47.107.186.18:8118&quot;},
-    {&quot;http&quot;:&quot;101.132.164.113:8118&quot;},
-    {&quot;http&quot;:&quot;121.232.194.196:9000&quot;},
-    {&quot;http&quot;:&quot;112.111.97.101:9000&quot;},
-    {&quot;http&quot;:&quot;175.44.151.198:9000&quot;}
-]
-
-# 随机选取代理IP
-proxy = random.choice(proxylist)
-print(proxy)
-
-# 构建代理处理器对象
-proxyHandler = request.ProxyHandler(proxy)
-
-# 创建自定义opener
-opener = request.build_opener(proxyHandler)
-
-# 创建自定义请求对象
-request = request.Request(url)
-
-response = opener.open(request)
-</code></pre>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[自定义opener 以及全局opener的创建方法]]></title>
@@ -202,10 +58,6 @@ response = opener.open(request)
         <link href="https://Superbishop.github.io/post/TbXZS3u2p">
         </link>
         <updated>2019-07-17T06:07:36.000Z</updated>
-        <content type="html"><![CDATA[<h4 id="通常我们默认使用的urlopen它是一个特殊的opener也就是模块自动构建好的但基本的urlopen不支持代理ipcookie等其他httphttps高级功能因此需要自动以opener">通常我们默认使用的urlopen,它是一个特殊的opener,也就是模块自动构建好的,但基本的urlopen()不支持代理IP/cookie等其他HTTP/HTTPS高级功能,因此需要自动以opener.</h4>
-<h5 id="通过-reqeustbuildopener创建自定义opener对象使用自定义的opener对象调用open方法发送请求">* 通过 reqeust.build.opener()创建自定义opener对象,使用自定义的opener对象,调用open()方法发送请求</h5>
-<h5 id="若程序全局都使用自定义opener通过requestinstallopener将自定义的opener对象定义为全局opener即若之后凡是调用urlopen都将使用该opener">* 若程序全局都使用自定义opener,通过request.install.opener()将自定义的opener对象定义为全局opener,即若之后凡是调用urlopen,都将使用该opener</h5>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[反爬虫机制一]]></title>
@@ -213,24 +65,6 @@ response = opener.open(request)
         <link href="https://Superbishop.github.io/post/yzZXoI4C0">
         </link>
         <updated>2019-07-17T05:14:28.000Z</updated>
-        <content type="html"><![CDATA[<ul>
-<li>
-<h4 id="反爬虫机制一判断用户是否是浏览器访问而非通过爬虫程序的urllib进行访问">反爬虫机制一:判断用户是否是浏览器访问,而非通过爬虫程序的urllib进行访问</h4>
-</li>
-<li>
-<h4 id="应对方法伪装浏览器进行访问">应对方法:伪装浏览器进行访问</h4>
-</li>
-</ul>
-<pre><code>header={
-&quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36&quot;
-} #构造请求头信息,包含进user-agent信息
-
-req=request.Request(url,headers=header)#自定义请求对象将构造的请求头封装进去
-
-
-</code></pre>
-<h4 id="同时很多时候会添加多个user-agent进行随机爬虫防止被网页识别并拦截"><strong>同时,很多时候会添加多个user-agent进行随机爬虫,防止被网页识别并拦截</strong></h4>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[自定义请求]]></title>
@@ -238,15 +72,6 @@ req=request.Request(url,headers=header)#自定义请求对象将构造的请求�
         <link href="https://Superbishop.github.io/post/zxPVKJyYZ">
         </link>
         <updated>2019-07-17T04:44:58.000Z</updated>
-        <content type="html"><![CDATA[<h4 id="正常情况下引入request模块request会自动创建请求对象">正常情况下,引入request模块,request会自动创建请求对象.</h4>
-<pre><code>response=reqeust.urlopen(url).read().decode() #发送请求,获取响应并解码
-</code></pre>
-<h4 id="但往往爬虫时需要创建自定义请求对象使我们能封装更多信息进行请求">但往往爬虫时需要创建自定义请求对象,使我们能封装更多信息进行请求.</h4>
-<pre><code>req=request.Request(url) #创建自定义请求对象
-response=reqeust.urlopen(req).read().decode() #发送请求,获取响应并解码
-</code></pre>
-<p>#####前后两种request,不同点在于,第一种只针对url自动创建了请求对象,而第二种自定义的Request可以封装更多信息,不仅仅是url,还可以是cookies等其他信息,对抗反爬虫机制.</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[爬虫与反爬虫对抗策略]]></title>
@@ -254,37 +79,5 @@ response=reqeust.urlopen(req).read().decode() #发送请求,获取响应并解�
         <link href="https://Superbishop.github.io/post/UxeS8jyWy">
         </link>
         <updated>2019-07-13T23:21:42.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="一-爬虫几个重要基本概念">一. 爬虫几个重要基本概念</h3>
-<ul>
-<li>
-<h4 id="爬虫自动获取网站数据的程序">爬虫:自动获取网站数据的程序</h4>
-</li>
-<li>
-<h4 id="反爬虫使用技术手段防止爬虫程序爬取数据">反爬虫：使用技术手段防止爬虫程序爬取数据</h4>
-</li>
-<li>
-<h4 id="误伤反爬虫技术将普通用户识别为爬虫这种情况多出现在封ip中例如学校网络-小区网络再或者网络网络都是共享一个公共ip这个时候如果是封ip就会导致很多正常访问的用户也无法获取到数据-所以相对来说封ip的策略不是特别好通常都是禁止某ip一段时间访问">误伤：反爬虫技术将普通用户识别为爬虫，这种情况多出现在封ip中，例如学校网络、小区网络再或者网络网络都是共享一个公共ip，这个时候如果是封ip就会导致很多正常访问的用户也无法获取到数据。所以相对来说封ip的策略不是特别好，通常都是禁止某ip一段时间访问。</h4>
-</li>
-<li>
-<h4 id="成本反爬虫也是需要人力和机器成本">成本：反爬虫也是需要人力和机器成本</h4>
-</li>
-<li>
-<h4 id="拦截成功拦截爬虫一般拦截率越高误伤率也就越高">拦截：成功拦截爬虫，一般拦截率越高，误伤率也就越高</h4>
-</li>
-</ul>
-<h3 id="二-爬虫与反爬虫对抗举例">二. 爬虫与反爬虫对抗举例:</h3>
-<p><img src="https://Superbishop.github.io/post-images/1563060420392.png" alt=""></p>
-<h3 id="三-python应对反爬虫机制策略总结">三. Python应对反爬虫机制策略总结:</h3>
-<h4 id="1-反爬虫机制user-agent解析">1. 反爬虫机制:user-agent解析</h4>
-<h4 id="应对机制fake-user-agent通过设定request-headers中的user-agent进行突破">应对机制:fake user-agent,通过设定Request Headers中的User-Agent进行突破</h4>
-<h4 id="2反爬虫机制访问频率限制">2.反爬虫机制:访问频率限制</h4>
-<h4 id="应对机制">应对机制:</h4>
-<h4 id="修改访问频率限制通过-post-方式修改-read_time正常访问的话这个值一般会大于10如果我们修改成-60">* 	修改访问频率限制,通过 POST 方式，修改 read_time，正常访问的话，这个值一般会大于10如果我们修改成 60.</h4>
-<h4 id="代理pi访问通过多个代理ip访问降低单个ip访问频率突破该机制">* 	代理PI访问,通过多个代理IP访问降低单个IP访问频率突破该机制</h4>
-<h4 id="分布式爬虫通过部署在多个服务器上的爬虫程序统一从一个地方拿网址平均下来每个服务器访问频率降低-从而突破限制同时实现的爬虫会更加的稳定和高效">* 	分布式爬虫,通过部署在多个服务器上的爬虫程序统一从一个地方拿网址,,平均下来每个服务器访问频率降低 ,从而突破限制,同时实现的爬虫会更加的稳定和高效</h4>
-<h4 id="3-反爬虫机制蜜罐技术">3. 反爬虫机制:蜜罐技术</h4>
-<h5 id="在反爬虫的机制中有一种蜜罐技术-网页上会故意留下一些人类看不到或者绝对不会点击的链接-由于爬虫会从源代码中获取内容所以爬虫可能会访问这样的链接-这个时候只要网站发现了有ip访问这个链接立刻永久封禁该ip-user-agent-mac地址等等可以用于识别访问者身份的所有信息"><code>在反爬虫的机制中，有一种蜜罐技术。网页上会故意留下一些人类看不到或者绝对不会点击的链接。由于爬虫会从源代码中获取内容，所以爬虫可能会访问这样的链接。这个时候，只要网站发现了有IP访问这个链接，立刻永久封禁该IP + User-Agent + Mac地址等等可以用于识别访问者身份的所有信息。</code></h5>
-<h4 id="应对机制定向爬虫技术">应对机制:定向爬虫技术</h4>
-]]></content>
     </entry>
 </feed>
