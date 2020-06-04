@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>《SQL必知必会》学习笔记-2020-6-4 | Bishop&#39;s Learning Space</title>
+<meta name="description" content="Live and learn. ">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1591244179900">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://Superbishop.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://Superbishop.github.io">
+        <img src="https://Superbishop.github.io/images/avatar.png?v=1591244179900" class="site-logo">
+        <h1 class="site-title">Bishop&#39;s Learning Space</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://Superbishop.github.io" class="site-nav" target="_blank">
+            Homepage
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            Archives
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            Tags
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            About
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Live and learn. 
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Superbishop.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">《SQL必知必会》学习笔记-2020-6-4</h2>
+            <div class="post-date">2020-06-04</div>
+            
+            <div class="post-content">
+              <h2 id="数据库database">数据库(DATABASE)</h2>
+<h4 id="定义">定义</h4>
+<p>保存有组织的数据的容器（通常是一个文件或一组文件）。</p>
+<p>最简单的办法是将数据库想象为一个文件柜。这个文件柜是一个存放数据的物理位置，不管数据是什么，也不管数据是如何组织的。</p>
+<h4 id="与数据库软件的区别">与数据库软件的区别</h4>
+<p>人们通常用数据库这个术语来代表他们使用的数据库软件，这是不正确的，也因此产生了许多混淆。确切地说，数据库软件应称为数据库管理系统（DBMS）。数据库是通过DBMS 创建和操纵的容器，而具体它究竟是什么，形式如何，各种数据库都不一样。</p>
+<h2 id="表table">表（table）</h2>
+<h4 id="定义-2">定义</h4>
+<p>某种特定类型数据的结构化清单。</p>
+<p>存储在表中的数据是同一种类型的数据或清单。决不应该将顾客的清单与订单的清单存储在同一个数据库表中，否则以后的检索和访问会很困难。</p>
+<p>数据库中的每个表都有一个名字来标识自己。这个名字是唯一的，即数<br>
+据库中没有其他表具有相同的名字。</p>
+<h4 id="表名">表名</h4>
+<p>使表名成为唯一的，实际上是数据库名和表名等的组合。虽然在相同数据库中不能两次使用相同的表名，但在不同的数据库中完全可以使用相同的表名。</p>
+<h4 id="模式schema">模式（schema）</h4>
+<p>关于数据库和表的布局及特性的信息。</p>
+<p>模式可以用来描述数据库中特定的表，也可以用来描述整个数据库（和其中表的关系）。</p>
+<h2 id="列和数据类型">列和数据类型</h2>
+<h4 id="列column">列（column）</h4>
+<p>表中的一个字段。所有表都是由一个或多个列组成的。</p>
+<h4 id="分解数据">分解数据</h4>
+<p>正确地将数据分解为多个列极为重要。例如，城市、州、邮政编码<br>
+应该总是彼此独立的列。通过分解这些数据，才有可能利用特定的<br>
+列对数据进行分类和过滤（如找出特定州或特定城市的所有顾客）。</p>
+<h4 id="数据类型">数据类型</h4>
+<p>所允许的数据的类型。每个表列都有相应的数据类型，它限制（或允<br>
+许）该列中存储的数据。</p>
+<h4 id="注意数据类型兼容">注意：数据类型兼容</h4>
+<p>数据类型及其名称是SQL 不兼容的一个主要原因。虽然大多数基本数<br>
+据类型得到了一致的支持，但许多高级的数据类型却没有。更糟的是，<br>
+偶然会有相同的数据类型在不同的DBMS 中具有不同的名称。对此用<br>
+户毫无办法，重要的是在创建表结构时要记住这些差异。</p>
+<h2 id="行row">行（row）</h2>
+<h4 id="定义-3">定义</h4>
+<p>表中的一个记录。</p>
+<h4 id="说明是记录还是行">说明：是记录还是行？</h4>
+<p>你可能听到用户在提到行时称其为数据库记录（record）。这两个术语<br>
+多半是可以交替使用的，但从技术上说，行才是正确的术语。</p>
+<h2 id="主键primary-key">主键（primary key）</h2>
+<h4 id="定义-4">定义</h4>
+<p>一列（或一组列），其值能够唯一标识表中每一行。</p>
+<p>表中每一行都应该有一列（或几列）可以唯一标识自己。顾客表可以使<br>
+用顾客编号，而订单表可以使用订单ID。雇员表可以使用雇员ID 或雇<br>
+员社会安全号。</p>
+<p>主键用来表示一个特定的行。没有主键，更新或删除表中特定行就极为困难。</p>
+<h4 id="提示应该总是定义主键">提示：应该总是定义主键</h4>
+<p>虽然并不总是需要主键，但多数数据库设计者都会保证他们创建的每<br>
+个表具有一个主键，以便于以后的数据操作和管理。</p>
+<h4 id="表中的任何列都可以作为主键只要它满足以下条件">表中的任何列都可以作为主键，只要它满足以下条件：</h4>
+<p> 任意两行都不具有相同的主键值；<br>
+ 每一行都必须具有一个主键值（主键列不允许NULL 值）；<br>
+ 主键列中的值不允许修改或更新；<br>
+ 主键值不能重用（如果某行从表中删除，它的主键不能赋给以后的新行）</p>
+<p>主键通常定义在表的一列上，但并不是必需这么做，也可以一起使用多<br>
+个列作为主键。在使用多列作为主键时，上述条件必须应用到所有列，<br>
+所有列值的组合必须是唯一的（但单个列的值可以不唯一）。</p>
+<h2 id="什么是sql">什么是SQL</h2>
+<p>SQL（发音为字母S-Q-L 或sequel）是Structured Query Language（结构<br>
+化查询语言）的缩写。SQL 是一种专门用来与数据库沟通的语言。</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://Superbishop.github.io/post/Ekr4wfa8m">
+                  <h3 class="post-title">
+                    爬取豆瓣电影列表
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '3bb4552eafc7c9ab4144',
+        clientSecret: 'f10e504a6ff8534bac9d2f34638c7b681cbf3763',
+        repo: 'superbishop.github.io',
+        owner: 'superbishop',
+        admin: ['superbishop'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
