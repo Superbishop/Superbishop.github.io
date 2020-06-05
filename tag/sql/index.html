@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>处理get请求 | Bishop&#39;s Learning Space</title>
+<title>SQL | Bishop&#39;s Learning Space</title>
 <meta name="description" content="Live and learn. ">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -13,12 +13,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://Superbishop.github.io/styles/main.css">
 
-
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
-
-  
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -97,48 +91,28 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">处理get请求</h2>
-            <div class="post-date">2019-07-28</div>
-            
-            <div class="post-content">
-              <pre><code>import urllib
-from urllib import request
-# https://www.baidu.com/s?wd=%E5%85%8D%E8%B4%B9%E4%BB%A3%E7%90%86IP # url 编码
-url = &quot;http://www.baidu.com/s?&quot;
-wd = {&quot;wd&quot;:&quot;免费代理IP&quot;}
-
-# 构造url编码
-wdd = urllib.parse.urlencode(wd)
-
-url = url + wdd
-req = request.Request(url)
-response = request.urlopen(req)
-print(response.read().decode())
-</code></pre>
-
-            </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://Superbishop.github.io/post/o3jSS0M9C">
-                  <h3 class="post-title">
-                    反爬虫机制2:代理IP爬去网站
-                  </h3>
+          <h2 class="current-tag">标签: SQL</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://Superbishop.github.io/post/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-5">
+                  <h2 class="post-title">《SQL必知必会》学习笔记-2020-6-5</h2>
                 </a>
+                <div class="post-date">
+                  2020-06-05
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
               </div>
-            
-
-            
               
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
+            </article>
+          
 
-              
-            
-
-          </div>
+          <div class="pagination-container">
+  
+  
+</div>
 
         </div>
       </div>
@@ -160,29 +134,6 @@ var app = new Vue({
 })
 
 </script>
-
-
-
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <script>
-
-      var gitalk = new Gitalk({
-        clientID: '3bb4552eafc7c9ab4144',
-        clientSecret: 'f10e504a6ff8534bac9d2f34638c7b681cbf3763',
-        repo: 'superbishop.github.io',
-        owner: 'superbishop',
-        admin: ['superbishop'],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
-
-      gitalk.render('gitalk-container')
-
-    </script>
-  
-
-  
 
 
 
