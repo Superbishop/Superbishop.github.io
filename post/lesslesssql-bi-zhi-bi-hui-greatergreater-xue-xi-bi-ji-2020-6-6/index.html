@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>《SQL必知必会》学习笔记-2020-6-6 | Bishop&#39;s Learning Space</title>
+<meta name="description" content="Live and learn. ">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1591415389913">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://Superbishop.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://Superbishop.github.io">
+        <img src="https://Superbishop.github.io/images/avatar.png?v=1591415389913" class="site-logo">
+        <h1 class="site-title">Bishop&#39;s Learning Space</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://Superbishop.github.io" class="site-nav" target="_blank">
+            Homepage
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            Archives
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            Tags
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            About
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Live and learn. 
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Superbishop.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">《SQL必知必会》学习笔记-2020-6-6</h2>
+            <div class="post-date">2020-06-06</div>
+            
+            <div class="post-content">
+              <h1 id="排序检索数据">排序检索数据</h1>
+<h4 id="子句clause">子句（clause）</h4>
+<p>SQL 语句由子句构成，有些子句是必需的，有些则是可选的。一个子句通常由一个关键字加上所提供的数据组成。</p>
+<p>为了明确地排序用SELECT 语句检索出的数据，可使用ORDER BY 子句。<br>
+ORDER BY 子句取一个或多个列的名字，据此对输出进行排序</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_name
+FROM Products
+ORDER BY prod_name;
+</code></pre>
+<blockquote>
+<p>在指定一条ORDER BY 子句时，应该保证它是SELECT 语句中最后一条子句。如果它不是最后的子句，将会出现错误消息。</p>
+</blockquote>
+<hr>
+<h4 id="按多个列排序">按多个列排序</h4>
+<p>要按多个列排序，简单指定列名，列名之间用逗号分开即可（就像选择多个列时那样）。</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_id, prod_price, prod_name
+FROM Products
+ORDER BY prod_price, prod_name;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_id prod_price prod_name
+---
+BNBG02 3.4900 Bird bean bag toy
+BNBG01 3.4900 Fish bean bag toy
+BNBG03 3.4900 Rabbit bean bag toy
+RGAN01 4.9900 Raggedy Ann
+BR01 5.9900 8 inch teddy bear
+BR02 8.9900 12 inch teddy bear
+RYL01 9.4900 King doll
+RYL02 9.4900 Queen doll
+BR03 11.9900 18 inch teddy bear
+
+</code></pre>
+<hr>
+<h4 id="按列位置排序">按列位置排序</h4>
+<p>除了能用列名指出排序顺序外，ORDER BY 还支持按相对列位置进行排序。</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_id, prod_price, prod_name
+FROM Products
+ORDER BY 2, 3;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_id prod_price prod_name
+------- ---------- --------------------
+BNBG02 3.4900 Bird bean bag toy
+BNBG01 3.4900 Fish bean bag toy
+BNBG03 3.4900 Rabbit bean bag toy
+RGAN01 4.9900 Raggedy Ann
+BR01 5.9900 8 inch teddy bear
+BR02 8.9900 12 inch teddy bear
+RYL01 9.4900 King doll
+RYL02 9.4900 Queen doll
+BR03 11.9900 18 inch teddy bear
+</code></pre>
+<blockquote>
+<p>这一技术的主要好处在于不用重新输入列名。但它也有缺点。首先，不明<br>
+确给出列名有可能造成错用列名排序。其次，在对SELECT 清单进行更改<br>
+时容易错误地对数据进行排序（忘记对ORDER BY 子句做相应的改动）。<br>
+最后，如果进行排序的列不在SELECT 清单中，显然不能使用这项技术。</p>
+</blockquote>
+<hr>
+<h4 id="指定排序方向">指定排序方向</h4>
+<p>数据排序不限于升序排序（从A 到Z），这只是默认的排序顺序。还可以使用ORDER BY 子句进行降序（从Z 到A）排序。为了进行降序排序，必须指定<strong>DESC</strong> 关键字。</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_id, prod_price, prod_name
+FROM Products
+ORDER BY prod_price DESC;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_id prod_price prod_name
+------- ---------- --------------------
+BR03 11.9900 18 inch teddy bear
+RYL01 9.4900 King doll
+RYL02 9.4900 Queen doll
+BR02 8.9900 12 inch teddy bear
+BR01 5.9900 8 inch teddy bear
+RGAN01 4.9900 Raggedy Ann
+BNBG01 3.4900 Fish bean bag toy
+BNBG02 3.4900 Bird bean bag toy
+BNBG03 3.4900 Rabbit bean bag toy
+</code></pre>
+<blockquote>
+<p><strong>如果想在多个列上进行降序排序，必须对每一列指定DESC 关键字。</strong></p>
+</blockquote>
+<hr>
+<h1 id="过滤数据">过滤数据</h1>
+<p>如何使用SELECT 语句的WHERE 子句指定搜索条件。</p>
+<h4 id="使用where-子句">使用WHERE 子句</h4>
+<p>在SELECT 语句中，数据根据WHERE 子句中指定的搜索条件进行过滤。WHERE 子句在表名（FROM 子句）之后给出。</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_name, prod_price
+FROM Products
+WHERE prod_price = 3.49;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_name prod_price
+------------------- ----------
+Fish bean bag toy 3.49
+Bird bean bag toy 3.49
+Rabbit bean bag toy 3.49
+</code></pre>
+<blockquote>
+<p>这条语句从products 表中检索两个列，但不返回所有行，只返回<br>
+prod_price 值为3.49 的行</p>
+</blockquote>
+<p><strong>在同时使用ORDER BY 和WHERE 子句时，应该让ORDER BY 位于WHERE 之后，否则将会产生错误</strong></p>
+<hr>
+<h4 id="where-子句操作符">WHERE 子句操作符</h4>
+<p>SQL 支持下表 列出的所有条件操作符。</p>
+<p>![image-20200606105756833](C:\Users\a\iCloudDrive\Typora\Daily Notes\image-20200606105756833.png)</p>
+<hr>
+<h4 id="检查单个值">检查单个值</h4>
+<p>列出所有价格小于10 美元的产品：</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_name, prod_price
+FROM Products
+WHERE prod_price &lt; 10;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_name prod_price
+------------------- ----------
+Fish bean bag toy 3.49
+Bird bean bag toy 3.49
+Rabbit bean bag toy 3.49
+8 inch teddy bear 5.99
+12 inch teddy bear 8.99
+Raggedy Ann 4.99
+King doll 9.49
+Queen doll 9.49
+</code></pre>
+<p>检索所有价格小于等于10 美元的产品：</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_name, prod_price
+FROM Products
+WHERE prod_price &lt;= 10;
+</code></pre>
+<hr>
+<h4 id="不匹配检查">不匹配检查</h4>
+<p>列出所有不是供应商DLL01 制造的产品：</p>
+<p>输入▼</p>
+<pre><code>SELECT vend_id, prod_name
+FROM Products
+WHERE vend_id &lt;&gt; 'DLL01';
+</code></pre>
+<p>输出▼</p>
+<pre><code>vend_id prod_name
+---------- ------------------
+BRS01 8 inch teddy bear
+BRS01 12 inch teddy bear
+BRS01 18 inch teddy bear
+FNG01 King doll
+FNG01 Queen doll
+</code></pre>
+<p><strong>何时使用引号？</strong></p>
+<p>单引号用来限定字符串。如果将值与字符串类型的列进行比较，就需要限定引号。用来与数值列进行比较的值不用引号。</p>
+<hr>
+<h4 id="范围值检查">范围值检查</h4>
+<p>要检查某个范围的值，可以使用BETWEEN 操作符。其语法与其他WHERE子句的操作符稍有不同，因为它需要两个值，即范围的开始值和结束值。</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_name, prod_price
+FROM Products
+WHERE prod_price BETWEEN 5 AND 10;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_name prod_price
+------------------- ----------
+8 inch teddy bear 5.99
+12 inch teddy bear 8.99
+King doll 9.49
+Queen doll 9.49
+</code></pre>
+<hr>
+<h4 id="空值检查">空值检查</h4>
+<p>在创建表时，表设计人员可以指定其中的列能否不包含值。在一个列不包含值时，称其包含<strong>空值NULL</strong>。</p>
+<blockquote>
+<p>NULL<br>
+无值（no value），它与字段包含0、空字符串或仅仅包含空格不同。</p>
+</blockquote>
+<p>SELECT 语句有一个特殊的WHERE 子句，可用来检查具有NULL 值的列。这个WHERE 子句就是<strong>IS NULL</strong> 子句。</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_name
+FROM Products
+WHERE prod_price IS NULL;
+</code></pre>
+<blockquote>
+<p>注意：NULL 和非匹配<br>
+通过过滤选择不包含指定值的所有行时，你可能希望返回含NULL 值<br>
+的行。但是这做不到。因为未知（unknown）有特殊的含义，数据库<br>
+不知道它们是否匹配，所以在进行匹配过滤或非匹配过滤时，不会返<br>
+回这些结果。<br>
+过滤数据时，一定要验证被过滤列中含NULL 的行确实出现在返回的<br>
+数据中。</p>
+</blockquote>
+<hr>
+<h1 id="高级数据过滤">高级数据过滤</h1>
+<p>如何组合WHERE 子句以建立功能更强、更高级的搜索条件？</p>
+<p>如何使用NOT 和IN 操作符？</p>
+<h4 id="组合where-子句">组合WHERE 子句</h4>
+<p>为了进行更强的过滤控制，SQL 允许给出多个WHERE 子句。这些子句有两<br>
+种使用方式，即以<strong>AND 子句或OR 子句</strong>的方式使用。</p>
+<blockquote>
+<p>操作符（operator）<br>
+用来联结或改变WHERE 子句中的子句的关键字，也称为逻辑操作符<br>
+（logical operator）。</p>
+</blockquote>
+<h4 id="and操作符">AND操作符</h4>
+<p>输入▼</p>
+<pre><code>SELECT prod_id, prod_price, prod_name
+FROM Products
+WHERE vend_id = 'DLL01' AND prod_price &lt;= 4;
+</code></pre>
+<h4 id="or操作符">OR操作符</h4>
+<p>输入▼</p>
+<pre><code>SELECT prod_name, prod_price
+FROM Products
+WHERE vend_id = 'DLL01' OR vend_id = ‘BRS01’;
+</code></pre>
+<h4 id="求值顺序">求值顺序</h4>
+<p>WHERE 子句可以包含任意数目的AND 和OR 操作符。允许两者结合以进行复杂、高级的过滤。但SQL（像多数语言一样）在处理OR 操作符前，优先处理AND 操作符。</p>
+<p>若想优先处理OR子句,解决方法是使用<strong>圆括号</strong>对操作符进行明确分组.</p>
+<p>对比一下两个例子,可得出,通过使用圆括号,输出结果截然不同.</p>
+<ol>
+<li></li>
+</ol>
+<p>输入▼</p>
+<pre><code>SELECT prod_name, prod_price
+FROM Products
+WHERE vend_id = 'DLL01' OR vend_id = 'BRS01'
+AND prod_price &gt;= 10;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_name prod_price
+------------------- ----------
+Fish bean bag toy 3.4900
+Bird bean bag toy 3.4900
+Rabbit bean bag toy 3.4900
+18 inch teddy bear 11.9900
+Raggedy Ann 4.9900
+</code></pre>
+<ol start="2">
+<li></li>
+</ol>
+<p>输入▼</p>
+<pre><code>SELECT prod_name, prod_price
+FROM Products
+WHERE (vend_id = 'DLL01' OR vend_id = 'BRS01')
+AND prod_price &gt;= 10;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_name prod_price
+------------------- ----------
+18 inch teddy bear 11.9900
+</code></pre>
+<blockquote>
+<p>提示：在WHERE 子句中使用圆括号<br>
+任何时候使用具有AND 和OR 操作符的WHERE 子句，都应该使用圆括<br>
+号明确地分组操作符。不要过分依赖默认求值顺序，即使它确实如你<br>
+希望的那样。使用圆括号没有什么坏处，它能消除歧义。</p>
+</blockquote>
+<p>​</p>
+<h4 id="in-操作符">IN 操作符</h4>
+<p>IN 操作符用来指定条件范围，范围中的每个条件都可以进行匹配。IN 取一组由逗号分隔、括在圆括号中的合法值.</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_name, prod_price
+FROM Products
+WHERE vend_id IN ( 'DLL01', 'BRS01' )
+ORDER BY prod_name;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_name prod_price
+------------------- ----------
+12 inch teddy bear 8.9900
+18 inch teddy bear 11.9900
+8 inch teddy bear 5.9900
+Bird bean bag toy 3.4900
+Fish bean bag toy 3.4900
+Rabbit bean bag toy 3.4900
+Raggedy Ann 4.9900
+</code></pre>
+<p>IN 操作符看似与OR操作符如出同辙,但IN操作符更具优势.</p>
+<ul>
+<li>
+<p>在有很多合法选项时，IN 操作符的语法<strong>更清楚，更直观</strong>。</p>
+</li>
+<li>
+<p>在与其他AND 和OR 操作符组合使用IN 时，<strong>求值顺序更容易管理</strong>。</p>
+</li>
+<li>
+<p><strong>IN 操作符一般比一组OR 操作符执行得更快</strong>（在上面这个合法选项很少的例子中，你看不出性能差异）。</p>
+</li>
+<li>
+<p><strong>IN 的最大优点是可以包含其他SELECT 语句，能够更动态地建立WHERE 子句</strong></p>
+</li>
+</ul>
+<h4 id="not-操作符">NOT 操作符</h4>
+<p>WHERE 子句中用来否定其后条件的关键字.</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_name
+FROM Products
+WHERE NOT vend_id = 'DLL01'
+ORDER BY prod_name;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_name
+------------------
+12 inch teddy bear
+18 inch teddy bear
+8 inch teddy bear
+King doll
+Queen doll
+</code></pre>
+<p>为什么使用NOT？</p>
+<p>对于这里的这种简单的WHERE 子句，使用NOT 确实没有什么优势。但在更复杂的子句中，NOT 是非常有用的。例如，在与IN 操作符联合使用时，NOT 可以非常简单地找出与条件列表不匹配的行。</p>
+<blockquote>
+<p>说明：MariaDB 中的NOT<br>
+MariaDB 支持使用NOT 否定IN、BETWEEN 和EXISTS 子句。大多数<br>
+DBMS 允许使用NOT 否定任何条件。</p>
+</blockquote>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://Superbishop.github.io/post/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-5">
+                  <h3 class="post-title">
+                    《SQL必知必会》学习笔记-2020-6-5
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '3bb4552eafc7c9ab4144',
+        clientSecret: 'f10e504a6ff8534bac9d2f34638c7b681cbf3763',
+        repo: 'superbishop.github.io',
+        owner: 'superbishop',
+        admin: ['superbishop'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
