@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>《SQL必知必会》学习笔记-2020-6-7 | Bishop&#39;s Learning Space</title>
+<meta name="description" content="Live and learn. ">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1591534043040">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://Superbishop.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://Superbishop.github.io">
+        <img src="https://Superbishop.github.io/images/avatar.png?v=1591534043040" class="site-logo">
+        <h1 class="site-title">Bishop&#39;s Learning Space</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://Superbishop.github.io" class="site-nav" target="_blank">
+            Homepage
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            Archives
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            Tags
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            About
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Live and learn. 
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Superbishop.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">《SQL必知必会》学习笔记-2020-6-7</h2>
+            <div class="post-date">2020-06-07</div>
+            
+            <div class="post-content">
+              <h1 id="用通配符进行过滤">用通配符进行过滤</h1>
+<h4 id="like-操作符">LIKE 操作符</h4>
+<h5 id="通配符wildcard">通配符（wildcard）</h5>
+<p>用来匹配值的一部分的特殊字符。</p>
+<p>为在搜索子句中使用通配符，必须使用LIKE 操作符。LIKE指示DBMS，后跟的搜索模式利用通配符匹配而不是简单的相等匹配进行比较。</p>
+<blockquote>
+<p>通配符搜索只能用于文本字段（字符串），非文本数据类型字段不能使用通配符搜索。</p>
+</blockquote>
+<h5 id="百分号通配符">百分号（%）通配符</h5>
+<p>最常使用的通配符是百分号（%）。在搜索串中，%表示任何字符出现任意次数.</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_id, prod_name
+FROM Products
+WHERE prod_name LIKE 'Fish%';
+</code></pre>
+<blockquote>
+<p>说明：Access 通配符<br>
+如果使用的是Microsoft Access，需要使用*而不是%。</p>
+</blockquote>
+<p>通配符可在搜索模式中的任意位置使用，并且可以使用多个通配符.</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_id, prod_name
+FROM Products
+WHERE prod_name LIKE '%bean bag%';
+</code></pre>
+<p>通配符也可以出现在搜索模式的中间，虽然这样做不太有用.</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_name
+FROM Products
+WHERE prod_name LIKE 'F%y';
+</code></pre>
+<blockquote>
+<p>说明：请注意后面所跟的空格<br>
+包括Access 在内的许多DBMS 都用空格来填补字段的内容。</p>
+</blockquote>
+<blockquote>
+<p>注意：请注意NULL<br>
+通配符%看起来像是可以匹配任何东西，但有个例外，这就是NULL。<br>
+子句WHERE prod_name LIKE '%'不会匹配产品名称为NULL 的行。</p>
+</blockquote>
+<p>#####下划线（_）通配符</p>
+<p>另一个有用的通配符是下划线（_）。下划线的用途与%一样，但它只匹配<strong>单个字符</strong>，而不是多个字符。</p>
+<blockquote>
+<p>DB2 不支持通配符_。<br>
+如果使用的是Microsoft Access，需要使用?而不是_。</p>
+</blockquote>
+<p>对比一下两个例子,观察下划线与百分号通配符区别.</p>
+<ul>
+<li>输入▼</li>
+</ul>
+<pre><code>SELECT prod_id, prod_name
+FROM Products
+WHERE prod_name LIKE '__ inch teddy bear';
+</code></pre>
+<p>​                输出▼</p>
+<pre><code>prod_id prod_name
+-------- --------------------
+BR02 12 inch teddy bear
+BR03 18 inch teddy bear
+</code></pre>
+<ul>
+<li>输入▼</li>
+</ul>
+<pre><code>SELECT prod_id, prod_name
+FROM Products
+WHERE prod_name LIKE '% inch teddy bear';
+</code></pre>
+<p>​                 输出▼</p>
+<pre><code>prod_id prod_name
+-------- --------------------
+BR01 8 inch teddy bear
+BR02 12 inch teddy bear
+BNR3 18 inch teddy bear
+</code></pre>
+<p>与%能匹配0 个字符不同，_总是刚好匹配一个字符，不能多也不能少.</p>
+<h5 id="方括号-通配符">方括号（[ ]）通配符</h5>
+<p>方括号（[]）通配符用来指定一个字符集，它必须匹配指定位置（通配符的位置）的一个字符.</p>
+<blockquote>
+<p>说明：并不总是支持集合<br>
+与前面描述的通配符不一样，并不是所有DBMS 都支持用来创建集合<br>
+的[]。只有微软的Access 和SQL Server 支持集合。为确定你使用的<br>
+DBMS 是否支持集合，请参阅相应的文档。</p>
+</blockquote>
+<p>此通配符可以用前缀字符^（脱字号）来否定。</p>
+<p>如果使用的是Microsoft Access，需要用!而不是^来否定一个集合.</p>
+<p>NOT 操作符可得出类似的结果。^的唯一优点是在使用多个WHERE 子句时可以简化语法.</p>
+<h5 id="使用通配符的技巧">使用通配符的技巧</h5>
+<ul>
+<li>不要过度使用通配符。如果其他操作符能达到相同的目的，应该使用<br>
+其他操作符。</li>
+<li>在确实需要使用通配符时，也尽量不要把它们用在搜索模式的开始<br>
+处。把通配符置于开始处，搜索起来是最慢的。</li>
+<li>仔细注意通配符的位置。如果放错地方，可能不会返回想要的数据。</li>
+</ul>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://Superbishop.github.io/post/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-6">
+                  <h3 class="post-title">
+                    《SQL必知必会》学习笔记-2020-6-6
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '3bb4552eafc7c9ab4144',
+        clientSecret: 'f10e504a6ff8534bac9d2f34638c7b681cbf3763',
+        repo: 'superbishop.github.io',
+        owner: 'superbishop',
+        admin: ['superbishop'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
