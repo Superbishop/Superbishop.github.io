@@ -1,98 +1,106 @@
-
-<!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>爬虫与反爬虫对抗策略 | Bishop&#39;s Learning Space</title>
-<meta name="description" content="Live and learn. ">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
+<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1593847702388">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1593847387169">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://Superbishop.github.io/styles/main.css">
 
-
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
-
-  
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
 
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://Superbishop.github.io">
-        <img class="avatar" src="https://Superbishop.github.io/images/avatar.png?v=1593847387169" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://Superbishop.github.io">
-        <h1 class="site-title">Bishop&#39;s Learning Space</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://Superbishop.github.io">
+  <img class="avatar" src="https://Superbishop.github.io/images/avatar.png?v=1593847702388" alt="">
+  </a>
+  <h1 class="site-title">
+    Bishop&#39;s Learning Space
+  </h1>
+  <p class="site-description">
+    Live and learn. 
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="https://Superbishop.github.io" class="menu" target="_blank">
+          Homepage
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" target="_blank">
+          Archives
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          Tags
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" target="_blank">
+          About
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/Superbishop" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/Bishopsun1988" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/p/1005053175769285/info?mod=pedit" target="_blank">
+          <i class="fab fa-weibo"></i>
+        </a>
+      
+    
+      
+    
+      
+        <a href="https://www.facebook.com/leo.sun.184" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+      
+    
   </div>
 </div>
 
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a class="menu purple-link" href="https://Superbishop.github.io" class="menu" target="_blank">
-            Homepage
-          </a>
-        
-      
-        
-          <a class="menu purple-link" href="/archives" class="menu" target="_blank">
-            Archives
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            Tags
-          </a>
-        
-      
-        
-          <a class="menu purple-link" href="/post/about" class="menu" target="_blank">
-            About
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
 
-
-      <div class="content-container">
         <div class="post-detail">
-          
-          <h2 class="post-title">爬虫与反爬虫对抗策略</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2019-07-14</span>
+          <article class="post">
+            <h2 class="post-title">
+              爬虫与反爬虫对抗策略
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-07-14 ·
+              </time>
+              
+            </div>
             
-          </div>
-          <div class="post-content">
-            <h3 id="一-爬虫几个重要基本概念">一. 爬虫几个重要基本概念</h3>
+            <div class="post-content">
+              <h3 id="一-爬虫几个重要基本概念">一. 爬虫几个重要基本概念</h3>
 <ul>
 <li>
 <h4 id="爬虫自动获取网站数据的程序">爬虫:自动获取网站数据的程序</h4>
@@ -124,86 +132,59 @@
 <h5 id="在反爬虫的机制中有一种蜜罐技术-网页上会故意留下一些人类看不到或者绝对不会点击的链接-由于爬虫会从源代码中获取内容所以爬虫可能会访问这样的链接-这个时候只要网站发现了有ip访问这个链接立刻永久封禁该ip-user-agent-mac地址等等可以用于识别访问者身份的所有信息"><code>在反爬虫的机制中，有一种蜜罐技术。网页上会故意留下一些人类看不到或者绝对不会点击的链接。由于爬虫会从源代码中获取内容，所以爬虫可能会访问这样的链接。这个时候，只要网站发现了有IP访问这个链接，立刻永久封禁该IP + User-Agent + Mac地址等等可以用于识别访问者身份的所有信息。</code></h5>
 <h4 id="应对机制定向爬虫技术">应对机制:定向爬虫技术</h4>
 
-          </div>
+            </div>
+          </article>
         </div>
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://Superbishop.github.io/post/3vAt6NvMi">
+            <div class="next">下一篇</div>
+            <a href="https://Superbishop.github.io/post/3vAt6NvMi">
               <h3 class="post-title">
-                下一篇：Leaning Summary 7-05
+                Leaning Summary 7-05
               </h3>
             </a>
           </div>
+        
+
+        
           
-      </div>
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
-      
-        
-          <div id="gitalk-container"></div>
-        
+<div id="gitalk-container"></div>
 
-        
-      
+<script>
 
-      <div class="site-footer">
-  <div class="slogan">Live and learn. </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Superbishop.github.io/atom.xml" target="_blank">RSS</a>
-</div>
+  var gitalk = new Gitalk({
+    clientID: '3bb4552eafc7c9ab4144',
+    clientSecret: 'f10e504a6ff8534bac9d2f34638c7b681cbf3763',
+    repo: 'superbishop.github.io',
+    owner: 'superbishop',
+    admin: ['superbishop'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
 
-
-    </div>
-    <script type="application/javascript">
-
-hljs.initHighlightingOnLoad()
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+  gitalk.render('gitalk-container')
 
 </script>
 
+          
 
+          
+        
 
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <script>
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://Superbishop.github.io/atom.xml" target="_blank">RSS</a>
+</div>
 
-      var gitalk = new Gitalk({
-        clientID: '3bb4552eafc7c9ab4144',
-        clientSecret: 'f10e504a6ff8534bac9d2f34638c7b681cbf3763',
-        repo: 'superbishop.github.io',
-        owner: 'superbishop',
-        admin: ['superbishop'],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
 
-      gitalk.render('gitalk-container')
-
-    </script>
-  
-
-  
-
-
-
-
+      </div>
+    </div>
   </body>
 </html>
