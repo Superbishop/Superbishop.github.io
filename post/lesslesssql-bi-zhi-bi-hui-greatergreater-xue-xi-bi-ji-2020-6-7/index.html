@@ -1,15 +1,18 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
+    
+<meta charset="utf-8" >
 
 <title>《SQL必知必会》学习笔记-2020-6-7 | Bishop&#39;s Learning Space</title>
 <meta name="description" content="Live and learn. ">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1591534043040">
+<link rel="shortcut icon" href="https://Superbishop.github.io/favicon.ico?v=1593847288916">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://Superbishop.github.io/styles/main.css">
 
@@ -24,85 +27,89 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
 
 
   </head>
   <body>
     <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://Superbishop.github.io">
-        <img src="https://Superbishop.github.io/images/avatar.png?v=1591534043040" class="site-logo">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://Superbishop.github.io">
+        <img class="avatar" src="https://Superbishop.github.io/images/avatar.png?v=1593847288916" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://Superbishop.github.io">
         <h1 class="site-title">Bishop&#39;s Learning Space</h1>
       </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
     </div>
-    <div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
       
         
-          <a href="https://Superbishop.github.io" class="site-nav" target="_blank">
+          <a class="menu purple-link" href="https://Superbishop.github.io" class="menu" target="_blank">
             Homepage
           </a>
         
       
         
-          <a href="/archives" class="site-nav" target="_blank">
+          <a class="menu purple-link" href="/archives" class="menu" target="_blank">
             Archives
           </a>
         
       
         
-          <a href="/tags" class="site-nav">
+          <a href="/tags" class="menu purple-link">
             Tags
           </a>
         
       
         
-          <a href="/post/about" class="site-nav" target="_blank">
+          <a class="menu purple-link" href="/post/about" class="menu" target="_blank">
             About
           </a>
         
       
     </div>
   </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      Live and learn. 
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Superbishop.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
-</div>
+</transition>
 
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">《SQL必知必会》学习笔记-2020-6-7</h2>
-            <div class="post-date">2020-06-07</div>
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">《SQL必知必会》学习笔记-2020-6-7</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-06-07</span>
             
-            <div class="post-content">
-              <h1 id="用通配符进行过滤">用通配符进行过滤</h1>
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://Superbishop.github.io/tag/sql">
+                    SQL
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://Superbishop.github.io/tag/B3Myw-CcF">
+                    learn summary
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <h1 id="用通配符进行过滤">用通配符进行过滤</h1>
 <h4 id="like-操作符">LIKE 操作符</h4>
 <h5 id="通配符wildcard">通配符（wildcard）</h5>
 <p>用来匹配值的一部分的特殊字符。</p>
@@ -197,38 +204,49 @@ DBMS 是否支持集合，请参阅相应的文档。</p>
 <li>仔细注意通配符的位置。如果放错地方，可能不会返回想要的数据。</li>
 </ul>
 
-            </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://Superbishop.github.io/post/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-6">
-                  <h3 class="post-title">
-                    《SQL必知必会》学习笔记-2020-6-6
-                  </h3>
-                </a>
-              </div>
-            
-
-            
-              
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
-
-              
-            
-
           </div>
-
         </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://Superbishop.github.io/post/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-6">
+              <h3 class="post-title">
+                下一篇：《SQL必知必会》学习笔记-2020-6-6
+              </h3>
+            </a>
+          </div>
+          
       </div>
+
+      
+        
+          <div id="gitalk-container"></div>
+        
+
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">Live and learn. </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Superbishop.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
     </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script type="application/javascript">
-
-AOS.init();
+    <script type="application/javascript">
 
 hljs.initHighlightingOnLoad()
 
