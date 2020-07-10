@@ -8,7 +8,7 @@
 <meta name="keywords" content="Bishop静态个人博客">
 <meta name="description" content="Live and learn. ">
 <meta name="theme-color" content="#000">
-<title>《SQL必知必会》学习笔记-2020-6-5 | Bishop</title>
+<title>本女设擂台挑战全世界男人，是男人就进来应战！(转载) | Bishop</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1594361764940">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,8 +38,8 @@
 
 
 
-  <meta name="description" content="《SQL必知必会》学习笔记-2020-6-5" />
-  <meta name="keywords" content="SQL,learn summary" />
+  <meta name="description" content="本女设擂台挑战全世界男人，是男人就进来应战！(转载)" />
+  <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -190,8 +190,7 @@
       <div class="sidebar-body pisces" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -260,211 +259,6 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li>
-<ul>
-<li><a href="#select-%E8%AF%AD%E5%8F%A5">SELECT 语句</a>
-<ul>
-<li><a href="#%E5%85%B3%E9%94%AE%E5%AD%97keyword">关键字（keyword）</a></li>
-<li><a href="#%E6%A3%80%E7%B4%A2%E5%8D%95%E4%B8%AA%E5%88%97">检索单个列</a></li>
-<li><a href="#sql%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83">SQL书写规范</a></li>
-<li><a href="#%E6%A3%80%E7%B4%A2%E5%A4%9A%E4%B8%AA%E5%88%97">检索多个列</a></li>
-<li><a href="#%E6%A3%80%E7%B4%A2%E6%89%80%E6%9C%89%E5%88%97">检索所有列</a></li>
-<li><a href="#%E6%A3%80%E7%B4%A2%E4%B8%8D%E5%90%8C%E7%9A%84%E5%80%BC">检索不同的值</a></li>
-<li><a href="#%E9%99%90%E5%88%B6%E7%BB%93%E6%9E%9C">限制结果</a></li>
-<li><a href="#limit-%E4%B8%8E-limit-offset%E4%BD%BF%E7%94%A8%E5%8C%BA%E5%88%AB">LIMIT 与 LIMIT OFFSET使用区别:</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8%E6%B3%A8%E9%87%8A">使用注释</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
           
         
       </div>
@@ -552,8 +346,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://Superbishop.github.io/post/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-5/">
-      《SQL必知必会》学习笔记-2020-6-5
+    <a class="post-title-link" href="https://Superbishop.github.io/post/ben-nu-she-lei-tai-tiao-zhan-quan-shi-jie-nan-ren-shi-nan-ren-jiu-jin-lai-ying-zhan-zhuan-zai/">
+      本女设擂台挑战全世界男人，是男人就进来应战！(转载)
     </a>
   </h1>
   <div class="post-meta">
@@ -561,274 +355,71 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-06-05 12:39:23">2020-06-05</span>
+      <span class="publish-time" data-t="2020-07-10 14:15:32">2020-07-10</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
     <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://Superbishop.github.io/tag/sql/">
-        <span>SQL</span>
-      </a>、
-      
-      
-      
-      <a href="https://Superbishop.github.io/tag/B3Myw-CcF/">
-        <span>learn summary</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>7<span class="language" data-lan="minute">分钟</span></span>
+      <span>5<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>1522<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>1422<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <h3 id="select-语句">SELECT 语句</h3>
-<p><strong>用途是从一个或多个表中检索信息。</strong></p>
-<h4 id="关键字keyword">关键字（keyword）</h4>
-<p>作为SQL 组成部分的保留字。关键字不能用作表或列的名字。</p>
-<p>为了使用SELECT 检索表数据，必须至少给出两条信息——想选择什么，<br>
-以及从什么地方选择。</p>
-<p>SQL 是一种语言而不是一个应用程序。</p>
-<p>具体如何写SQL 语句并显示语句输出，是随不同的应用程序而变化的</p>
-<hr>
-<h4 id="检索单个列">检索单个列</h4>
-<p>利用SELECT 语句从Products 表中检索一个名为prod_name的列。</p>
-<p>输入：</p>
-<pre><code>SELECT prod_name
-FROM Products;
-</code></pre>
-<p>输出：</p>
-<pre><code>prod_name
--------------------
-Fish bean bag toy
-Bird bean bag toy
-Rabbit bean bag toy
-8 inch teddy bear
-12 inch teddy bear
-18 inch teddy bear
-Raggedy Ann
-King doll
-Queen doll
-</code></pre>
-<hr>
-<h4 id="sql书写规范">SQL书写规范</h4>
-<ol>
-<li>
-<p>多条SQL 语句必须以分号（；）分隔。</p>
-</li>
-<li>
-<p>SQL 语句不区分大小写，因此SELECT 与select 是相同的。同样，写成Select 也没有关系。许多SQL 开发人员喜欢对<strong>SQL 关键字使用大写</strong>，而<strong>对列名和表名使用小写</strong>，这样做使代码更<em>易于阅读和调试</em>。</p>
-</li>
-<li>
-<p>在处理SQL 语句时，其中所有空格都被忽略。以下三种写法等效的，但第一、三种写法符合多数SQL 开发人员习惯，便于阅读和调试。</p>
-<pre><code>SELECT prod_name
-FROM Products;
-
-SELECT prod_name FROM Products;
-
-SELECT
-prod_name
-FROM
-Products;
-</code></pre>
-</li>
-</ol>
-<hr>
-<h4 id="检索多个列">检索多个列</h4>
-<p>在SELECT 关键字后给出多个列名，列名之间必须以逗号分隔。</p>
-<p>输入：</p>
-<pre><code>SELECT prod_id, prod_name, prod_price
-FROM Products;
-</code></pre>
-<p>输出：</p>
-<pre><code>prod_id prod_name prod_price
---------- -------------------- ----------
-BNBG01 Fish bean bag toy 3.4900
-BNBG02 Bird bean bag toy 3.4900
-BNBG03 Rabbit bean bag toy 3.4900
-BR01 8 inch teddy bear 5.9900
-BR02 12 inch teddy bear 8.9900
-BR03 18 inch teddy bear 11.9900
-RGAN01 Raggedy Ann 4.9900
-RYL01 King doll 9.4900
-RYL02 Queen dool 9.4900
-</code></pre>
-<blockquote>
-<p>SQL 语句一般返回原始的、无格式的数据。数据的格式化是表示问题，而不是检索问题。因此，表示（如把上面的价格值显示为正确的十进制数值货币金额）一般在显示该数据的应用程序中规定。通常很少直接使用实际检索出的数据（没有应用程序提供的格式）。</p>
-</blockquote>
-<hr>
-<h4 id="检索所有列">检索所有列</h4>
-<p>除了指定所需的列外（如上所述，一个或多个列），SELECT 语句还可以<br>
-检索所有的列而不必逐个列出它们。在实际列名的位置使用星号（*）通<br>
-配符可以做到这点，如下所示。<br>
-输入▼</p>
-<pre><code>SELECT *
-FROM Products;
-</code></pre>
-<blockquote>
-<p>缺点：检索不需要的列通常会降低检索和应用程序的性能</p>
-</blockquote>
-<blockquote>
-<p>优点：由于不明确指定列名（因为星号检索每一列），所以能检索出名字未知的列</p>
-</blockquote>
-<hr>
-<h4 id="检索不同的值">检索不同的值</h4>
-<p>检索products 表中所有产品供应商的ID：</p>
-<p>输入▼</p>
-<pre><code>SELECT vend_id
-FROM Products;
-</code></pre>
-<p>输出▼</p>
-<pre><code>vend_id
-------
-BRS01
-BRS01
-BRS01
-DLL01
-DLL01
-DLL01
-DLL01
-FNG01
-FNG01
-</code></pre>
-<blockquote>
-<p>SELECT 语句返回9 行（即使表中只有3 个产品供应商），因为products表中有9 种产品。</p>
-</blockquote>
-<p>检索出不同的值</p>
-<p>输入▼</p>
-<pre><code>SELECT DISTINCT vend_id
-FROM Products;
-</code></pre>
-<p>输出▼</p>
-<pre><code>vend_id
-------
-BRS01
-DLL01
-FNG01
-</code></pre>
-<p><strong>如果使用DISTINCT 关键字，它必须直接放在列名的前面。</strong></p>
-<hr>
-<h4 id="限制结果">限制结果</h4>
-<p>SELECT 语句返回指定表中所有匹配的行，很可能是每一行。如果你只想<br>
-返回第一行或者一定数量的行，该怎么办呢？</p>
-<ul>
-<li>在SQL Server 和Access 中使用SELECT 时，可以使用TOP 关键字来限制最多返回多少行，如下所示：</li>
-</ul>
-<p>输入▼</p>
-<pre><code>SELECT TOP 5 prod_name
-FROM Products;
-</code></pre>
-<p>输出▼</p>
-<pre><code>prod_name
-8 inch teddy bear
-12 inch teddy bear
-18 inch teddy bear
-Fish bean bag toy
-Bird bean bag toy
-</code></pre>
-<blockquote>
-<p>使用SELECT TOP 5 语句，只检索前5 行数据</p>
-</blockquote>
-<ul>
-<li>
-<p>如果你使用的是DB2，很可能习惯使用下面这一DBMS 特定的SQL 语句，像这样：</p>
-<p>输入▼</p>
-<pre><code>SELECT prod_name
-FROM Products
-FETCH FIRST 5 ROWS ONLY;
-</code></pre>
-</li>
-</ul>
-<blockquote>
-<p>FETCH FIRST 5 ROWS ONLY，程序会按字面意思检索前5行</p>
-</blockquote>
-<ul>
-<li>
-<p>如果你使用Oracle，需要基于ROWNUM（行计数器）来计算行，像这样：</p>
-<p>输入▼</p>
-<pre><code>SELECT prod_name
-FROM Products
-WHERE ROWNUM &lt;=5;
-</code></pre>
-</li>
-</ul>
-<blockquote>
-<p>WHERE ROWNUM &lt;=5，基于ROWNUM计算</p>
-</blockquote>
-<ul>
-<li>
-<p>如果你使用MySQL、MariaDB、PostgreSQL 或者SQLite，需要使用LIMIT子句，像这样：</p>
-<p>输入▼</p>
-<pre><code>SELECT prod_name
-FROM Products
-LIMIT 5;
-</code></pre>
-</li>
-</ul>
-<blockquote>
-<p>LIMIT 5 指示MySQL等DBMS 返回不超过5 行的数据</p>
-</blockquote>
-<ul>
-<li>
-<p>为了得到后面的5 行数据，需要指定从哪儿开始以及检索的行数，像这样：</p>
-<p>输入▼</p>
-<pre><code>SELECT prod_name
-FROM Products
-LIMIT 5 OFFSET 5;
-</code></pre>
-</li>
-</ul>
-<blockquote>
-<p>LIMIT 5 OFFSET 5 指示MySQL 等DBMS 返回从第5 行起的5 行数据。第一个数字是指从哪儿开始，第二个数字是检索的行数。</p>
-</blockquote>
-<p>注意事项</p>
-<ol>
-<li>第一个被检索的行是第0 行，而不是第1 行。因此，LIMIT 1 OFFSET1 会检索第2 行，而不是第1 行。</li>
-<li>MySQL和MariaDB支持<em>简化版的LIMIT 4 OFFSET 3语句</em>，即<em>LIMIT 3,4</em>。使用这个语法，<strong>逗号之前的值对应OFFSET</strong>，<strong>逗号之后的值对应LIMIT</strong>。</li>
-<li>并非所有的SQL 实现都一样，SQL 虽然通常都有相当一致的实现，但你不能想当然地认为它总是这样。非常基本的语句往往是容易移植的，但较复杂的语句就不同了。当你针对某个问题寻找SQL解决方案时，一定要记住这一点。</li>
-</ol>
-<h4 id="limit-与-limit-offset使用区别">LIMIT 与 LIMIT OFFSET使用区别:</h4>
-<p>LIMIT x,y =LIMIT y OFFSET x :</p>
-<p>表示从y+1行开始取x行数据;</p>
-<p>LIMIT x OFFSET y = LIMIT y,x :</p>
-<p>表示从x+1行开始取y行数据;</p>
-<hr>
-<h4 id="使用注释">使用注释</h4>
-<p>为什么需要添加注释？</p>
-<ol>
-<li>随着SQL语句边长，复杂性增加，有必要添加注释进行说明，便于自己日后调试，也便于他人参考。</li>
-<li>适用于SQL开始处的内容，比如包含程序员的联系方式、程序描述及说明。</li>
-<li>另一个重要应用是可以暂时停止不用执行的SQL代码。如果你碰到一个长SQL 语句，而只想测试它的一部分，那么应该注释掉一些代码。</li>
-</ol>
-<p>几种常见注释方法</p>
-<p>行内注释：</p>
-<pre><code>SELECT prod_name -- 这是一条注释
-FROM Products;
-</code></pre>
-<pre><code>#这是一条注释
-SELECT prod_name
-FROM Products;
-</code></pre>
-<pre><code>/* SELECT prod_name, vend_id
-FROM Products; */
-SELECT prod_name
-FROM Products;
-</code></pre>
+              <p>by 喜欢数学的女孩<br>
+　　　　　　<br>
+　　　　　　本女的存在至少有一个意义，就是让全世界男人知道自己的无知、无能。为了让全世界男人输得心服口服，本女就设擂台挑战全世界男人，不用男人去生孩子，就用男人自以为是的长期糊弄人的所谓各类知识/技能/学问。擂台既然是本女所设，规则当然也是本女定，本女的地盘当然是本女做主，规则只有一条，上擂者必须一关关过，过不了前面的就没资格继续下去，请走开！另外，本女是中国人，当然只用中文，其它乱七八糟的鸡毛鸭肠，谁爱谁用！<br>
+　　　　　　<br>
+　　　　　　第一关：<br>
+　　　　　　诗：按题步韵本女所写的诗4组，这些诗曾在网上随意帖过，本女写得好的都不会在网上帖的，在本女所写中，这些最多只能算是中驷，但应付男人足够了。4组分别是涵盖历史/现实/情感/悟境，范围应该够了。<br>
+　　　　　　<br>
+　　　　　　润之<br>
+　　　　　　润之年少傲王侯，意气激扬凌九州。万里驱云归狭岛，十年掀浪卷全球。<br>
+　　　　　　曾经天地齐同力，毕竟英雄不自由。世界三分槐蚁梦，湘江无语水空流。<br>
+　　　　　　<br>
+　　　　　　东南<br>
+　　　　　　东南万里海浮天，一裂金瓯百五年。未葬鱼龙今古血，翻生蛤蜃晓昏烟。<br>
+　　　　　　华夷衰盛忝唐杰，风雨苍黄思郑贤。十亿神州重抖擞，昆仑拔掷浪波填。<br>
+　　　　　　<br>
+　　　　　　出差南昌恰逢中秋<br>
+　　　　　　灯火喧城人落寞，歌弦酣处独彷徨。满江明月寒如痛，彻夜碧天深似狂。<br>
+　　　　　　风影楼台风影定，镜花世界镜花长。情迷今古梦犹梦，空首惊回秋半霜。<br>
+　　　　　　<br>
+　　　　　　 缠中说禅<br>
+　　　　　　渺渺天涯渺渺秋，绮霞烟水自空流。谁怜西岭西风后，满地相思满地愁！<br>
+　　　　　　满城风雨满城秋，一水横空天地流。独上孤峰倾百斗，披云啸尽古今愁。<br>
+　　　　　　一番风雨一番秋，依旧青山枕碧流。溅血长虹贯天地，羲和鞭堕六龙愁。<br>
+　　　　　　万古长空春复秋，一朝风月乍星流。乱蜂深处斜阳下，木落花飞愁自愁。<br>
+　　　　　　<br>
+　　　　　　第二关<br>
+　　　　　　宗教哲学：这个问题如果顶门有眼的，就知道已经涵盖所有宗教哲学的问题：“法身有三种病、两种光，究竟如何？”本女其后将写大书《缠中说禅》，里面自然涉及。回答不出的就回家参究去！<br>
+　　　　　　<br>
+　　　　　　第三关<br>
+　　　　　　作曲：为莎士比亚《哈姆雷特》中最著名的独白谱曲，按歌剧形式带乐队伴奏总谱，如有人能挑战到这一关，本女所写会一并贴上来比较！<br>
+　　　　　　词如下：“生存还是毁灭,这是一个值得思考的问题。默默忍受命运暴虐的毒箭,或是挺身反抗人世无涯的苦难,通过斗争把他们扫清,这两种行为,哪一种更高贵?死了,睡着了,什么都完了,要是在这一种睡眠之中,我们心头的创痛,以及其他无数血肉之躯所不能避免的打击,都可以从此消失,那正是我们求之不得的结局;死了,睡着了,睡着了也许还会做梦,啊,阻碍就在这儿。因为当我们摆脱了这一具腐朽的皮囊之后,在那死的睡眠里,究竟还要做什么梦,这不能不使我们踌躇顾虑。人们甘心受困于患难之中,也就是为了这个缘故。谁愿意忍受人世的鞭挞和讥嘲,压迫者的凌辱,傲慢者的冷眼,被轻蔑的爱情的惨痛,法律的迁延,官吏的横暴和费尽辛勤所换来的小人的鄙视,要是他只要用一柄小小的刀子就可以清算他自己的一生。谁愿意背负这样的重担,在烦劳的生命的压迫下呻吟流汗,尚不是因为惧怕那不可知的死后,惧怕那从来不曾有一个旅人回来过的神秘之国,是它迷惑了我们的意志,使我们宁愿忍受目前的折磨,不敢向我们所不知道的痛苦飞去。这样重重的顾虑使我们全变成了懦夫。决心炽热的光彩,被审慎的思维盖上了一层灰色,伟大的事业在这一种考虑之下也会逆流而退,失去了行动的意义。”<br>
+　　　　　　<br>
+　　　　　　第四关<br>
+　　　　　　物理：按唯识论的观点设计一个相应物理框架下的宇宙模型，并以此推演出通常的物理，如相对论/量子力学/超弦理论/M理论等，并指出其适用范围等边界条件。<br>
+　　　　　　<br>
+　　　　　　第五关<br>
+　　　　　　数学：对朗兰兹纲领给出一个系统的构建框架。<br>
+　　　　　　<br>
+　　　　　　第六关<br>
+　　　　　　经济：比钱多可能有点欺负男人，这样，就比谁能挣钱，模拟炒股炒期货也太弱智。如果谁真能达到第六关，本女也不妨在现实中比赛，每人自己拿出3000万到1亿人民币之间的一个数各自成立一个公司，1年之类看谁挣钱多，可以按比例算！<br>
+　　　　　　<br>
+　　　　　　第七关<br>
+　　　　　　歌唱：举行一次演唱会，歌剧/艺术歌曲/民歌/通俗/摇滚/外文歌/戏曲，七种一起比！<br>
+　　　　　　<br>
+　　　　　　第八关<br>
+　　　　　　年龄：如果前面七关都不分胜负，最简单就比年龄，年龄小的胜！<br>
+　　　　<br>
+　　　　注：第六关没钱的，本女可以垫，挣了都你的！</p>
 
             </div>
             
@@ -845,7 +436,7 @@ FROM Products;
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://Superbishop.github.io/post/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-5/" title="《SQL必知必会》学习笔记-2020-6-5">https://Superbishop.github.io/post/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-5/</a>
+      <a href="https://Superbishop.github.io/post/ben-nu-she-lei-tai-tiao-zhan-quan-shi-jie-nan-ren-shi-nan-ren-jiu-jin-lai-ying-zhan-zhuan-zai/" title="本女设擂台挑战全世界男人，是男人就进来应战！(转载)">https://Superbishop.github.io/post/ben-nu-she-lei-tai-tiao-zhan-quan-shi-jie-nan-ren-shi-nan-ren-jiu-jin-lai-ying-zhan-zhuan-zai/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -854,23 +445,15 @@ FROM Products;
   </ul>
   <div class="tags">
     
-      <a href="https://Superbishop.github.io/tag/sql/"># SQL</a>
-    
-      <a href="https://Superbishop.github.io/tag/B3Myw-CcF/"># learn summary</a>
-    
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="《SQL必知必会》学习笔记-2020-6-6" href="https://Superbishop.github.io/post/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-6/">《SQL必知必会》学习笔记-2020-6-6</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="《SQL必知必会》学习笔记-2020-6-6" href="https://Superbishop.github.io/post/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-6/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="《SQL必知必会》学习笔记-2020-6-4" href="https://Superbishop.github.io/post/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-4/">《SQL必知必会》学习笔记-2020-6-4</a>
-        <a class="nav-mobile-next" title="《SQL必知必会》学习笔记-2020-6-4" href="https://Superbishop.github.io/post/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-4/">下一篇</a>
+        <a class="nav-pc-next" title="近期学习回顾" href="https://Superbishop.github.io/post/jin-qi-xue-xi-hui-gu/">近期学习回顾</a>
+        <a class="nav-mobile-next" title="近期学习回顾" href="https://Superbishop.github.io/post/jin-qi-xue-xi-hui-gu/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
