@@ -8,7 +8,7 @@
 <meta name="keywords" content="Bishop静态个人博客">
 <meta name="description" content="Live and learn. ">
 <meta name="theme-color" content="#000">
-<title>Bishop</title>
+<title>统计学 | Bishop</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1596691198787">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,6 +38,8 @@
 
 
 
+  <meta name="description" content="统计学" />
+  <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -172,8 +174,24 @@
     <div
       class="section-layout pisces ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active language" data-lan="index">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item language" data-lan="preview">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body pisces" id="sidebar_body">
+        
+          
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -242,391 +260,1716 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E7%AC%AC1%E7%AB%A0-%E5%AF%BC%E8%AE%BA">第1章 导论</a>
+<ul>
+<li><a href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E5%AE%9A%E4%B9%89">统计学定义</a></li>
+<li><a href="#%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1%E6%B3%95">描述统计法</a></li>
+<li><a href="#%E6%8E%A8%E6%96%AD%E7%BB%9F%E8%AE%A1%E6%B3%95">推断统计法</a></li>
+<li><a href="#%E7%BB%9F%E8%AE%A1%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">统计数据类型</a>
+<ul>
+<li><a href="#%E6%8C%89%E8%AE%A1%E9%87%8F%E5%B0%BA%E5%BA%A6%E5%88%86%E7%B1%BB">按计量尺度分类</a></li>
+<li><a href="#%E6%8C%89%E6%94%B6%E9%9B%86%E6%96%B9%E6%B3%95%E5%88%86%E7%B1%BB">按收集方法分类</a></li>
+<li><a href="#%E6%8C%89%E6%97%B6%E9%97%B4%E7%8A%B6%E5%86%B5%E5%88%86%E7%B1%BB">按时间状况分类</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC2%E7%AB%A0-%E6%95%B0%E6%8D%AE%E6%90%9C%E9%9B%86">第2章 数据搜集</a>
+<ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E6%9D%A5%E6%BA%90">数据的来源</a></li>
+<li><a href="#%E8%B0%83%E6%9F%A5%E6%96%B9%E6%B3%95">调查方法</a>
+<ul>
+<li><a href="#%E6%A6%82%E7%8E%87%E6%8A%BD%E6%A0%B7">概率抽样</a></li>
+<li><a href="#%E9%9D%9E%E6%A6%82%E7%8E%87%E6%8A%BD%E6%A0%B7">非概率抽样</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%B3%95">实验方法</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E8%AF%AF%E5%B7%AE">数据的误差</a>
+<ul>
+<li><a href="#%E6%8A%BD%E6%A0%B7%E8%AF%AF%E5%B7%AE">抽样误差</a></li>
+<li><a href="#%E9%9D%9E%E6%8A%BD%E6%A0%B7%E8%AF%AF%E5%B7%AE">非抽样误差</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC3%E7%AB%A0-%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9B%BE%E8%A1%A8%E5%B1%95%E7%A4%BA">第3章 数据的图表展示</a>
+<ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86">数据预处理</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E8%BF%9B%E4%B8%80%E6%AD%A5%E6%95%B4%E7%90%86%E4%B8%8E%E5%9B%BE%E8%A1%A8%E5%8C%96">数据进一步整理与图表化</a>
+<ul>
+<li><a href="#%E5%93%81%E8%B4%A8%E6%95%B0%E6%8D%AE%E7%9A%84%E6%95%B4%E7%90%86%E4%B8%8E%E5%9B%BE%E8%A1%A8%E5%8C%96">品质数据的整理与图表化</a>
+<ul>
+<li><a href="#%E5%88%86%E7%B1%BB%E6%95%B0%E6%8D%AE">分类数据</a></li>
+<li><a href="#%E9%A1%BA%E5%BA%8F%E6%95%B0%E6%8D%AE">顺序数据</a></li>
+<li><a href="#%E6%95%B0%E5%80%BC%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%9A%84%E6%95%B4%E7%90%86%E4%B8%8E%E5%9B%BE%E8%A1%A8%E5%8C%96">数值型数据的整理与图表化</a>
+<ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84">数据分组</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%9B%BE%E8%A1%A8%E5%8C%96">数据图表化</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC4%E7%AB%A0-%E6%95%B0%E6%8D%AE%E7%9A%84%E6%A6%82%E6%8B%AC%E6%80%A7%E5%BA%A6%E9%87%8F">第4章 数据的概括性度量</a>
+<ul>
+<li><a href="#%E9%9B%86%E4%B8%AD%E8%B6%8B%E5%8A%BF%E7%9A%84%E5%BA%A6%E9%87%8F">集中趋势的度量</a></li>
+<li><a href="#%E7%A6%BB%E6%95%A3%E7%A8%8B%E5%BA%A6%E7%9A%84%E5%BA%A6%E9%87%8F">离散程度的度量</a></li>
+<li><a href="#%E7%9B%B8%E5%AF%B9%E4%BD%8D%E7%BD%AE%E7%9A%84%E5%BA%A6%E9%87%8F">相对位置的度量</a></li>
+<li><a href="#%E7%9B%B8%E5%AF%B9%E7%A6%BB%E6%95%A3%E7%A8%8B%E5%BA%A6">相对离散程度</a></li>
+<li><a href="#%E5%88%86%E5%B8%83%E7%9A%84%E5%BD%A2%E7%8A%B6">分布的形状</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC5%E7%AB%A0-%E6%A6%82%E7%8E%87%E4%B8%8E%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83">第5章 概率与概率分布</a>
+<ul>
+<li><a href="#%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%85%B6%E6%A6%82%E7%8E%87">随机事件及其概率</a></li>
+<li><a href="#%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%A6%82%E7%8E%87">事件的概率</a><br>
+*
+<ul>
+<li><a href="#%E5%8F%A4%E5%85%B8%E6%A6%82%E7%8E%87">古典概率</a></li>
+<li><a href="#%E7%BB%9F%E8%AE%A1%E6%A6%82%E7%8E%87">统计概率</a></li>
+<li><a href="#%E4%B8%BB%E8%A7%82%E6%A6%82%E7%8E%87">主观概率</a></li>
+</ul>
+</li>
+<li><a href="#%E7%A6%BB%E6%95%A3%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83">离散型随机变量及其分布</a><br>
+*
+<ul>
+<li><a href="#%E5%8F%98%E9%87%8F">变量</a></li>
+<li><a href="#%E5%88%86%E5%B8%83">分布</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BF%9E%E7%BB%AD%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83">连续型随机变量的概率分布</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC6%E7%AB%A0-%E7%BB%9F%E8%AE%A1%E9%87%8F%E5%8F%8A%E5%85%B6%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83">第6章 统计量及其抽样分布</a>
+<ul>
+<li><a href="#%E7%BB%9F%E8%AE%A1%E9%87%8F%E7%9A%84%E6%A6%82%E5%BF%B5">统计量的概念</a></li>
+<li><a href="#%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83">抽样分布</a></li>
+<li><a href="#%E6%A0%B7%E6%9C%AC%E5%9D%87%E5%80%BC%E5%88%86%E5%B8%83%E4%B8%8E%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86">样本均值分布与中心极限定理</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC7%E7%AB%A0-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1">第7章 参数估计</a>
+<ul>
+<li><a href="#%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86">参数估计的基本原理</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC8%E7%AB%A0-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C">第8章 假设检验</a></li>
+<li><a href="#%E7%AC%AC9%E7%AB%A0-%E5%88%86%E7%B1%BB%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">第9章 分类数据分析</a>
+<ul>
+<li><a href="#%E5%88%86%E7%B1%BB%E6%95%B0%E6%8D%AE-2">分类数据</a></li>
+<li><a href="#chi2%E7%BB%9F%E8%AE%A1%E9%87%8F"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">χ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>统计量</a></li>
+<li><a href="#%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C">拟合优度检验</a></li>
+<li><a href="#%E5%88%97%E8%81%94%E5%88%86%E6%9E%90%E7%8B%AC%E7%AB%8B%E6%80%A7%E6%A3%80%E9%AA%8C">列联分析:独立性检验</a>
+<ul>
+<li><a href="#%E5%88%97%E8%81%94%E8%A1%A8">列联表</a></li>
+<li><a href="#%E7%8B%AC%E7%AB%8B%E6%80%A7%E6%A3%80%E9%AA%8C">独立性检验</a></li>
+<li><a href="#%E5%88%97%E8%81%94%E8%A1%A8%E4%B8%AD%E7%9A%84%E7%9B%B8%E5%85%B3%E6%B5%8B%E9%87%8F">列联表中的相关测量</a>
+<ul>
+<li><a href="#varphi-%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi></mrow><annotation encoding="application/x-tex">\varphi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">φ</span></span></span></span> 相关系数</a></li>
+<li><a href="#c%E7%B3%BB%E6%95%B0"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span>系数</a></li>
+<li><a href="#v%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span>相关系数</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC10%E7%AB%A0-%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90">第10章 方差分析</a>
+<ul>
+<li><a href="#%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E5%BC%95%E8%AE%BA">方差分析引论</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC11%E7%AB%A0-%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92">第11章 一元线性回归</a>
+<ul>
+<li><a href="#%E5%8F%98%E9%87%8F%E9%97%B4%E5%85%B3%E7%B3%BB%E7%9A%84%E5%BA%A6%E9%87%8F">变量间关系的度量</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC12%E7%AB%A0-%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92">第12章 多元线性回归</a>
+<ul>
+<li><a href="#%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B">多元线性回归模型</a></li>
+</ul>
+</li>
+<li><a href="#%E7%AC%AC13%E7%AB%A0-%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%88%86%E6%9E%90%E5%92%8C%E9%A2%84%E6%B5%8B">第13章 时间序列分析和预测</a>
+<ul>
+<li><a href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%9E%81%E5%85%B6%E5%88%86%E8%A7%A3">时间序列极其分解</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
 </div>
+
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'pisces';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
       }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
     });
   }
-  </script>
-        <div class="section-box pisces">
-          <section class="section bg-color posts-expand slide-down-in">
-            
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <section class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://Superbishop.github.io/post/Ekr4wfa8m/">
-      爬取豆瓣电影列表
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2019-12-03 02:24:58">2019-12-03</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>2<span class="language" data-lan="minute">分钟</span></span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>240<span class="pc-show language" data-lan="words">字数</span></span>
-    </span>
-    
-  </div>
-</section>
-      <div class="post-body">
-        
-        
-          
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://Superbishop.github.io/post/Ekr4wfa8m/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-        <footer class="post-footer">
-          <div class="post-eof"></div>
-        </footer>
-      
-    </div>
-  </article>
 
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <section class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://Superbishop.github.io/post/qlZcHAhor/">
-      正则表达式
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2019-09-10 11:51:52">2019-09-10</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://Superbishop.github.io/tag/wiZ0GzLM1/">
-        <span>正则表达式</span>
-      </a>、
-      
-      
-      
-      <a href="https://Superbishop.github.io/tag/j75nuvaWl/">
-        <span>python</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>2<span class="language" data-lan="minute">分钟</span></span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>307<span class="pc-show language" data-lan="words">字数</span></span>
-    </span>
-    
-  </div>
-</section>
-      <div class="post-body">
-        
-        
-          
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://Superbishop.github.io/post/qlZcHAhor/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-        <footer class="post-footer">
-          <div class="post-eof"></div>
-        </footer>
-      
-    </div>
-  </article>
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
 
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <section class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://Superbishop.github.io/post/l99V4EeeY/">
-      处理get请求
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2019-07-28 11:58:42">2019-07-28</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>1<span class="language" data-lan="minute">分钟</span></span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>71<span class="pc-show language" data-lan="words">字数</span></span>
-    </span>
-    
-  </div>
-</section>
-      <div class="post-body">
-        
-        
-          
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://Superbishop.github.io/post/l99V4EeeY/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-        <footer class="post-footer">
-          <div class="post-eof"></div>
-        </footer>
-      
-    </div>
-  </article>
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
 
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <section class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://Superbishop.github.io/post/o3jSS0M9C/">
-      反爬虫机制2:代理IP爬去网站
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2019-07-28 10:55:46">2019-07-28</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>1<span class="language" data-lan="minute">分钟</span></span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>104<span class="pc-show language" data-lan="words">字数</span></span>
-    </span>
-    
-  </div>
-</section>
-      <div class="post-body">
-        
-        
-          
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://Superbishop.github.io/post/o3jSS0M9C/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-        <footer class="post-footer">
-          <div class="post-eof"></div>
-        </footer>
-      
-    </div>
-  </article>
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
 
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <section class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://Superbishop.github.io/post/TbXZS3u2p/">
-      自定义opener 以及全局opener的创建方法
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2019-07-17 14:07:36">2019-07-17</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>1<span class="language" data-lan="minute">分钟</span></span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>133<span class="pc-show language" data-lan="words">字数</span></span>
-    </span>
-    
-  </div>
-</section>
-      <div class="post-body">
-        
-        
-          
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://Superbishop.github.io/post/TbXZS3u2p/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-        <footer class="post-footer">
-          <div class="post-eof"></div>
-        </footer>
-      
-    </div>
-  </article>
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
 
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <section class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://Superbishop.github.io/post/yzZXoI4C0/">
-      反爬虫机制一
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2019-07-17 13:14:28">2019-07-17</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>1<span class="language" data-lan="minute">分钟</span></span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>142<span class="pc-show language" data-lan="words">字数</span></span>
-    </span>
-    
-  </div>
-</section>
-      <div class="post-body">
-        
-        
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
           
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://Superbishop.github.io/post/yzZXoI4C0/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
         
       </div>
-      
-        <footer class="post-footer">
-          <div class="post-eof"></div>
-        </footer>
-      
     </div>
-  </article>
   
-            
-            
-<div class="page bg-color">
-  <ul class="pagination-ul">
-    
-      <li class="pagination-dir">
-        <a href="https://Superbishop.github.io/">
-          <i class="fa fa-angle-left"></i>
-        </a>
-      </li>
-    
-    
-      
-        <li class="pagination-li ">
-            <a href="/page/../">
-              1
-            </a>
-        </li>
-      
-        <li class="pagination-li pagination-active">
-            <a href="/page/2">
-              2
-            </a>
-        </li>
-      
-        <li class="pagination-li ">
-            <a href="/page/3">
-              3
-            </a>
-        </li>
-      
-    
-    
-      <li class="pagination-dir">
-        <a href="/page/3">
-          <i class="fa fa-angle-right"></i>
-        </a>
-      </li>
-    
-  </ul>
 </div>
-          </section>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <section class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://Superbishop.github.io/post/tong-ji-xue/">
+      统计学
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span class="publish-time" data-t="2020-08-06 13:17:11">2020-08-06</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>15<span class="language" data-lan="minute">分钟</span></span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>4193<span class="pc-show language" data-lan="words">字数</span></span>
+    </span>
+    
+  </div>
+</section>
+            <div class="post-body next-md-body" id="post_body">
+              <h2 id="第1章-导论">第1章 导论</h2>
+<h3 id="统计学定义">统计学定义</h3>
+<p>统计学是收集/处理/分析/解释数据并从数据中得出结论的科学</p>
+<ul>
+<li>
+<p>数据收集</p>
+</li>
+<li>
+<p>数据处理</p>
+</li>
+<li>
+<p>数据分析</p>
+</li>
+</ul>
+<h3 id="描述统计法">描述统计法</h3>
+<p>研究的是数据收集/处理/汇总/图表描述/概括分析等统计方法</p>
+<h3 id="推断统计法">推断统计法</h3>
+<p>研究如何利用样本数据来推断总体特征的统计方法</p>
+<h3 id="统计数据类型">统计数据类型</h3>
+<h4 id="按计量尺度分类">按计量尺度分类</h4>
+<ul>
+<li>
+<p>分类数据</p>
+</li>
+<li>
+<p>顺序数据</p>
+</li>
+<li>
+<p>数值型数据</p>
+</li>
+</ul>
+<h4 id="按收集方法分类">按收集方法分类</h4>
+<ul>
+<li>
+<p>观测数据</p>
+</li>
+<li>
+<p>实验数据</p>
+</li>
+</ul>
+<h4 id="按时间状况分类">按时间状况分类</h4>
+<ul>
+<li>
+<p>截面数据</p>
+</li>
+<li>
+<p>时间序列数据</p>
+</li>
+</ul>
+<hr>
+<h2 id="第2章-数据搜集">第2章 数据搜集</h2>
+<h3 id="数据的来源">数据的来源</h3>
+<ul>
+<li>
+<p>间接来源<br>
+原信息已存在,对原信息进行加工/整理后用于统计分析</p>
+</li>
+<li>
+<p>直接来源<br>
+通过调查方法/或实验获得数据</p>
+</li>
+</ul>
+<h3 id="调查方法">调查方法</h3>
+<h4 id="概率抽样">概率抽样</h4>
+<p>也称随机抽样,在遵循一定原则的基础上进行抽样</p>
+<ul>
+<li>
+<p>简单随机抽样</p>
+</li>
+<li>
+<p>分层抽样</p>
+</li>
+<li>
+<p>整群抽样</p>
+</li>
+<li>
+<p>系统抽样</p>
+</li>
+<li>
+<p>多阶段抽样</p>
+</li>
+</ul>
+<h4 id="非概率抽样">非概率抽样</h4>
+<p>抽取样本时不按随机原则,而是根据研究目的对数据的要求从总体抽出部分进行调查</p>
+<ul>
+<li>
+<p>方便抽样</p>
+</li>
+<li>
+<p>判断抽样</p>
+</li>
+<li>
+<p>自愿样本</p>
+</li>
+<li>
+<p>滚雪球抽样</p>
+</li>
+<li>
+<p>配额抽样</p>
+</li>
+</ul>
+<h3 id="实验方法">实验方法</h3>
+<ul>
+<li>
+<p>实验组</p>
+</li>
+<li>
+<p>对照组</p>
+</li>
+</ul>
+<h3 id="数据的误差">数据的误差</h3>
+<h4 id="抽样误差">抽样误差</h4>
+<ul>
+<li>
+<p>样本量:样本量越大,抽样误差越小</p>
+</li>
+<li>
+<p>总体变异性:变异性越大,抽样误差越大</p>
+</li>
+</ul>
+<h4 id="非抽样误差">非抽样误差</h4>
+<ul>
+<li>
+<p>抽样框误差</p>
+</li>
+<li>
+<p>回答误差</p>
+</li>
+<li>
+<p>无回答误差</p>
+</li>
+<li>
+<p>调查员误差</p>
+</li>
+<li>
+<p>测量误差</p>
+</li>
+</ul>
+<hr>
+<h2 id="第3章-数据的图表展示">第3章 数据的图表展示</h2>
+<h3 id="数据预处理">数据预处理</h3>
+<p>对数据分类或分组前的所做的必要处理,包括审核/筛选/排序等</p>
+<ol>
+<li>数据审核</li>
+</ol>
+<ul>
+<li>
+<p>直接来源得到的数据:审核数据的<strong>完整性</strong>与<strong>正确性</strong></p>
+</li>
+<li>
+<p>间接来源得到的数据:审核数据的<strong>适用性</strong>与<strong>时效性</strong></p>
+</li>
+</ul>
+<ol start="2">
+<li>
+<p>数据筛选</p>
+</li>
+<li>
+<p>数据排序</p>
+</li>
+<li>
+<p>数据透视表</p>
+</li>
+</ol>
+<h3 id="数据进一步整理与图表化">数据进一步整理与图表化</h3>
+<p>对品质数据主要做分类整理,数值型数据主要做分组整理</p>
+<h4 id="品质数据的整理与图表化">品质数据的整理与图表化</h4>
+<h5 id="分类数据">分类数据</h5>
+<ol>
+<li>
+<p>汇总成频数分布表</p>
+</li>
+<li>
+<p>图表展示</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>条形图</p>
+</li>
+<li>
+<p>帕累托图</p>
+</li>
+<li>
+<p>饼图</p>
+</li>
+<li>
+<p>环形图</p>
+</li>
+</ul>
+<h5 id="顺序数据">顺序数据</h5>
+<p>适用于分类数据的频数分布表和图示法</p>
+<ul>
+<li>
+<p>累计频数分布表</p>
+</li>
+<li>
+<p>累计频数分布图</p>
+</li>
+<li>
+<p>向上累计</p>
+</li>
+<li>
+<p>向下累计</p>
+</li>
+</ul>
+<h5 id="数值型数据的整理与图表化">数值型数据的整理与图表化</h5>
+<h6 id="数据分组">数据分组</h6>
+<ul>
+<li>
+<p>单变量值分组--离散变量</p>
+</li>
+<li>
+<p>组距分组--连续变量或多变量</p>
+</li>
+</ul>
+<h6 id="数据图表化">数据图表化</h6>
+<ol>
+<li>
+<p>分组数据</p>
+<p>直方图</p>
+</li>
+<li>
+<p>未分组数据</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>茎叶图</p>
+</li>
+<li>
+<p>箱线图</p>
+</li>
+</ul>
+<ol start="3">
+<li>
+<p>时间序列数据</p>
+<p>线图</p>
+</li>
+<li>
+<p>多变量数据</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>散点图</p>
+</li>
+<li>
+<p>气泡图</p>
+</li>
+<li>
+<p>雷达图</p>
+</li>
+</ul>
+<hr>
+<h2 id="第4章-数据的概括性度量">第4章 数据的概括性度量</h2>
+<h3 id="集中趋势的度量">集中趋势的度量</h3>
+<ol>
+<li>
+<p>[[众数]]--分类数据,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>M</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">M_o</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+</li>
+<li>
+<p>[[中位数]]--顺序数据,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>M</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">M_e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+</li>
+<li>
+<p>分位数--顺序数据</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>上四分位,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>u</mi></msub></mrow><annotation encoding="application/x-tex">Q_u</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+</li>
+<li>
+<p>下四分卫,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">Q_l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+</li>
+</ul>
+<ol start="4">
+<li>平均数--数值型数据</li>
+</ol>
+<ul>
+<li>
+<p>[[简单平均数]]--针对未分组数据,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>x</mi><mo>ˉ</mo></mover></mrow><annotation encoding="application/x-tex">\bar x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.56778em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.56778em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault">x</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;">ˉ</span></span></span></span></span></span></span></span></span></p>
+</li>
+<li>
+<p>[[加权平均数]]--针对分组数据，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>x</mi><mo>ˉ</mo></mover></mrow><annotation encoding="application/x-tex">\bar x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.56778em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.56778em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault">x</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;">ˉ</span></span></span></span></span></span></span></span></span></p>
+</li>
+<li>
+<p>[[几何平均数]]--针对平均比率,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">G</span></span></span></span></p>
+</li>
+</ul>
+<p><strong>总结</strong></p>
+<ol>
+<li>
+<p>众数是一组数据分布的峰值,不受极端值影响,缺点不具唯一性,适用于大量的分类数据</p>
+</li>
+<li>
+<p>平均数是利用了全部数据信息而针对数值型数据计算得出的值,应用最广泛的集中趋势测度值.缺点:对于偏态分布较大的数据,代表性较差,采用中位数或众数代表较好.</p>
+</li>
+</ol>
+<h3 id="离散程度的度量">离散程度的度量</h3>
+<ol>
+<li>
+<p>[[异众比率]]--针对分类数据,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">V_r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+</li>
+<li>
+<p>[[四分位差]]--针对顺序/数值型数据,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">Q_d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+</li>
+<li>
+<p>针对数值型数据</p>
+</li>
+</ol>
+<ul>
+<li>[[极差]],<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span></li>
+<li>[[平均差]],<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>M</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">M_d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+<li>[[样本方差]],<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>s</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">s^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></li>
+<li>[[样本标准差]],<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">s</span></span></span></span></li>
+<li>[[总体方差]],<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span></span></span></span></li>
+<li>[[总体标准差]],<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>σ</mi></mrow><annotation encoding="application/x-tex">\sigma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span></span></span></span></li>
+</ul>
+<h3 id="相对位置的度量">相对位置的度量</h3>
+<ol>
+<li>
+<p>[[标准分数]],也称标准化值,z分数</p>
+</li>
+<li>
+<p>经验法则,适合对称分布的数据</p>
+</li>
+<li>
+<p>切比雪夫不等式,适合非对称分布的数据</p>
+</li>
+</ol>
+<h3 id="相对离散程度">相对离散程度</h3>
+<ul>
+<li>[[离散系数]]</li>
+</ul>
+<h3 id="分布的形状">分布的形状</h3>
+<p><strong>[[偏态]]系数,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>K</mi></mrow><annotation encoding="application/x-tex">SK</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span></span></span></span></strong></p>
+<ul>
+<li>
+<p>若数据分布对称,则SK等于0</p>
+</li>
+<li>
+<p>若SK大于1或小于-1,称为高度偏态分布</p>
+</li>
+<li>
+<p>若SK在0.5<sub>1或-1</sub>-0.5,称为中等偏态分布</p>
+</li>
+</ul>
+<p><strong>[[峰态]]系数,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span></span></span></span></strong></p>
+<ul>
+<li>
+<p>若一组数据服从标准正态分布,则K为0</p>
+</li>
+<li>
+<p>若K&gt;0,为尖峰分布,数据分布更集中</p>
+</li>
+<li>
+<p>若K&lt;0,为平峰分布,数据分布越分散</p>
+</li>
+</ul>
+<hr>
+<h2 id="第5章-概率与概率分布">第5章 概率与概率分布</h2>
+<h3 id="随机事件及其概率">随机事件及其概率</h3>
+<p>随机事件,也叫偶然事件</p>
+<p>必然事件</p>
+<p>不可能事件</p>
+<h3 id="事件的概率">事件的概率</h3>
+<h5 id="古典概率">古典概率</h5>
+<ol>
+<li>
+<p>结果有限</p>
+</li>
+<li>
+<p>各结果出现可能性相同</p>
+</li>
+</ol>
+<h5 id="统计概率">统计概率</h5>
+<h5 id="主观概率">主观概率</h5>
+<p>决策者根据本人掌握信息对某个事件发生可能性做出的预判</p>
+<h3 id="离散型随机变量及其分布">离散型随机变量及其分布</h3>
+<h5 id="变量">变量</h5>
+<ul>
+<li>
+<p>期望值</p>
+</li>
+<li>
+<p>方差与标准差</p>
+</li>
+<li>
+<p>离散系数</p>
+</li>
+</ul>
+<p>【财务应用中,常用来评估财务风险】</p>
+<h5 id="分布">分布</h5>
+<ul>
+<li>
+<p>二项分布,贝努里试验</p>
+</li>
+<li>
+<p>泊松分布</p>
+</li>
+</ul>
+<h3 id="连续型随机变量的概率分布">连续型随机变量的概率分布</h3>
+<ol>
+<li>
+<p>概率密度函数</p>
+</li>
+<li>
+<p>概率分布</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>正态分布</p>
+</li>
+<li>
+<p>标准正态分布</p>
+</li>
+</ul>
+<p>【质量管理领域的六西格玛管理质量标准】</p>
+<hr>
+<h2 id="第6章-统计量及其抽样分布">第6章 统计量及其抽样分布</h2>
+<h3 id="统计量的概念">统计量的概念</h3>
+<h3 id="抽样分布">抽样分布</h3>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">χ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> 分布</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span></span></span></span> 分布</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span></span></span></span> 分布</li>
+</ul>
+<h3 id="样本均值分布与中心极限定理">样本均值分布与中心极限定理</h3>
+<hr>
+<h2 id="第7章-参数估计">第7章 参数估计</h2>
+<h3 id="参数估计的基本原理">参数估计的基本原理</h3>
+<p>·    估计量与估计值</p>
+<p>·    点估计与区间估计</p>
+<p>·    点估计需要给出点估计值的可靠性</p>
+<p>·    区间估计需要构造置信区间</p>
+<p>·    评价估计量的标准</p>
+<p>·    无偏性</p>
+<p>·    有效性</p>
+<p>·    一致性</p>
+<p>·    一个总体参数的区间估计</p>
+<p>·    均值</p>
+<p>·    大样本---&gt;z分布</p>
+<p>·    小样本</p>
+<p>·    正态分布,总体方差已知---&gt;z分布</p>
+<p>·    正态分布,总体方差位置---&gt;t分布</p>
+<p>·    比例</p>
+<p>·    大样本---&gt;z分布</p>
+<p>·    方差</p>
+<p>·    x2分布</p>
+<p>·    两个总体参数的区间估计</p>
+<p>·    均值差</p>
+<p>·    独立大样本</p>
+<p>·    样本1,2方差已知---&gt;z分布</p>
+<p>·    样本1,2方差未知---&gt;z分布</p>
+<p>·    独立小样本</p>
+<p>·    总体正态分布</p>
+<p>·    样本1,2方差已知---&gt;z分布</p>
+<p>·    样本1,2方差未知</p>
+<p>·    样本1方差等于样本2方差---&gt;t分布</p>
+<p>·    样本1方差不等于样本方差---&gt;t分布</p>
+<p>·    匹配样本---&gt;t分布</p>
+<p>·    比列差</p>
+<p>·    独立大样本---&gt;z分布</p>
+<p>·    方差比</p>
+<p>·    F分布</p>
+<p>·    样本量的确定</p>
+<hr>
+<h2 id="第8章-假设检验">第8章 假设检验</h2>
+<p>###假设检验的基本问题</p>
+<p>·    两类假设</p>
+<p>·    原假设</p>
+<p>·    备择假设</p>
+<p>·    两类错误</p>
+<p>·    弃真错误</p>
+<p>·    取伪错误</p>
+<p>·    假设检验的流程</p>
+<p>·    提出假设</p>
+<p>·    确定适当的检验统计量,计算其数值</p>
+<p>·    统计决策</p>
+<p>·    利用P值进行决策<br>
+能精确地反应决策的风险度​</p>
+<p>·    单侧检验</p>
+<p>·    左单侧检验,也称下限检验</p>
+<p>·    右单侧检验,也称上限检验</p>
+<p>·    一个总体参数的检验</p>
+<p>·    均值</p>
+<p>·    样本量大---&gt;z分布</p>
+<p>·    样本量小,标准差已知,正态总体---&gt;z分布</p>
+<p>·    样本量小,保准查未知,正态总体---&gt;t分布</p>
+<p>·    比例</p>
+<p>·    z分布</p>
+<p>·    方差</p>
+<p>·    X2分布</p>
+<p>·    两个总体参数的检验</p>
+<p>·    均值之差检验</p>
+<p>·    方差已知或未知,样本量大---&gt;z统计量</p>
+<p>·    方差未知,样本量小---&gt;t统计量</p>
+<p>·    比例之差检验</p>
+<p>·    z统计量</p>
+<p>·    反差比检验</p>
+<p>·    F统计量</p>
+<h2 id="第9章-分类数据分析">第9章 分类数据分析</h2>
+<h3 id="分类数据-2">分类数据</h3>
+<p>分类数据是对事物进行分类的结果,特征是,不同数值描述了调查对象的不同特征.</p>
+<p>分类数据的结果是频数,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">χ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>检验是对分类数据的频数进行分析的统计方法.</p>
+<h3 id="chi2统计量"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">χ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>统计量</h3>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mi>χ</mi><mn>2</mn></msup><mo>=</mo><mo>∑</mo><mfrac><mrow><mo>(</mo><msub><mi>f</mi><mn>0</mn></msub><mo>−</mo><msub><mi>f</mi><mi>e</mi></msub><msup><mo>)</mo><mn>2</mn></msup></mrow><msub><mi>f</mi><mi>e</mi></msub></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle\chi^2= \sum \frac{(f_0-f_e)^2} {f_e}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0585479999999998em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">χ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.371548em;vertical-align:-0.8804400000000001em;"></span><span class="mop op-symbol large-op" style="position:relative;top:-0.000004999999999977245em;">∑</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.491108em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">f_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>表示观察值频数,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">f_e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.10764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>表示期望值频数</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">χ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>统计量有以下特征:</p>
+<ol>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup><mo>⩾</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\chi^2 \geqslant 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">χ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">⩾</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">χ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>  统计量分布与自由度有关</li>
+<li>描述了观察值与期望值的接近程度</li>
+</ol>
+<h3 id="拟合优度检验">拟合优度检验</h3>
+<p>拟合优度检验是用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">χ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> 统计量进行<strong>统计显著性检验</strong>的重要内容之一</p>
+<ol>
+<li>计算分类变量中各类别期望频数</li>
+<li>对比期望频数与观察频数差异</li>
+<li>判断是否是显著性差异,或者相关联</li>
+</ol>
+<h3 id="列联分析独立性检验">列联分析:独立性检验</h3>
+<p>拟合优度检验是针对一个分类变量的检验分析</p>
+<p>独立性检验则可以针对两个分类变量进行检验分析,主要通过列联表的方式呈现,又称为列联分析</p>
+<h4 id="列联表">列联表</h4>
+<p>将两个以上的变量进行交叉分类的频数分布表</p>
+<h4 id="独立性检验">独立性检验</h4>
+<p>分析列联表中行变量和列表里是否相互独立</p>
+<h4 id="列联表中的相关测量">列联表中的相关测量</h4>
+<h5 id="varphi-相关系数"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi></mrow><annotation encoding="application/x-tex">\varphi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">φ</span></span></span></span> 相关系数</h5>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>φ</mi><mo>=</mo><msqrt><mrow><msup><mi>χ</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mi>n</mi></mrow></msqrt></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle\varphi=\sqrt{\chi^2/n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">φ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.24em;vertical-align:-0.25612499999999994em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.983875em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mord mathdefault">χ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord">/</span><span class="mord mathdefault">n</span></span></span><span style="top:-2.9438750000000002em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg width='400em' height='1.28em' viewBox='0 0 400000 1296' preserveAspectRatio='xMinYMin slice'><path d='M263,681c0.7,0,18,39.7,52,119c34,79.3,68.167,
+158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120c340,-704.7,510.7,-1060.3,512,-1067
+c4.7,-7.3,11,-11,19,-11H40000v40H1012.3s-271.3,567,-271.3,567c-38.7,80.7,-84,
+175,-136,283c-52,108,-89.167,185.3,-111.5,232c-22.3,46.7,-33.8,70.3,-34.5,71
+c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1s-109,-253,-109,-253c-72.7,-168,-109.3,
+-252,-110,-252c-10.7,8,-22,16.7,-34,26c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26
+s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.25612499999999994em;"><span></span></span></span></span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 为列联表中的总频数,即样本量</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi></mrow><annotation encoding="application/x-tex">\varphi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">φ</span></span></span></span>系数适合<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>×</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">2\times2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 列联表,可以将系数控制在0~1范围</p>
+<h5 id="c系数"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span>系数</h5>
+<p>又称列联相关系数,列联系数,主要用于列联表大于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>×</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">2\times2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>情况</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>c</mi><mo>=</mo><msqrt><mfrac><msup><mi>χ</mi><mn>2</mn></msup><mrow><msup><mi>χ</mi><mn>2</mn></msup><mo>+</mo><mi>n</mi></mrow></mfrac></msqrt></mrow></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle{c=\sqrt{\frac{\chi^2}{\chi^2+n}}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.04em;vertical-align:-1.137791em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.902209em;"><span class="svg-align" style="top:-5em;"><span class="pstrut" style="height:5em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4171079999999998em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">χ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">n</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">χ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-3.862209em;"><span class="pstrut" style="height:5em;"></span><span class="hide-tail" style="min-width:1.02em;height:3.08em;"><svg width='400em' height='3.08em' viewBox='0 0 400000 3240' preserveAspectRatio='xMinYMin slice'><path d='M473,2793c339.3,-1799.3,509.3,-2700,510,-2702
+c3.3,-7.3,9.3,-11,18,-11H400000v40H1017.7s-90.5,478,-276.2,1466c-185.7,988,
+-279.5,1483,-281.5,1485c-2,6,-10,9,-24,9c-8,0,-12,-0.7,-12,-2c0,-1.3,-5.3,-32,
+-16,-92c-50.7,-293.3,-119.7,-693.3,-207,-1200c0,-1.3,-5.3,8.7,-16,30c-10.7,
+21.3,-21.3,42.7,-32,64s-16,33,-16,33s-26,-26,-26,-26s76,-153,76,-153s77,-151,
+77,-151c0.7,0.7,35.7,202,105,604c67.3,400.7,102,602.7,104,606z
+M1001 80H400000v40H1017z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.137791em;"><span></span></span></span></span></span></span></span></span></span></p>
+<p>当列联表中的两个变量相互独立时,系数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> ,并且永远不可能大于1</p>
+<h5 id="v相关系数"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span>相关系数</h5>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>V</mi><mo>=</mo><msqrt><mfrac><msup><mi>χ</mi><mn>2</mn></msup><mrow><mi>n</mi><mo>×</mo><mi>m</mi><mi>i</mi><mi>n</mi><mo>[</mo><mo>(</mo><mi>R</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo separator="true">,</mo><mo>(</mo><mi>c</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>]</mo></mrow></mfrac></msqrt></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle V=\sqrt{\frac{\chi^2}{n\times min[(R-1),(c-1)]}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.04em;vertical-align:-1.165571em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8744290000000001em;"><span class="svg-align" style="top:-5em;"><span class="pstrut" style="height:5em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4171079999999998em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mopen">[</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mopen">(</span><span class="mord mathdefault">c</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mclose">]</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">χ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-3.834429em;"><span class="pstrut" style="height:5em;"></span><span class="hide-tail" style="min-width:1.02em;height:3.08em;"><svg width='400em' height='3.08em' viewBox='0 0 400000 3240' preserveAspectRatio='xMinYMin slice'><path d='M473,2793c339.3,-1799.3,509.3,-2700,510,-2702
+c3.3,-7.3,9.3,-11,18,-11H400000v40H1017.7s-90.5,478,-276.2,1466c-185.7,988,
+-279.5,1483,-281.5,1485c-2,6,-10,9,-24,9c-8,0,-12,-0.7,-12,-2c0,-1.3,-5.3,-32,
+-16,-92c-50.7,-293.3,-119.7,-693.3,-207,-1200c0,-1.3,-5.3,8.7,-16,30c-10.7,
+21.3,-21.3,42.7,-32,64s-16,33,-16,33s-26,-26,-26,-26s76,-153,76,-153s77,-151,
+77,-151c0.7,0.7,35.7,202,105,604c67.3,400.7,102,602.7,104,606z
+M1001 80H400000v40H1017z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.165571em;"><span></span></span></span></span></span></span></span></span></p>
+<ul>
+<li>
+<p>当两个变量相互独立时,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">V=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></p>
+</li>
+<li>
+<p>当两个变量完全相关时,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">V=1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></p>
+</li>
+<li>
+<p>当列联表中有一维为2,则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span>就等于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi></mrow><annotation encoding="application/x-tex">\varphi</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">φ</span></span></span></span></p>
+<hr>
+</li>
+</ul>
+<h2 id="第10章-方差分析">第10章 方差分析</h2>
+<h3 id="方差分析引论">方差分析引论</h3>
+<p>方差分析排除错误累计的概率,能有效避免拒绝真实的原假设</p>
+<ul>
+<li>
+<p>术语</p>
+<ul>
+<li>
+<p>方差分析定义,ANOVA<br>
+主要分析变量间是否有关系,关系强度</p>
+</li>
+<li>
+<p>因素或因子</p>
+</li>
+<li>
+<p>水平或处理</p>
+</li>
+</ul>
+</li>
+<li>
+<p>基本思想和原理</p>
+<ul>
+<li>
+<p>总误差,SST</p>
+</li>
+<li>
+<p>组内误差,SSE</p>
+</li>
+<li>
+<p>组间误差,SSA</p>
+</li>
+<li>
+<p>误差分析</p>
+</li>
+</ul>
+</li>
+<li>
+<p>基本假定</p>
+<ul>
+<li>
+<p>总体都服从正态分布</p>
+</li>
+<li>
+<p>各总体方差必须相同</p>
+</li>
+</ul>
+</li>
+<li>
+<p>单因素方差分析</p>
+<ul>
+<li>
+<p>数据结构</p>
+</li>
+<li>
+<p>分析步骤</p>
+<ul>
+<li>
+<p>提出假设</p>
+</li>
+<li>
+<p>构造检验的统计量</p>
+<ul>
+<li>
+<p>计算样本均值</p>
+</li>
+<li>
+<p>计算全部观测值均值</p>
+</li>
+<li>
+<p>计算各误差平方和</p>
+</li>
+</ul>
+</li>
+<li>
+<p>计算统计量</p>
+<ul>
+<li>
+<p>MSA</p>
+</li>
+<li>
+<p>MSE</p>
+</li>
+</ul>
+</li>
+<li>
+<p>做出统计决策</p>
+</li>
+<li>
+<p>方差分析表</p>
+</li>
+</ul>
+</li>
+<li>
+<p>关系强度的测量</p>
+<ul>
+<li>R2,SSA与SST的比值来反映</li>
+</ul>
+</li>
+<li>
+<p>方差分析中的多重比较</p>
+<ul>
+<li>最小显著差异方法,LSD</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>双因素方差分析</p>
+<ul>
+<li>
+<p>无交互作用的双因素方差分析</p>
+</li>
+<li>
+<p>有交互作用的双因素方差分析</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="第11章-一元线性回归">第11章 一元线性回归</h2>
+<h3 id="变量间关系的度量">变量间关系的度量</h3>
+<ul>
+<li>
+<p>变量间的关系</p>
+<ul>
+<li>
+<p>函数关系</p>
+</li>
+<li>
+<p>相关关系<br>
+变量之间存在不确定的数量关系一个 变量取值不能由另一个变量唯一确定​</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>相关关系的描述与度量</p>
+<ul>
+<li>
+<p>散点图中相关关系的表现形态</p>
+<ul>
+<li>
+<p>线性相关</p>
+<ul>
+<li>
+<p>正相关</p>
+</li>
+<li>
+<p>负相关</p>
+</li>
+</ul>
+</li>
+<li>
+<p>非线性相关</p>
+</li>
+<li>
+<p>完全相关</p>
+</li>
+<li>
+<p>不完全相关</p>
+</li>
+</ul>
+</li>
+<li>
+<p>相关系数<br>
+​用来准确度量变量之间的关系强度​</p>
+<ul>
+<li>
+<p>总体相关系数，ρ</p>
+</li>
+<li>
+<p>样本相关系数，r</p>
+</li>
+<li>
+<p>Pearson相关系数</p>
+<ul>
+<li>
+<p>r的取值范围，[-1,1]</p>
+</li>
+<li>
+<p>r具有对称性</p>
+</li>
+<li>
+<p>r大小与自变量和因变量的原点及尺度无关</p>
+</li>
+<li>
+<p>不能用于描述非线性关系</p>
+</li>
+<li>
+<p>r虽可以度量自变量与因变量之间的关系，但二者不一定有因果关系</p>
+<ul>
+<li>
+<p>│r│→1，说明两变量之间线性关系越强；│r│→0，说明关系越弱</p>
+</li>
+<li>
+<p>│r│≥0.8，两变量之间呈高度相关</p>
+</li>
+<li>
+<p>0.3≤│r│＜0.5，低度相关</p>
+</li>
+<li>
+<p>│r│＜0.3，相关程度较弱，可视为不相关</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>相关系数的显著性检验</p>
+<ul>
+<li>
+<p>r的抽样分布</p>
+</li>
+<li>
+<p>r的显著性检验</p>
+<ul>
+<li>常用t检验</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>一元线性回归</p>
+<ul>
+<li>
+<p>一元线性回归模型<br>
+回归分析中只涉及一个自变量，称为一元回归，若因变量与自变量存在线性关系，则称为一元线性回归</p>
+<ul>
+<li>
+<p>理论回归模型</p>
+<ul>
+<li>
+<p>因变量y与自变量x存在线性关系</p>
+</li>
+<li>
+<p>假定x非随机</p>
+</li>
+<li>
+<p>误差项ε是期望值为0的随机变量</p>
+</li>
+<li>
+<p>误差项服从正态分布且独立</p>
+</li>
+</ul>
+</li>
+<li>
+<p>回归方程<br>
+由回归模型得到，表示因变量的期望值随自变量变化的方程</p>
+</li>
+<li>
+<p>估计的回归方程<br>
+根据样本统计量数据求出</p>
+</li>
+</ul>
+</li>
+<li>
+<p>参数的最小二乘估计</p>
+<ul>
+<li>
+<p>最小二乘法，也称最小平方法</p>
+</li>
+<li>
+<p>广泛应用于回归模型参数的估计</p>
+</li>
+</ul>
+</li>
+<li>
+<p>回归直线的拟合优度<br>
+回归直线与观测点的接近程度</p>
+<ul>
+<li>
+<p>判定系数 ，R2,变差平方和占总平和的比值</p>
+<ul>
+<li>
+<p>变差，变差平方和,SSR</p>
+</li>
+<li>
+<p>残差，残差平方和, SSE</p>
+</li>
+<li>
+<p>总平方和，SST</p>
+</li>
+</ul>
+</li>
+<li>
+<p>估计标准误差<br>
+反映了因变量y随机波动的大小</p>
+</li>
+<li>
+<p>显著性检验</p>
+<ul>
+<li>
+<p>回归系数的检验</p>
+</li>
+<li>
+<p>线性关系的检验</p>
+</li>
+</ul>
+</li>
+<li>
+<p>回归分析结果的评价</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>利用回归方程进行预测</p>
+<ul>
+<li>
+<p>点估计</p>
+<ul>
+<li>
+<p>平均值的点估计</p>
+</li>
+<li>
+<p>个别值的点估计</p>
+</li>
+</ul>
+</li>
+<li>
+<p>区间估计</p>
+<ul>
+<li>
+<p>置信区间估计</p>
+</li>
+<li>
+<p>预测区间估计</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>残差分析</p>
+<ul>
+<li>残差与残差图</li>
+<li>标准化残差</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="第12章-多元线性回归">第12章 多元线性回归</h2>
+<h3 id="多元线性回归模型">多元线性回归模型</h3>
+<ul>
+<li>
+<p>多元回归模型与回归方程</p>
+<ul>
+<li>
+<p>多元回归模型</p>
+<ul>
+<li>对误差项的三个基本假定，参考一元线性回归方程</li>
+</ul>
+</li>
+<li>
+<p>多元回归方程<br>
+描述了因变量的期望值与自变量的关系</p>
+</li>
+<li>
+<p>估计的多元回归方程</p>
+<ul>
+<li>
+<p>偏回归系数</p>
+</li>
+<li>
+<p>平均变动量</p>
+</li>
+</ul>
+</li>
+<li>
+<p>参数的最小二乘估计<br>
+当残差平方和最小时，可得到偏回归系数</p>
+</li>
+</ul>
+</li>
+<li>
+<p>回归方程的拟合优度</p>
+<ul>
+<li>
+<p>多重判定系数,R2<br>
+多元回归中回归平方和占总平方和的比例</p>
+</li>
+<li>
+<p>调整的多重判定系数，Ra2<br>
+为避免增加自变量而增大R2，用样本量n和自变量个数k调整R2，在多元回归分析中，常用调整的多重判定系数</p>
+</li>
+<li>
+<p>多重相关系数<br>
+也称复相关系数，度量了因变量同k个自变量的相关程度​</p>
+</li>
+<li>
+<p>估计标准误差</p>
+</li>
+</ul>
+</li>
+<li>
+<p>显著性检验</p>
+<ul>
+<li>
+<p>理解线性关系检验（F检验）与回归系数检验（t检验）在一元回归和多元回归中的区别</p>
+</li>
+<li>
+<p>线性关系检验</p>
+<ul>
+<li>总体显著性检验并不能说明单个自变量与因变量的关系一定是显著的</li>
+</ul>
+</li>
+<li>
+<p>回归系数检验和推断</p>
+</li>
+</ul>
+</li>
+<li>
+<p>多重共线性</p>
+<ul>
+<li>
+<p>多重共线性会产生的问题</p>
+</li>
+<li>
+<p>多重共线性的判别</p>
+</li>
+<li>
+<p>多重共线性问题的处理</p>
+</li>
+</ul>
+</li>
+<li>
+<p>利用回归方程进行预测</p>
+</li>
+<li>
+<p>变量选择方法</p>
+<ul>
+<li>向前选择</li>
+<li>向后剔除</li>
+<li>逐步回归</li>
+<li>最优子集</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="第13章-时间序列分析和预测">第13章 时间序列分析和预测</h2>
+<h3 id="时间序列极其分解">时间序列极其分解</h3>
+<ul>
+<li>
+<p>平稳序列</p>
+</li>
+<li>
+<p>非平稳序列</p>
+<ul>
+<li>
+<p>有趋势的序列</p>
+</li>
+<li>
+<p>有趋势和季节性的序列</p>
+</li>
+<li>
+<p>几种成分混合而成的复合序列</p>
+</li>
+</ul>
+</li>
+<li>
+<p>时间序列的四种成分</p>
+<ul>
+<li>
+<p>趋势，T</p>
+</li>
+<li>
+<p>季节性或季节变动，S</p>
+</li>
+<li>
+<p>周期性或循环波动，C</p>
+</li>
+<li>
+<p>随机性或不规则波动，I</p>
+</li>
+</ul>
+</li>
+<li>
+<p>乘法模型：Y=T x S x C x I</p>
+</li>
+<li>
+<p>时间序列的描述性分析</p>
+<ul>
+<li>
+<p>图形描述</p>
+</li>
+<li>
+<p>增长率分析</p>
+<ul>
+<li>
+<p>增长率</p>
+<ul>
+<li>
+<p>环比增长率</p>
+</li>
+<li>
+<p>定基增长率</p>
+</li>
+</ul>
+</li>
+<li>
+<p>平均增长率</p>
+<ul>
+<li>[公式]{.ul}</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>时间序列预测步骤</p>
+<ul>
+<li>
+<p>确定时间序列成分</p>
+</li>
+<li>
+<p>选择预测方法</p>
+<ul>
+<li>预测方法的流程图，<strong>待补全</strong></li>
+</ul>
+</li>
+<li>
+<p>评估预测方法</p>
+<ul>
+<li>
+<p>平均误差</p>
+<ul>
+<li>[公式]{.ul}</li>
+</ul>
+</li>
+<li>
+<p>平均绝对误差</p>
+<ul>
+<li>公式</li>
+</ul>
+</li>
+<li>
+<p>均方误差</p>
+<ul>
+<li>公式</li>
+</ul>
+</li>
+<li>
+<p>平均百分比误差和平均绝对百分比误差</p>
+<ul>
+<li>公式</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>进行预测</p>
+<ul>
+<li>
+<p>平稳序列的预测</p>
+<ul>
+<li>
+<p>简单平均法</p>
+</li>
+<li>
+<p>移动平均法</p>
+<ul>
+<li>
+<p>简单移动平均法</p>
+</li>
+<li>
+<p>加权移动平均法</p>
+</li>
+</ul>
+</li>
+<li>
+<p>指数平滑法<br>
+理解如何选择一个合适的α</p>
+</li>
+</ul>
+</li>
+<li>
+<p>趋势型序列的预测</p>
+<ul>
+<li>
+<p>线性趋势预测</p>
+</li>
+<li>
+<p>非线性趋势预测</p>
+<ul>
+<li>
+<p>指数曲线</p>
+</li>
+<li>
+<p>多阶曲线</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>复合型序列的分解预测</p>
+<ul>
+<li>
+<p>季节性多元回归模型</p>
+</li>
+<li>
+<p>季节自回归模型</p>
+</li>
+<li>
+<p>时间序列分解法预测模型</p>
+<ul>
+<li>
+<p>确定并分离季节成分</p>
+<ul>
+<li>
+<p>确定季节指数</p>
+</li>
+<li>
+<p>分离季节成分</p>
+</li>
+</ul>
+</li>
+<li>
+<p>建立预测模型进行预测</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            
+              <div class="reward-btn">
+                <div class="reward-btn-text">赞赏</div>
+              </div>
+            
+            
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong class="language" data-lan="author">本文作者：</strong>
+      Bishop
+    </li>
+    <li class="post-copyright-link">
+      <strong class="language" data-lan="link">本文链接：</strong>
+      <a href="https://Superbishop.github.io/post/tong-ji-xue/" title="统计学">https://Superbishop.github.io/post/tong-ji-xue/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="近期学习回顾" href="https://Superbishop.github.io/post/jin-qi-xue-xi-hui-gu/">近期学习回顾</a>
+        <a class="nav-mobile-next" title="近期学习回顾" href="https://Superbishop.github.io/post/jin-qi-xue-xi-hui-gu/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
+            
+            
+  
+    
+      <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '3bb4552eafc7c9ab4144',
+    clientSecret: 'f10e504a6ff8534bac9d2f34638c7b681cbf3763',
+    repo: 'superbishop.github.io',
+    owner: 'superbishop',
+    admin: ['superbishop'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+  gitalk.render('gitalk-container')
+</script>
+    
+    
+  
+
+          </div>
         </div>
       </div>
     </div>
@@ -885,6 +2228,235 @@
     }
   })
 </script>
+    <div class="reward-mask" style="display: none;">
+  <div class="reward-relative">
+    <span class="close" aria-hidden="true">x</span>
+    <div class="reward-body">
+      <h2>感谢您的支持，我会继续努力的!</h2>
+      <div class="reward-img-box">
+        <div style="position: relative; width: 140px; height: 140px;">
+          
+          
+            <img id="zfb" class="reward-img" src="\media\images\custom-zfbImg.JPG" alt="赞赏码">
+          
+          
+            <img id="wx" class="reward-img" src="\media\images\custom-wxImg.JPG" alt="赞赏码">
+          
+        </div>
+      </div>
+      <p class="reward-word">扫码打赏，你说多少就多少</p>
+      <p class="reward-tip">打开微信扫一扫，即可进行扫码打赏哦</p>
+    </div>
+    <div class="bottom">
+      
+      <div id="zfbBtn" class="pay-text">
+        支付宝
+      </div>
+      
+      
+      <div id="wxBtn" class="pay-text">
+        微信支付
+      </div>
+      
+    </div>
+  </div>
+</div>
+<style>
+  .reward-mask {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000054;
+  }
+
+  .reward-relative {
+    position: relative;
+    width: 480px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 50%;
+    margin-top: -205px;
+  }
+
+  .reward-relative .close {
+    position: absolute;
+    right: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #929292;
+  }
+
+  .reward-body {
+    padding: 40px 20px 20px;
+  }
+
+  .bottom {
+    display: flex;
+  }
+
+  .reward-btn {
+    text-align: center;
+  }
+
+  .reward-btn-text {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #ff9734;
+    color: #FFF;
+    margin-top: 20px;
+  }
+
+  .pay-text {
+    margin-top: 10px;
+    padding: 10px;
+    flex: 1;
+    transition: all .2s linear;
+  }
+
+  .pay-text:hover {
+    background-color: #a5a5a536;
+  }
+
+  .reward-body h2 {
+    padding-top: 10px;
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 20px;
+  }
+
+  .reward-body h2:after,
+  .reward-body h2:before {
+    font-family: Arial, Helvetica, sans-serif;
+    background: 0 0;
+    width: 0;
+    height: 0;
+    font-style: normal;
+    color: #eee;
+    font-size: 80px;
+    position: absolute;
+    top: 20px;
+  }
+
+  .reward-body h2:before {
+    content: '\201c';
+    left: 50px;
+  }
+
+  .reward-body h2:after {
+    content: '\201d';
+    right: 80px;
+  }
+
+  .reward-img-box {
+    display: inline-block;
+    padding: 10px;
+    border: 6px solid #ea5f00;
+    margin: 0 auto;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .reward-img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .reward-relative {
+      height: 100%;
+      top: 0px;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .reward-relative .bottom {
+      flex-direction: column;
+    }
+
+    .reward-relative .pay-text {
+      width: 80%;
+      margin: 5px auto;
+      border: 1px solid silver;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    .reward-body h2:after {
+      right: 40px;
+    }
+
+    .reward-body h2:after,
+    .reward-body h2:before {
+      font-size: 60px;
+    }
+
+    .reward-body h2:before {
+      left: 20px;
+    }
+  }
+</style>
+<script>
+  !function () {
+    var mask = document.querySelector('.reward-mask');
+    let close = document.querySelector('.reward-relative .close');
+    let rewardBtn = document.querySelector('.reward-btn');
+
+    let zfb = document.querySelector('#zfb'),
+      wx = document.querySelector('#wx'),
+      zfbBtn = document.querySelector('#zfbBtn'),
+      wxBtn = document.querySelector('#wxBtn');
+
+    if (zfbBtn && wxBtn) {
+      zfbBtn.addEventListener('click', () => {
+        window.Velocity(zfb, 'transition.slideLeftIn', {
+          duration: 400
+        });
+        window.Velocity(wx, 'transition.slideRightOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+
+      wxBtn.addEventListener('click', () => {
+        window.Velocity(wx, 'transition.slideRightIn', {
+          duration: 400
+        });
+        window.Velocity(zfb, 'transition.slideLeftOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+    }
+
+    rewardBtn.addEventListener('click', (e) => {
+      window.Velocity(mask, 'transition.slideDownIn', {
+        duration: 400
+      })
+    });
+
+    close.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.Velocity(mask, 'transition.slideUpOut', {
+        duration: 400
+      })
+    })
+  }()
+</script>
+
   </div>
 </body>
 
@@ -3422,7 +4994,6 @@ response=reqeust.urlopen(req).read().decode() #发送请求,获取响应并解�
 
 
 <script src="/media/js/mouse/peace.js"></script>
-
 
 
 </html>
