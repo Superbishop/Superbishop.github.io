@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Superbishop.github.io</id>
     <title>Bishop</title>
-    <updated>2021-06-22T01:52:39.074Z</updated>
+    <updated>2021-06-22T01:58:22.365Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Superbishop.github.io"/>
     <link rel="self" href="https://Superbishop.github.io/atom.xml"/>
@@ -12,37 +12,51 @@
     <rights>All rights reserved 2021, Bishop</rights>
     <entry>
         <title type="html"><![CDATA[2020年7-8月学习回顾]]></title>
-        <id>https://Superbishop.github.io/post/2020-nian-7-8-yue-xue-xi-hui-gu/</id>
-        <link href="https://Superbishop.github.io/post/2020-nian-7-8-yue-xue-xi-hui-gu/">
+        <id>https://Superbishop.github.io/2020-nian-7-8-yue-xue-xi-hui-gu/</id>
+        <link href="https://Superbishop.github.io/2020-nian-7-8-yue-xue-xi-hui-gu/">
         </link>
         <updated>2020-08-11T06:15:15.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[统计学]]></title>
-        <id>https://Superbishop.github.io/post/tong-ji-xue/</id>
-        <link href="https://Superbishop.github.io/post/tong-ji-xue/">
+        <id>https://Superbishop.github.io/tong-ji-xue/</id>
+        <link href="https://Superbishop.github.io/tong-ji-xue/">
         </link>
         <updated>2020-08-06T05:17:11.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[近期学习回顾]]></title>
-        <id>https://Superbishop.github.io/post/jin-qi-xue-xi-hui-gu/</id>
-        <link href="https://Superbishop.github.io/post/jin-qi-xue-xi-hui-gu/">
+        <id>https://Superbishop.github.io/jin-qi-xue-xi-hui-gu/</id>
+        <link href="https://Superbishop.github.io/jin-qi-xue-xi-hui-gu/">
         </link>
         <updated>2020-07-04T20:33:18.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[《SQL必知必会》学习笔记-2020-6-7]]></title>
-        <id>https://Superbishop.github.io/post/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-7/</id>
-        <link href="https://Superbishop.github.io/post/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-7/">
+        <id>https://Superbishop.github.io/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-7/</id>
+        <link href="https://Superbishop.github.io/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-7/">
         </link>
         <updated>2020-06-07T12:45:56.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[《SQL必知必会》学习笔记-2020-6-6]]></title>
-        <id>https://Superbishop.github.io/post/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-6/</id>
-        <link href="https://Superbishop.github.io/post/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-6/">
+        <id>https://Superbishop.github.io/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-6/</id>
+        <link href="https://Superbishop.github.io/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-6/">
         </link>
         <updated>2020-06-06T03:49:17.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[《SQL必知必会》学习笔记-2020-6-5]]></title>
+        <id>https://Superbishop.github.io/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-5/</id>
+        <link href="https://Superbishop.github.io/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-5/">
+        </link>
+        <updated>2020-06-05T04:39:23.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[《SQL必知必会》学习笔记-2020-6-4]]></title>
+        <id>https://Superbishop.github.io/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-4/</id>
+        <link href="https://Superbishop.github.io/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-4/">
+        </link>
+        <updated>2020-06-04T04:07:41.000Z</updated>
     </entry>
 </feed>

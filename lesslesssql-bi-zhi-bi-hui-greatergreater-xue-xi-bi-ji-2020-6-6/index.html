@@ -8,7 +8,7 @@
 <meta name="keywords" content="Bishop静态个人博客">
 <meta name="description" content="Live and learn. ">
 <meta name="theme-color" content="#000">
-<title>Bishop</title>
+<title>《SQL必知必会》学习笔记-2020-6-6 | Bishop</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1624326955805">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,6 +38,8 @@
 
 
 
+  <meta name="description" content="《SQL必知必会》学习笔记-2020-6-6" />
+  <meta name="keywords" content="SQL" />
 </head>
 
 <body>
@@ -99,7 +101,7 @@
             
               
             
-            <li class="nav-item nav-item-active">
+            <li class="nav-item ">
               
               
                 <a href="/tags/" target="_blank">
@@ -170,10 +172,26 @@
   <div class="main-continer">
     
     <div
-      class="section-layout  pisces">
+      class="section-layout pisces ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active language" data-lan="index">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item language" data-lan="preview">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body pisces" id="sidebar_body">
+        
+          
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -242,446 +260,732 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#%E6%8E%92%E5%BA%8F%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE">排序检索数据</a><br>
+*<br>
+*<br>
+* <a href="#%E5%AD%90%E5%8F%A5clause">子句（clause）</a><br>
+* <a href="#%E6%8C%89%E5%A4%9A%E4%B8%AA%E5%88%97%E6%8E%92%E5%BA%8F">按多个列排序</a><br>
+* <a href="#%E6%8C%89%E5%88%97%E4%BD%8D%E7%BD%AE%E6%8E%92%E5%BA%8F">按列位置排序</a><br>
+* <a href="#%E6%8C%87%E5%AE%9A%E6%8E%92%E5%BA%8F%E6%96%B9%E5%90%91">指定排序方向</a></li>
+<li><a href="#%E8%BF%87%E6%BB%A4%E6%95%B0%E6%8D%AE">过滤数据</a><br>
+*<br>
+*<br>
+* <a href="#%E4%BD%BF%E7%94%A8where-%E5%AD%90%E5%8F%A5">使用WHERE 子句</a><br>
+* <a href="#where-%E5%AD%90%E5%8F%A5%E6%93%8D%E4%BD%9C%E7%AC%A6">WHERE 子句操作符</a><br>
+* <a href="#%E6%A3%80%E6%9F%A5%E5%8D%95%E4%B8%AA%E5%80%BC">检查单个值</a><br>
+* <a href="#%E4%B8%8D%E5%8C%B9%E9%85%8D%E6%A3%80%E6%9F%A5">不匹配检查</a><br>
+* <a href="#%E8%8C%83%E5%9B%B4%E5%80%BC%E6%A3%80%E6%9F%A5">范围值检查</a><br>
+* <a href="#%E7%A9%BA%E5%80%BC%E6%A3%80%E6%9F%A5">空值检查</a></li>
+<li><a href="#%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4">高级数据过滤</a><br>
+*<br>
+*<br>
+* <a href="#%E7%BB%84%E5%90%88where-%E5%AD%90%E5%8F%A5">组合WHERE 子句</a><br>
+* <a href="#and%E6%93%8D%E4%BD%9C%E7%AC%A6">AND操作符</a><br>
+* <a href="#or%E6%93%8D%E4%BD%9C%E7%AC%A6">OR操作符</a><br>
+* <a href="#%E6%B1%82%E5%80%BC%E9%A1%BA%E5%BA%8F">求值顺序</a><br>
+* <a href="#in-%E6%93%8D%E4%BD%9C%E7%AC%A6">IN 操作符</a><br>
+* <a href="#not-%E6%93%8D%E4%BD%9C%E7%AC%A6">NOT 操作符</a></li>
+</ul>
+
+  </div>
 </div>
+
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'pisces';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
       }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
     });
   }
-  </script>
-        <div class="section-box box-shadow-wrapper">
-          <section class="section tags-section bg-color posts-expand">
-            <div class="tags-box">
-  <div class="tag-cloud-title language" data-lan="cloud-tags" data-count="6">
-    目前共计 6 个标签
-  </div>
-  <div class="tag-cloud-list" id="tags">
-    
-      
-      
-        
-      
-        
-      
-        
-          
-            
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-      
-        
-      
-        
-          
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-          
-        
-          
-        
-      
-        
-      
-      <a class="cloud-tag" href="https://Superbishop.github.io/shu-ju-fen-xi/" rel="1">数据分析</a>
-    
-      
-      
-        
-      
-        
-      
-        
-          
-        
-          
-            
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-      
-        
-      
-        
-          
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-          
-        
-          
-        
-      
-        
-      
-      <a class="cloud-tag" href="https://Superbishop.github.io/xue-xi-zong-jie/" rel="1">学习总结</a>
-    
-      
-      
-        
-      
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-            
-      
-        
-          
-            
-      
-        
-          
-            
-      
-        
-      
-        
-      
-        
-          
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-          
-        
-          
-        
-      
-        
-      
-      <a class="cloud-tag" href="https://Superbishop.github.io/sql/" rel="3">SQL</a>
-    
-      
-      
-        
-      
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-            
-      
-        
-          
-        
-      
-        
-          
-        
-          
-            
-      
-        
-      
-        
-      
-        
-          
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-          
-        
-          
-            
-      
-        
-      
-      <a class="cloud-tag" href="https://Superbishop.github.io/B3Myw-CcF/" rel="3">learn summary</a>
-    
-      
-      
-        
-      
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-      
-        
-      
-        
-          
-            
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-          
-        
-          
-        
-      
-        
-      
-      <a class="cloud-tag" href="https://Superbishop.github.io/wiZ0GzLM1/" rel="1">正则表达式</a>
-    
-      
-      
-        
-      
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-      
-        
-      
-        
-          
-        
-          
-            
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-          
-            
-      
-        
-      
-      <a class="cloud-tag" href="https://Superbishop.github.io/j75nuvaWl/" rel="2">python</a>
-    
-  </div>
-</div>
-<script>
 
-  let fontStart = 12, fontEnd = 30, colorStart = '#666', colorEnd = '#000';
-  let tags = document.querySelector('#tags').children;
-  let counts = [];
-  for(let i = 0; i < tags.length; i++) {
-    counts.push(tags[i].rel);
-  }
-  let lowest = Math.min.apply(null,counts), highest = Math.max.apply(null,counts);;
-  let range = highest - lowest;
-  if (range === 0) {
-    range = 1;
-  }
-  let fontIncr, colorIncr;
-  fontIncr = (fontEnd - fontStart) / range;
-  
-  let sColorArr = toRGB(colorStart), eColorArr = toRGB(colorEnd);
-
-  for(let i = 0; i < tags.length; i++) {
-    let disCount = tags[i].rel - lowest;
-    let fontSize = fontStart + disCount * fontIncr;
-    let style = 'font-size: ' + fontSize + 'px;';
-    let arr = [];
-    for(let c = 0; c < sColorArr.length; c++) {
-      if (disCount === 0) {
-        disCount = 1;
-      }
-      let val = (sColorArr[c] - eColorArr[c]) / range * disCount;
-      if (val >= 100) {
-        val = eColorArr[c];
-      } else if (val <= 0) {
-        val = sColorArr[c];
-      }
-      arr[c] = Math.floor(val);
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
     }
-    style += 'color: ' + toHex(arr);
-    tags[i].style = style;
   }
 
-  function toRGB(code) {
-    if (code.length === 4) {
-      code = code.replace(/(\w)(\w)(\w)/gi, "\$1\$1\$2\$2\$3\$3");
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
     }
-    var hex = /(\w{2})(\w{2})(\w{2})/.exec(code);
-    return [parseInt(hex[1], 16), parseInt(hex[2], 16), parseInt(hex[3], 16)];
   }
 
-  function toHex(ary) {
-    return "#" + ((1 << 24) + (ary[0] << 16) + (ary[1] << 8) + ary[2]).toString(16).slice(1);
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
   }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
 
 </script>
-          </section>
+            </div>
+          
+        
+      </div>
+    </div>
+  
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <section class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://Superbishop.github.io/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-6/">
+      《SQL必知必会》学习笔记-2020-6-6
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span class="publish-time" data-t="2020-06-06 11:49:17">2020-06-06</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-folder-o"></i>
+      <span class="pc-show language" data-lan="category-in">分类于</span>
+      
+      
+      <a href="https://Superbishop.github.io/sql/">
+        <span>SQL</span>
+      </a>
+      
+      
+    </span>
+    <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>10<span class="language" data-lan="minute">分钟</span></span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>2221<span class="pc-show language" data-lan="words">字数</span></span>
+    </span>
+    
+  </div>
+</section>
+            <div class="post-body next-md-body" id="post_body">
+              <h1 id="排序检索数据">排序检索数据</h1>
+<h4 id="子句clause">子句（clause）</h4>
+<p>SQL 语句由子句构成，有些子句是必需的，有些则是可选的。一个子句通常由一个关键字加上所提供的数据组成。</p>
+<p>为了明确地排序用SELECT 语句检索出的数据，可使用ORDER BY 子句。<br>
+ORDER BY 子句取一个或多个列的名字，据此对输出进行排序</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_name
+FROM Products
+ORDER BY prod_name;
+</code></pre>
+<blockquote>
+<p>在指定一条ORDER BY 子句时，应该保证它是SELECT 语句中最后一条子句。如果它不是最后的子句，将会出现错误消息。</p>
+</blockquote>
+<hr>
+<h4 id="按多个列排序">按多个列排序</h4>
+<p>要按多个列排序，简单指定列名，列名之间用逗号分开即可（就像选择多个列时那样）。</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_id, prod_price, prod_name
+FROM Products
+ORDER BY prod_price, prod_name;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_id prod_price prod_name
+---
+BNBG02 3.4900 Bird bean bag toy
+BNBG01 3.4900 Fish bean bag toy
+BNBG03 3.4900 Rabbit bean bag toy
+RGAN01 4.9900 Raggedy Ann
+BR01 5.9900 8 inch teddy bear
+BR02 8.9900 12 inch teddy bear
+RYL01 9.4900 King doll
+RYL02 9.4900 Queen doll
+BR03 11.9900 18 inch teddy bear
+
+</code></pre>
+<hr>
+<h4 id="按列位置排序">按列位置排序</h4>
+<p>除了能用列名指出排序顺序外，ORDER BY 还支持按相对列位置进行排序。</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_id, prod_price, prod_name
+FROM Products
+ORDER BY 2, 3;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_id prod_price prod_name
+------- ---------- --------------------
+BNBG02 3.4900 Bird bean bag toy
+BNBG01 3.4900 Fish bean bag toy
+BNBG03 3.4900 Rabbit bean bag toy
+RGAN01 4.9900 Raggedy Ann
+BR01 5.9900 8 inch teddy bear
+BR02 8.9900 12 inch teddy bear
+RYL01 9.4900 King doll
+RYL02 9.4900 Queen doll
+BR03 11.9900 18 inch teddy bear
+</code></pre>
+<blockquote>
+<p>这一技术的主要好处在于不用重新输入列名。但它也有缺点。首先，不明<br>
+确给出列名有可能造成错用列名排序。其次，在对SELECT 清单进行更改<br>
+时容易错误地对数据进行排序（忘记对ORDER BY 子句做相应的改动）。<br>
+最后，如果进行排序的列不在SELECT 清单中，显然不能使用这项技术。</p>
+</blockquote>
+<hr>
+<h4 id="指定排序方向">指定排序方向</h4>
+<p>数据排序不限于升序排序（从A 到Z），这只是默认的排序顺序。还可以使用ORDER BY 子句进行降序（从Z 到A）排序。为了进行降序排序，必须指定<strong>DESC</strong> 关键字。</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_id, prod_price, prod_name
+FROM Products
+ORDER BY prod_price DESC;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_id prod_price prod_name
+------- ---------- --------------------
+BR03 11.9900 18 inch teddy bear
+RYL01 9.4900 King doll
+RYL02 9.4900 Queen doll
+BR02 8.9900 12 inch teddy bear
+BR01 5.9900 8 inch teddy bear
+RGAN01 4.9900 Raggedy Ann
+BNBG01 3.4900 Fish bean bag toy
+BNBG02 3.4900 Bird bean bag toy
+BNBG03 3.4900 Rabbit bean bag toy
+</code></pre>
+<blockquote>
+<p><strong>如果想在多个列上进行降序排序，必须对每一列指定DESC 关键字。</strong></p>
+</blockquote>
+<hr>
+<h1 id="过滤数据">过滤数据</h1>
+<p>如何使用SELECT 语句的WHERE 子句指定搜索条件。</p>
+<h4 id="使用where-子句">使用WHERE 子句</h4>
+<p>在SELECT 语句中，数据根据WHERE 子句中指定的搜索条件进行过滤。WHERE 子句在表名（FROM 子句）之后给出。</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_name, prod_price
+FROM Products
+WHERE prod_price = 3.49;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_name prod_price
+------------------- ----------
+Fish bean bag toy 3.49
+Bird bean bag toy 3.49
+Rabbit bean bag toy 3.49
+</code></pre>
+<blockquote>
+<p>这条语句从products 表中检索两个列，但不返回所有行，只返回<br>
+prod_price 值为3.49 的行</p>
+</blockquote>
+<p><strong>在同时使用ORDER BY 和WHERE 子句时，应该让ORDER BY 位于WHERE 之后，否则将会产生错误</strong></p>
+<hr>
+<h4 id="where-子句操作符">WHERE 子句操作符</h4>
+<p>SQL 支持下表 列出的所有条件操作符。</p>
+<figure data-type="image" tabindex="1"><img src="https://Superbishop.github.io/post-images/1591415615769.png" alt="" loading="lazy"></figure>
+<hr>
+<h4 id="检查单个值">检查单个值</h4>
+<p>列出所有价格小于10 美元的产品：</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_name, prod_price
+FROM Products
+WHERE prod_price &lt; 10;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_name prod_price
+------------------- ----------
+Fish bean bag toy 3.49
+Bird bean bag toy 3.49
+Rabbit bean bag toy 3.49
+8 inch teddy bear 5.99
+12 inch teddy bear 8.99
+Raggedy Ann 4.99
+King doll 9.49
+Queen doll 9.49
+</code></pre>
+<p>检索所有价格小于等于10 美元的产品：</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_name, prod_price
+FROM Products
+WHERE prod_price &lt;= 10;
+</code></pre>
+<hr>
+<h4 id="不匹配检查">不匹配检查</h4>
+<p>列出所有不是供应商DLL01 制造的产品：</p>
+<p>输入▼</p>
+<pre><code>SELECT vend_id, prod_name
+FROM Products
+WHERE vend_id &lt;&gt; 'DLL01';
+</code></pre>
+<p>输出▼</p>
+<pre><code>vend_id prod_name
+---------- ------------------
+BRS01 8 inch teddy bear
+BRS01 12 inch teddy bear
+BRS01 18 inch teddy bear
+FNG01 King doll
+FNG01 Queen doll
+</code></pre>
+<p><strong>何时使用引号？</strong></p>
+<p>单引号用来限定字符串。如果将值与字符串类型的列进行比较，就需要限定引号。用来与数值列进行比较的值不用引号。</p>
+<hr>
+<h4 id="范围值检查">范围值检查</h4>
+<p>要检查某个范围的值，可以使用BETWEEN 操作符。其语法与其他WHERE子句的操作符稍有不同，因为它需要两个值，即范围的开始值和结束值。</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_name, prod_price
+FROM Products
+WHERE prod_price BETWEEN 5 AND 10;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_name prod_price
+------------------- ----------
+8 inch teddy bear 5.99
+12 inch teddy bear 8.99
+King doll 9.49
+Queen doll 9.49
+</code></pre>
+<hr>
+<h4 id="空值检查">空值检查</h4>
+<p>在创建表时，表设计人员可以指定其中的列能否不包含值。在一个列不包含值时，称其包含<strong>空值NULL</strong>。</p>
+<blockquote>
+<p>NULL<br>
+无值（no value），它与字段包含0、空字符串或仅仅包含空格不同。</p>
+</blockquote>
+<p>SELECT 语句有一个特殊的WHERE 子句，可用来检查具有NULL 值的列。这个WHERE 子句就是<strong>IS NULL</strong> 子句。</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_name
+FROM Products
+WHERE prod_price IS NULL;
+</code></pre>
+<blockquote>
+<p>注意：NULL 和非匹配<br>
+通过过滤选择不包含指定值的所有行时，你可能希望返回含NULL 值<br>
+的行。但是这做不到。因为未知（unknown）有特殊的含义，数据库<br>
+不知道它们是否匹配，所以在进行匹配过滤或非匹配过滤时，不会返<br>
+回这些结果。<br>
+过滤数据时，一定要验证被过滤列中含NULL 的行确实出现在返回的<br>
+数据中。</p>
+</blockquote>
+<hr>
+<h1 id="高级数据过滤">高级数据过滤</h1>
+<p>如何组合WHERE 子句以建立功能更强、更高级的搜索条件？</p>
+<p>如何使用NOT 和IN 操作符？</p>
+<h4 id="组合where-子句">组合WHERE 子句</h4>
+<p>为了进行更强的过滤控制，SQL 允许给出多个WHERE 子句。这些子句有两<br>
+种使用方式，即以<strong>AND 子句或OR 子句</strong>的方式使用。</p>
+<blockquote>
+<p>操作符（operator）<br>
+用来联结或改变WHERE 子句中的子句的关键字，也称为逻辑操作符<br>
+（logical operator）。</p>
+</blockquote>
+<h4 id="and操作符">AND操作符</h4>
+<p>输入▼</p>
+<pre><code>SELECT prod_id, prod_price, prod_name
+FROM Products
+WHERE vend_id = 'DLL01' AND prod_price &lt;= 4;
+</code></pre>
+<h4 id="or操作符">OR操作符</h4>
+<p>输入▼</p>
+<pre><code>SELECT prod_name, prod_price
+FROM Products
+WHERE vend_id = 'DLL01' OR vend_id = ‘BRS01’;
+</code></pre>
+<h4 id="求值顺序">求值顺序</h4>
+<p>WHERE 子句可以包含任意数目的AND 和OR 操作符。允许两者结合以进行复杂、高级的过滤。但SQL（像多数语言一样）在处理OR 操作符前，优先处理AND 操作符。</p>
+<p>若想优先处理OR子句,解决方法是使用<strong>圆括号</strong>对操作符进行明确分组.</p>
+<p>对比一下两个例子,可得出,通过使用圆括号,输出结果截然不同.</p>
+<ol>
+<li></li>
+</ol>
+<p>输入▼</p>
+<pre><code>SELECT prod_name, prod_price
+FROM Products
+WHERE vend_id = 'DLL01' OR vend_id = 'BRS01'
+AND prod_price &gt;= 10;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_name prod_price
+------------------- ----------
+Fish bean bag toy 3.4900
+Bird bean bag toy 3.4900
+Rabbit bean bag toy 3.4900
+18 inch teddy bear 11.9900
+Raggedy Ann 4.9900
+</code></pre>
+<ol start="2">
+<li></li>
+</ol>
+<p>输入▼</p>
+<pre><code>SELECT prod_name, prod_price
+FROM Products
+WHERE (vend_id = 'DLL01' OR vend_id = 'BRS01')
+AND prod_price &gt;= 10;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_name prod_price
+------------------- ----------
+18 inch teddy bear 11.9900
+</code></pre>
+<blockquote>
+<p>提示：在WHERE 子句中使用圆括号<br>
+任何时候使用具有AND 和OR 操作符的WHERE 子句，都应该使用圆括<br>
+号明确地分组操作符。不要过分依赖默认求值顺序，即使它确实如你<br>
+希望的那样。使用圆括号没有什么坏处，它能消除歧义。</p>
+</blockquote>
+<p>​</p>
+<h4 id="in-操作符">IN 操作符</h4>
+<p>IN 操作符用来指定条件范围，范围中的每个条件都可以进行匹配。IN 取一组由逗号分隔、括在圆括号中的合法值.</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_name, prod_price
+FROM Products
+WHERE vend_id IN ( 'DLL01', 'BRS01' )
+ORDER BY prod_name;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_name prod_price
+------------------- ----------
+12 inch teddy bear 8.9900
+18 inch teddy bear 11.9900
+8 inch teddy bear 5.9900
+Bird bean bag toy 3.4900
+Fish bean bag toy 3.4900
+Rabbit bean bag toy 3.4900
+Raggedy Ann 4.9900
+</code></pre>
+<p>IN 操作符看似与OR操作符如出同辙,但IN操作符更具优势.</p>
+<ul>
+<li>
+<p>在有很多合法选项时，IN 操作符的语法<strong>更清楚，更直观</strong>。</p>
+</li>
+<li>
+<p>在与其他AND 和OR 操作符组合使用IN 时，<strong>求值顺序更容易管理</strong>。</p>
+</li>
+<li>
+<p><strong>IN 操作符一般比一组OR 操作符执行得更快</strong>（在上面这个合法选项很少的例子中，你看不出性能差异）。</p>
+</li>
+<li>
+<p><strong>IN 的最大优点是可以包含其他SELECT 语句，能够更动态地建立WHERE 子句</strong></p>
+</li>
+</ul>
+<h4 id="not-操作符">NOT 操作符</h4>
+<p>WHERE 子句中用来否定其后条件的关键字.</p>
+<p>输入▼</p>
+<pre><code>SELECT prod_name
+FROM Products
+WHERE NOT vend_id = 'DLL01'
+ORDER BY prod_name;
+</code></pre>
+<p>输出▼</p>
+<pre><code>prod_name
+------------------
+12 inch teddy bear
+18 inch teddy bear
+8 inch teddy bear
+King doll
+Queen doll
+</code></pre>
+<p>为什么使用NOT？</p>
+<p>对于这里的这种简单的WHERE 子句，使用NOT 确实没有什么优势。但在更复杂的子句中，NOT 是非常有用的。例如，在与IN 操作符联合使用时，NOT 可以非常简单地找出与条件列表不匹配的行。</p>
+<blockquote>
+<p>说明：MariaDB 中的NOT<br>
+MariaDB 支持使用NOT 否定IN、BETWEEN 和EXISTS 子句。大多数<br>
+DBMS 允许使用NOT 否定任何条件。</p>
+</blockquote>
+
+            </div>
+            
+              <div class="reward-btn">
+                <div class="reward-btn-text">赞赏</div>
+              </div>
+            
+            
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong class="language" data-lan="author">本文作者：</strong>
+      Bishop
+    </li>
+    <li class="post-copyright-link">
+      <strong class="language" data-lan="link">本文链接：</strong>
+      <a href="https://Superbishop.github.io/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-6/" title="《SQL必知必会》学习笔记-2020-6-6">https://Superbishop.github.io/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-6/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://Superbishop.github.io/sql/"># SQL</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="《SQL必知必会》学习笔记-2020-6-7" href="https://Superbishop.github.io/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-7/">《SQL必知必会》学习笔记-2020-6-7</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="《SQL必知必会》学习笔记-2020-6-7" href="https://Superbishop.github.io/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-7/">上一篇</a>
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="《SQL必知必会》学习笔记-2020-6-5" href="https://Superbishop.github.io/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-5/">《SQL必知必会》学习笔记-2020-6-5</a>
+        <a class="nav-mobile-next" title="《SQL必知必会》学习笔记-2020-6-5" href="https://Superbishop.github.io/lesslesssql-bi-zhi-bi-hui-greatergreater-xue-xi-bi-ji-2020-6-5/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
+            
+            
+  
+    
+      <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '3bb4552eafc7c9ab4144',
+    clientSecret: 'f10e504a6ff8534bac9d2f34638c7b681cbf3763',
+    repo: 'superbishop.github.io',
+    owner: 'superbishop',
+    admin: ['superbishop'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+  gitalk.render('gitalk-container')
+</script>
+    
+    
+  
+
+          </div>
         </div>
       </div>
     </div>
@@ -910,6 +1214,265 @@
   }
 
 </script>
+    <div class="light-box" id="light_box"></div>
+<script>
+  let imgs = document.querySelectorAll('.post-body img');
+  let lightBox = document.querySelector('#light_box');
+  lightBox.addEventListener('mousedown', (e) => {
+    e.preventDefault()
+  })
+  lightBox.addEventListener('mousewheel', (e) => {
+    e.preventDefault()
+  })
+  let width = window.innerWidth * 0.8;
+  lightBox.onclick = () => {
+    let img = lightBox.querySelector('img');
+    lightBox.style = '';
+    img && img.remove();
+  }
+  imgs.forEach(item => {
+    item.onclick = function (e) {
+      let lightImg = document.createElement('img');
+      lightImg.src = this.src;
+      lightBox.style = `height: 100%; opacity: 1; background-color: rgba(0, 0, 0, 0.5);cursor: zoom-out;`;
+      lightImg.style = `width: ${width}px;border-radius: 2px;`;
+      lightImg.onclick = function () {
+        lightBox.style = '';
+        this.remove();
+      }
+      lightBox.append(lightImg);
+    }
+  })
+</script>
+    <div class="reward-mask" style="display: none;">
+  <div class="reward-relative">
+    <span class="close" aria-hidden="true">x</span>
+    <div class="reward-body">
+      <h2>感谢您的支持，我会继续努力的!</h2>
+      <div class="reward-img-box">
+        <div style="position: relative; width: 140px; height: 140px;">
+          
+          
+            <img id="zfb" class="reward-img" src="\media\images\custom-zfbImg.JPG" alt="赞赏码">
+          
+          
+            <img id="wx" class="reward-img" src="\media\images\custom-wxImg.JPG" alt="赞赏码">
+          
+        </div>
+      </div>
+      <p class="reward-word">扫码打赏，你说多少就多少</p>
+      <p class="reward-tip">打开微信扫一扫，即可进行扫码打赏哦</p>
+    </div>
+    <div class="bottom">
+      
+      <div id="zfbBtn" class="pay-text">
+        支付宝
+      </div>
+      
+      
+      <div id="wxBtn" class="pay-text">
+        微信支付
+      </div>
+      
+    </div>
+  </div>
+</div>
+<style>
+  .reward-mask {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000054;
+  }
+
+  .reward-relative {
+    position: relative;
+    width: 480px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 50%;
+    margin-top: -205px;
+  }
+
+  .reward-relative .close {
+    position: absolute;
+    right: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #929292;
+  }
+
+  .reward-body {
+    padding: 40px 20px 20px;
+  }
+
+  .bottom {
+    display: flex;
+  }
+
+  .reward-btn {
+    text-align: center;
+  }
+
+  .reward-btn-text {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #ff9734;
+    color: #FFF;
+    margin-top: 20px;
+  }
+
+  .pay-text {
+    margin-top: 10px;
+    padding: 10px;
+    flex: 1;
+    transition: all .2s linear;
+  }
+
+  .pay-text:hover {
+    background-color: #a5a5a536;
+  }
+
+  .reward-body h2 {
+    padding-top: 10px;
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 20px;
+  }
+
+  .reward-body h2:after,
+  .reward-body h2:before {
+    font-family: Arial, Helvetica, sans-serif;
+    background: 0 0;
+    width: 0;
+    height: 0;
+    font-style: normal;
+    color: #eee;
+    font-size: 80px;
+    position: absolute;
+    top: 20px;
+  }
+
+  .reward-body h2:before {
+    content: '\201c';
+    left: 50px;
+  }
+
+  .reward-body h2:after {
+    content: '\201d';
+    right: 80px;
+  }
+
+  .reward-img-box {
+    display: inline-block;
+    padding: 10px;
+    border: 6px solid #ea5f00;
+    margin: 0 auto;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .reward-img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .reward-relative {
+      height: 100%;
+      top: 0px;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .reward-relative .bottom {
+      flex-direction: column;
+    }
+
+    .reward-relative .pay-text {
+      width: 80%;
+      margin: 5px auto;
+      border: 1px solid silver;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    .reward-body h2:after {
+      right: 40px;
+    }
+
+    .reward-body h2:after,
+    .reward-body h2:before {
+      font-size: 60px;
+    }
+
+    .reward-body h2:before {
+      left: 20px;
+    }
+  }
+</style>
+<script>
+  !function () {
+    var mask = document.querySelector('.reward-mask');
+    let close = document.querySelector('.reward-relative .close');
+    let rewardBtn = document.querySelector('.reward-btn');
+
+    let zfb = document.querySelector('#zfb'),
+      wx = document.querySelector('#wx'),
+      zfbBtn = document.querySelector('#zfbBtn'),
+      wxBtn = document.querySelector('#wxBtn');
+
+    if (zfbBtn && wxBtn) {
+      zfbBtn.addEventListener('click', () => {
+        window.Velocity(zfb, 'transition.slideLeftIn', {
+          duration: 400
+        });
+        window.Velocity(wx, 'transition.slideRightOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+
+      wxBtn.addEventListener('click', () => {
+        window.Velocity(wx, 'transition.slideRightIn', {
+          duration: 400
+        });
+        window.Velocity(zfb, 'transition.slideLeftOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+    }
+
+    rewardBtn.addEventListener('click', (e) => {
+      window.Velocity(mask, 'transition.slideDownIn', {
+        duration: 400
+      })
+    });
+
+    close.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.Velocity(mask, 'transition.slideUpOut', {
+        duration: 400
+      })
+    })
+  }()
+</script>
+
   </div>
 </body>
 
@@ -3460,7 +4023,6 @@ response=reqeust.urlopen(req).read().decode() #发送请求,获取响应并解�
 
 
 <script src="/media/js/mouse/peace.js"></script>
-
 
 
 </html>
